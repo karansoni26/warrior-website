@@ -1,208 +1,376 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Warrior | Master Your Discipline & Conquer Habits</title>
-    <meta name="description" content="The world's most powerful discipline and habit-building ecosystem. Features AI-powered blocking, squad support, and gamified XP tracking for modern growth." />
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>NoRelapse | Master Your Discipline</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "on-primary-fixed": "#001a41",
+                "primary-fixed": "#d8e2ff",
+                "on-error-container": "#ffdad6",
+                "error": "#ffb4ab",
+                "surface-container": "#201f1f",
+                "on-secondary-fixed": "#1c1b1b",
+                "on-tertiary-fixed": "#221b00",
+                "secondary-fixed-dim": "#c8c6c5",
+                "primary": "#adc7ff",
+                "primary-fixed-dim": "#adc7ff",
+                "surface-container-highest": "#353534",
+                "surface-container-lowest": "#0e0e0e",
+                "inverse-surface": "#e5e2e1",
+                "on-secondary-container": "#b7b5b4",
+                "on-surface-variant": "#c1c6d7",
+                "surface-variant": "#353534",
+                "background": "#131313",
+                "on-tertiary-fixed-variant": "#544600",
+                "secondary": "#c8c6c5",
+                "tertiary-fixed": "#ffe16d",
+                "tertiary": "#e9c400",
+                "outline-variant": "#414754",
+                "surface-tint": "#adc7ff",
+                "surface": "#131313",
+                "on-secondary-fixed-variant": "#474746",
+                "on-primary-fixed-variant": "#004493",
+                "surface-dim": "#131313",
+                "secondary-container": "#474746",
+                "surface-bright": "#3a3939",
+                "secondary-fixed": "#e5e2e1",
+                "primary-container": "#4a8eff",
+                "inverse-on-surface": "#313030",
+                "surface-container-low": "#1c1b1b",
+                "on-primary-container": "#00285b",
+                "inverse-primary": "#005bc0",
+                "error-container": "#93000a",
+                "on-primary": "#002e68",
+                "on-tertiary-container": "#4c3f00",
+                "tertiary-fixed-dim": "#e9c400",
+                "on-surface": "#e5e2e1",
+                "tertiary-container": "#c9a900",
+                "on-secondary": "#313030",
+                "outline": "#8b90a0",
+                "on-error": "#690005",
+                "on-background": "#e5e2e1",
+                "surface-container-high": "#2a2a2a",
+                "on-tertiary": "#3a3000"
+              },
+              fontFamily: {
+                "headline": ["Inter"],
+                "body": ["Inter"],
+                "label": ["Inter"]
+              },
+              borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+            },
+          },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0e0e0e;
+            color: #e5e2e1;
+            overflow-x: hidden;
+        }
+        .grainy-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        @keyframes spin-slow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .animate-spin-slow {
+            animation: spin-slow 30s linear infinite;
+        }
+    </style>
+</head>
+<body class="bg-surface-container-lowest text-on-surface selection:bg-primary selection:text-on-primary-container">
+    <div class="grainy-overlay"></div>
     
-    <!-- SEO & Social Sharing -->
-    <meta property="og:title" content="Warrior | Master Your Discipline" />
-    <meta property="og:description" content="Conquer urges, build legendary streaks, and join the elite squad. The #1 discipline app for high-performers." />
-    <meta property="og:type" content="website" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://streak.warrior.app" />
-    
-    <!-- Premium Typography -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-    
-    <!-- Icons -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0" />
-    
-    <link rel="stylesheet" href="./src/style.css" />
-  </head>
-  <body>
-    <div id="app">
-      <nav class="glass-nav">
-        <div class="container">
-          <div class="logo">
-            <span class="material-symbols-outlined gold-text">bolt</span>
-            <span class="logo-text">STREAK</span>
-          </div>
-          <div class="nav-links">
-            <a href="#features">Features</a>
-            <a href="#squad">Squad</a>
-            <a href="#pricing">Elite</a>
-            <button class="cta-btn secondary">LOGIN</button>
-          </div>
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-[#131313]/80 backdrop-blur-xl border-b border-white/5">
+        <div class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
+            <div class="flex items-center gap-2 text-2xl font-black text-white uppercase tracking-tighter">
+                NoRelapse
+            </div>
+            <div class="hidden md:flex gap-8 items-center">
+                <a class="text-primary font-bold tracking-tight" href="index.html">Home</a>
+                <a class="text-on-surface-variant hover:text-white transition-colors font-bold tracking-tight" href="#guardian">Guardian Shield</a>
+                <a class="text-on-surface-variant hover:text-white transition-colors font-bold tracking-tight" href="install.html">Security Guide</a>
+            </div>
+            <button class="download-btn-trigger bg-gradient-to-r from-primary to-primary-container text-on-primary-container px-6 py-2.5 font-bold tracking-tight rounded-md">
+                Get v1.1
+            </button>
         </div>
-      </nav>
+    </nav>
 
-      <main>
-        <!-- Hero Section -->
-        <section class="hero">
-          <div class="glow-sphere"></div>
-          <div class="container">
-            <h1 class="hero-title">Build Your <span class="gradient-text">Legend</span></h1>
-            <p class="hero-subtitle">The #1 rated discipline app for the modern warrior. Conquer your urges, track your XP, and join a global brotherhood.</p>
-            <div class="hero-actions">
-              <button class="app-btn-main download-btn-trigger">DOWNLOAD APK</button>
-              <a href="#features" class="app-btn-secondary">LEARN MORE</a>
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+        <div class="absolute inset-0 z-0 opacity-40 grayscale mix-blend-overlay">
+            <img alt="Sovereign Vault" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqFt1RHn6qDMkRypcnkX2fxjg2UvqnN35LF7UfzN2c_7GDYX3f0AMLin1Cnl3F1Do_PnNJv-Vs3Fn2xjXAF45bAJx1RRprX5YGFkdJTP_KcezlZj8gRsi-OCscaxhsUH9spX0e9uTyd5qyQ8naKx_WyzU7_h5v3TI0VXcp7tDFa_rRl2wdfRzv6WF4WQrkOCWBY7zdv8GT2SyzdoDtyW8esy7UXqu_FYeVWA1QxldOSUFwGc7Ftdemg-PKOOuqh3U_CtIqc1--CWM" />
+        </div>
+        <div class="relative z-10 max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-8">
+                <div class="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 px-4 py-1.5 rounded-full text-primary text-xs font-bold tracking-widest uppercase">
+                    <span class="relative flex h-2 w-2">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+                    </span>
+                    System Online: Build v1.1
+                </div>
+                <h1 class="text-6xl md:text-8xl font-black tracking-tighter leading-[0.9] text-white">
+                    Master Your <br/><span class="text-primary italic">Discipline.</span> <br/>Reclaim Your Life.
+                </h1>
+                <p class="text-xl text-on-surface-variant max-w-lg leading-relaxed">
+                    The world's most advanced recovery and habit-building ecosystem. NoRelapse uses AI-powered protection to build an unbreakable shield against urges.
+                </p>
+                <div class="flex flex-col sm:row gap-4 pt-4">
+                    <button class="download-btn-trigger px-8 py-5 bg-gradient-to-r from-primary to-primary-container text-on-primary-container font-black text-lg tracking-tight rounded-lg shadow-2xl hover:brightness-110 transition-all flex items-center justify-center gap-3">
+                        <span class="material-symbols-outlined">download</span>
+                        Download Final Build (v1.1)
+                    </button>
+                    <a href="#install" class="px-8 py-5 bg-surface-container-high border border-outline-variant/30 text-on-surface font-bold text-lg hover:bg-surface-container-highest transition-all text-center">
+                        Security Briefing
+                    </a>
+                </div>
             </div>
             
-            <!-- Live Ticker (Social Proof) -->
-            <div class="live-ticker">
-              <div class="ticker-dot"></div>
-              <span>Join <strong id="user-count">12,400+</strong> active warriors in the arena right now.</span>
-            </div>
-          </div>
-        </section>
-
-        <!-- Features Grid -->
-        <section id="features" class="features-section">
-          <div class="container">
-            <div class="section-header">
-              <h2>Battle-Tested <span class="gradient-text">Features</span></h2>
-              <p class="section-subtitle">Everything you need to reclaim your focus and build an unbreakable streak.</p>
-            </div>
-            <div class="features-grid">
-              <div class="feature-card glass">
-                <span class="material-symbols-outlined">shield</span>
-                <h3>Guardian Shield</h3>
-                <p>AI-powered DNS protection that blocks triggers at the root level. Your willpower, fortified.</p>
-              </div>
-              <div class="feature-card glass">
-                <span class="material-symbols-outlined">psychology</span>
-                <h3>AI Counselor</h3>
-                <p>24/7 mental support for handling intense urges and identifying your risk patterns.</p>
-              </div>
-              <div class="feature-card glass">
-                <span class="material-symbols-outlined">groups_3</span>
-                <h3>Global Squad</h3>
-                <p>You aren't alone. Share victories and draw strength from the brotherhood in real-time.</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- Trust & Safe Download -->
-        <section id="download" class="download-section">
-          <div class="container glass">
-            <div class="section-header">
-              <h2>Safe & <span class="gradient-text">Secure</span> Download</h2>
-              <p>We prioritize your privacy. Here's how to install the Warrior App safely.</p>
-            </div>
-            
-            <div class="trust-grid">
-              <div class="trust-item">
-                <span class="material-symbols-outlined secondary-text">verified_user</span>
-                <p>100% VirusTotal Clean</p>
-              </div>
-              <div class="trust-item">
-                <span class="material-symbols-outlined secondary-text">enhanced_encryption</span>
-                <p>End-to-End Encrypted</p>
-              </div>
-              <div class="trust-item">
-                <span class="material-symbols-outlined secondary-text">privacy_tip</span>
-                <p>Zero Data Tracking</p>
-              </div>
-            </div>
-
-            <div class="install-guide">
-              <div class="guide-step">
-                <div class="step-number">1</div>
-                <h3>Download APK</h3>
-                <p>Tap 'Download Anyway' if prompted. This is a standard Android warning for direct APK files.</p>
-                <button class="app-btn-main download-btn-trigger" style="margin-top: 10px; padding: 8px 16px; font-size: 13px;">GET LATEST BUILD</button>
-              </div>
-              <div class="guide-step">
-                <div class="step-number">2</div>
-                <h3>Enable System Access</h3>
-                <p>Tap **Settings** on the security prompt and toggle **Allow from this source** to proceed.</p>
-              </div>
-              <div class="guide-step">
-                <div class="step-number">3</div>
-                <h3>Install & Launch</h3>
-                <p>Tap **Install**. If you see 'App not installed', simply uninstall any old version first.</p>
-              </div>
-            </div>
-
-            <div class="transparency-note">
-              <span class="material-symbols-outlined">info</span>
-              <p><strong>Why not on Play Store?</strong> To provide advanced DNS-level blocking (Guardian Shield), we use system APIs that are currently being audited by Google. Direct distribution allows us to offer these powerful features today.</p>
-            </div>
-          </div>
-        </section>
-
-        <!-- Squad Showcase -->
-        <section id="squad" class="squad-section">
-          <div class="container">
-            <div class="squad-content glass">
-              <div class="squad-text">
-                <h2>The <span class="gradient-text">Squad</span> Feed</h2>
-                <p>Real-time victories from warriors around the world. Every second, someone conquers an urge.</p>
-                <div id="squad-feed" class="feed-container">
-                  <!-- Dynamic Feed Items -->
+            <!-- Vault Status (Visual Authority) -->
+            <div class="hidden md:block relative">
+                <div class="absolute -inset-10 bg-primary/20 blur-[100px] rounded-full"></div>
+                <div class="relative glass-card p-10 rounded-2xl">
+                    <div class="flex justify-between items-center mb-10">
+                        <span class="text-[0.6875rem] font-black uppercase tracking-widest text-primary">Sovereignty Protocol v1.1</span>
+                        <div class="flex gap-2">
+                            <div class="w-2 h-2 rounded-full bg-primary"></div>
+                            <div class="w-2 h-2 rounded-full bg-primary opacity-30"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-col items-center justify-center py-10">
+                        <div class="relative w-48 h-48 flex items-center justify-center">
+                            <svg class="absolute inset-0 w-full h-full -rotate-90">
+                                <circle class="text-white/5" cx="96" cy="96" r="90" fill="transparent" stroke="currentColor" stroke-width="8"></circle>
+                                <circle class="text-primary" cx="96" cy="96" r="90" fill="transparent" stroke="currentColor" stroke-width="8" stroke-dasharray="565" stroke-dashoffset="141" stroke-linecap="round"></circle>
+                            </svg>
+                            <div class="text-center">
+                                <div class="text-6xl font-black text-white">42</div>
+                                <div class="text-[0.6rem] font-black uppercase tracking-widest text-on-surface-variant">Days Clean</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-4 pt-6">
+                        <div class="h-1.5 bg-white/5 w-full rounded-full overflow-hidden">
+                            <div class="h-full bg-tertiary w-3/4 shadow-[0_0_10px_#e9c400]"></div>
+                        </div>
+                        <div class="flex justify-between text-[0.65rem] font-black uppercase tracking-widest text-on-surface-variant">
+                            <span>Level 12: Sentinel</span>
+                            <span>8,450 XP</span>
+                        </div>
+                    </div>
                 </div>
-              </div>
-              <div class="squad-visual">
-                <div class="stat-box">
-                  <span class="stat-value" id="total-victories">8,912</span>
-                  <span class="stat-label">VICTORIES TODAY</span>
-                </div>
-              </div>
             </div>
-          </div>
-        </section>
-
-        <!-- Pricing Section -->
-        <section id="pricing" class="pricing-section">
-          <div class="container">
-            <div class="section-header">
-              <h2>Choose Your <span class="gradient-text">Path</span></h2>
-            </div>
-            <div class="pricing-grid">
-              <div class="pricing-card glass">
-                <div class="tier-label">WARRIOR</div>
-                <div class="price">FREE</div>
-                <ul class="tier-features">
-                  <li><span class="material-symbols-outlined">check</span> Basic Streak Tracking</li>
-                  <li><span class="material-symbols-outlined">check</span> Community Support</li>
-                  <li><span class="material-symbols-outlined">check</span> Daily Quests</li>
-                </ul>
-                <button class="app-btn-secondary">GET STARTED</button>
-              </div>
-              <div class="pricing-card glass featured">
-                <div class="tier-label gold-text">ELITE</div>
-                <div class="price">₹199<span>/mo</span></div>
-                <ul class="tier-features">
-                  <li><span class="material-symbols-outlined">check</span> Premium Guardian Shield</li>
-                  <li><span class="material-symbols-outlined">check</span> Unlimited AI Counselor</li>
-                  <li><span class="material-symbols-outlined">check</span> Cloud Sync & Multi-Device</li>
-                  <li><span class="material-symbols-outlined">check</span> Deep Analytics & Risk Detection</li>
-                </ul>
-                <button class="app-btn-main">GO ELITE</button>
-              </div>
-            </div>
-          </div>
-        </section>
-      </main>
-
-      <footer class="glass-footer">
-        <div class="container">
-          <p>&copy; 2026 Streak App. Built for Warriors.</p>
-          <div class="footer-links">
-            <a href="privacy.html">Privacy Policy</a>
-            <a href="#">Terms</a>
-            <a href="#">Contact</a>
-          </div>
         </div>
-      </footer>
-    </div>
+    </section>
+
+    <!-- Guardian Shield Transparency (GOOGLE COMPLIANCE) -->
+    <section id="guardian" class="py-32 bg-surface-container-low">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="glass-card p-12 md:p-24 relative overflow-hidden rounded-3xl">
+                <div class="absolute top-0 right-0 w-96 h-96 bg-primary/5 blur-[120px] -translate-y-1/2 translate-x-1/2"></div>
+                <div class="relative z-10 flex flex-col md:flex-row gap-20 items-center">
+                    <div class="w-full md:w-3/5">
+                        <div class="inline-flex p-4 bg-primary/10 mb-8 border border-primary/20 rounded-xl">
+                            <span class="material-symbols-outlined text-4xl text-primary">shield</span>
+                        </div>
+                        <h2 class="text-4xl md:text-5xl font-black tracking-tight text-white mb-8 leading-tight">
+                            Military-Grade <br/>Urge Protection
+                        </h2>
+                        <p class="text-on-surface-variant text-xl mb-10 leading-relaxed max-w-2xl">
+                            The **Guardian Shield** uses the **AccessibilityService API** to provide real-time, on-device protection. It monitors browser activity to intercept and block triggers instantly.
+                        </p>
+                        
+                        <div class="grid sm:grid-cols-2 gap-8 mb-12">
+                            <div class="flex gap-4">
+                                <div class="w-1 bg-primary rounded-full"></div>
+                                <div>
+                                    <h4 class="font-black uppercase tracking-widest text-sm mb-2">100% Local</h4>
+                                    <p class="text-sm text-on-surface-variant">All monitoring is processed on-device. No data leaves your hardware.</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-4">
+                                <div class="w-1 bg-primary rounded-full"></div>
+                                <div>
+                                    <h4 class="font-black uppercase tracking-widest text-sm mb-2">Zero Tracking</h4>
+                                    <p class="text-sm text-on-surface-variant">We do not store or transmit browsing history or personal keywords.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="p-6 bg-surface-container-highest/30 border border-white/5 rounded-xl flex items-center gap-4">
+                            <span class="material-symbols-outlined text-primary">verified_user</span>
+                            <p class="text-xs font-bold text-on-surface uppercase tracking-widest">Strict Security Standards - Build v1.1.0 (Signed)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="w-full md:w-2/5 flex justify-center">
+                        <div class="relative w-64 h-64">
+                            <div class="absolute inset-0 bg-primary/10 rounded-full animate-pulse"></div>
+                            <div class="absolute inset-4 border border-dashed border-primary/20 rounded-full animate-spin-slow"></div>
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <span class="material-symbols-outlined text-7xl text-primary" style="font-variation-settings: 'wght' 200;">lock</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Arsenal Section -->
+    <section class="py-32 max-w-7xl mx-auto px-6">
+        <div class="mb-20">
+            <h2 class="text-sm font-black uppercase tracking-[0.4em] text-primary mb-6">The Arsenal</h2>
+            <h3 class="text-5xl font-black tracking-tighter text-white">Equipped for Victory.</h3>
+        </div>
+        
+        <div class="grid md:grid-cols-3 gap-8">
+            <!-- Feature 1 -->
+            <div class="group relative bg-[#1c1b1b] p-12 border border-white/5 hover:border-primary/20 transition-all duration-500 rounded-2xl overflow-hidden">
+                <div class="relative z-10">
+                    <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-8">
+                        <span class="material-symbols-outlined text-primary text-3xl">military_tech</span>
+                    </div>
+                    <h4 class="text-2xl font-black mb-4 uppercase">Warrior Class XP</h4>
+                    <p class="text-on-surface-variant text-sm mb-12 leading-relaxed">
+                        Earn experience for every hour of discipline. Level up your avatar and claim your localized milestone cards.
+                    </p>
+                    <div class="h-1 bg-white/5 w-full rounded-full">
+                        <div class="h-full bg-primary/40 w-3/4"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feature 2 -->
+            <div class="group relative bg-[#1c1b1b] p-12 border border-white/5 hover:border-primary/20 transition-all duration-500 rounded-2xl overflow-hidden">
+                <div class="relative z-10">
+                    <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-8">
+                        <span class="material-symbols-outlined text-primary text-3xl">psychology</span>
+                    </div>
+                    <h4 class="text-2xl font-black mb-4 uppercase">AI SOS Counselor</h4>
+                    <p class="text-on-surface-variant text-sm mb-12 leading-relaxed">
+                        Neural-network powered support when the pressure peaks. Crisis intervention available on-device 24/7.
+                    </p>
+                    <p class="text-[11px] font-bold text-primary italic uppercase tracking-widest leading-relaxed">"Sovereignty is Eternal"</p>
+                </div>
+            </div>
+
+            <!-- Feature 3 -->
+            <div class="group relative bg-[#1c1b1b] p-12 border border-white/5 hover:border-primary/20 transition-all duration-500 rounded-2xl overflow-hidden">
+                <div class="relative z-10">
+                    <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-8">
+                        <span class="material-symbols-outlined text-primary text-3xl">groups_3</span>
+                    </div>
+                    <h4 class="text-2xl font-black mb-4 uppercase">Global Squad Feed</h4>
+                    <p class="text-on-surface-variant text-sm mb-12 leading-relaxed">
+                        Never fight alone. Connect with high-performance cohorts and share real-time victories in the arena.
+                    </p>
+                    <div class="flex -space-x-3">
+                        <div class="w-10 h-10 rounded-full border-2 border-[#1c1b1b] bg-primary/20"></div>
+                        <div class="w-10 h-10 rounded-full border-2 border-[#1c1b1b] bg-primary/40"></div>
+                        <div class="w-10 h-10 rounded-full border-2 border-[#1c1b1b] bg-primary/60"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Installation Protocol (CRITICAL FOR TRUST) -->
+    <section id="install" class="py-32 bg-[#0e0e0e]">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-20 items-center">
+                <div>
+                    <h2 class="text-4xl font-black tracking-tight text-white mb-8">Official Installation <span class="text-primary italic">Protocol</span></h2>
+                    <p class="text-on-surface-variant text-lg mb-12 leading-relaxed">
+                        We deliver NoRelapse directly to you to preserve our advanced blocking capabilities. This direct build ensures you get the full Guardian Shield experience.
+                    </p>
+                    
+                    <div class="space-y-8">
+                        <div class="flex gap-6">
+                            <div class="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center text-primary font-black shrink-0">1</div>
+                            <div>
+                                <h4 class="font-black uppercase tracking-widest text-sm mb-2">Secure Download</h4>
+                                <p class="text-sm text-on-surface-variant">Tap 'Download Anyway' if prompted. Every build is VirusTotal scanned and verified.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-6">
+                            <div class="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center text-primary font-black shrink-0">2</div>
+                            <div>
+                                <h4 class="font-black uppercase tracking-widest text-sm mb-2">Authorize Source</h4>
+                                <p class="text-sm text-on-surface-variant">Go to **Settings** -> **Allow from this source** to enable the system-level installer.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-6">
+                            <div class="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center text-primary font-black shrink-0">3</div>
+                            <div>
+                                <h4 class="font-black uppercase tracking-widest text-sm mb-2">Verify & Install</h4>
+                                <p class="text-sm text-on-surface-variant">Tap **"Install Anyway"** on the Play Protect prompt to activate your Sovereignty Protocols.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-surface-container-high border border-white/5 p-12 rounded-3xl">
+                    <div class="bg-primary/5 p-6 border-l-4 border-primary mb-10">
+                        <h4 class="text-primary font-black uppercase tracking-widest text-xs mb-2">Technical Compliance</h4>
+                        <p class="text-xs text-on-surface-variant leading-relaxed">
+                            NoRelapse utilizes **Request Install Packages** for the sole purpose of enabling secure, direct self-updates to preserve protection layers.
+                        </p>
+                    </div>
+                    <button class="download-btn-trigger w-full py-6 bg-primary text-on-primary-container font-black text-xl rounded-xl hover:brightness-110 transition-all mb-6">
+                        DOWNLOAD FINAL RELEASE
+                    </button>
+                    <p class="text-[0.65rem] text-center text-on-surface-variant uppercase tracking-[0.2em]">Signed Binary Build v1.1 - 42.5MB</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#0e0e0e] border-t border-white/5 py-20">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-12 items-center">
+            <div class="text-2xl font-black text-white uppercase">NoRelapse</div>
+            <div class="flex justify-center gap-10">
+                <a class="text-xs font-black uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="privacy.html">Privacy Policy</a>
+                <a class="text-xs font-black uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="terms.html">Terms</a>
+                <a class="text-xs font-black uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="mailto:developer@norelapse.app">Contact</a>
+            </div>
+            <div class="text-right text-[0.65rem] font-black uppercase tracking-widest text-on-surface-variant opacity-60">
+                © 2026 NoRelapse App. Reclaim Your Sovereignty.
+            </div>
+        </div>
+    </footer>
+
     <script type="module" src="./src/main.ts"></script>
-  </body>
+</body>
 </html>

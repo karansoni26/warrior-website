@@ -1,77 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="dark" lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy | Warrior App</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Privacy Policy | NoRelapse</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet"/>
     <style>
-        :root {
-            --bg: #0a0812;
-            --text: #e0e0e0;
-            --accent: #590df2;
-        }
-        body {
-            font-family: 'Outfit', sans-serif;
-            background-color: var(--bg);
-            color: var(--text);
-            line-height: 1.6;
-            margin: 0;
-            padding: 40px 20px;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            background: rgba(255, 255, 255, 0.03);
-            padding: 40px;
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        h1 { color: white; border-bottom: 2px solid var(--accent); padding-bottom: 10px; }
-        h2 { color: white; margin-top: 30px; }
-        p { margin-bottom: 20px; color: #b0b0b0; }
-        .highlight {
-            background: rgba(89, 13, 242, 0.1);
-            padding: 20px;
-            border-left: 4px solid var(--accent);
-            border-radius: 4px;
-            color: #d0d0d0;
-        }
-        footer { margin-top: 40px; text-align: center; color: #666; font-size: 0.9em; }
+        body { font-family: 'Inter', sans-serif; background-color: #0e0e0e; color: #e5e2e1; }
+        .glass-card { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.05); }
     </style>
 </head>
-<body>
-    <div class="container">
-        <h1>Privacy Policy</h1>
-        <p>Last Updated: March 18, 2026</p>
+<body class="p-6 md:p-20">
+    <div class="max-w-4xl mx-auto space-y-12">
+        <a href="index.html" class="text-primary font-bold uppercase tracking-widest text-xs inline-flex items-center gap-2 hover:opacity-80 transition-all">
+            <span class="material-symbols-outlined text-sm">arrow_back</span> Back to Home
+        </a>
         
-        <p>The Warrior App ("we," "us," or "our") is committed to protecting your privacy. This Privacy Policy explains our practices regarding the collection, use, and disclosure of information when you use our mobile application.</p>
+        <header>
+            <h1 class="text-4xl md:text-6xl font-black tracking-tighter text-white mb-4">Privacy Policy</h1>
+            <p class="text-on-surface-variant font-bold uppercase tracking-[0.3em] text-xs">Last Updated: March 2026</p>
+        </header>
 
-        <h2>1. Information We Collect</h2>
-        <p>Warrior App is built with a "Privacy First" philosophy. We do not collect personal identifiers, email addresses, or contact lists unless explicitly shared by you in the community section.</p>
+        <section class="glass-card p-10 rounded-2xl space-y-8 leading-relaxed">
+            <div>
+                <h2 class="text-xl font-black text-white uppercase tracking-tight mb-4">1. Technical Overview</h2>
+                <p class="text-on-surface-variant">NoRelapse is a discipline-building tool designed with a "Safety-First, Data-Last" architecture. We prioritize on-device processing to ensure maximum user privacy.</p>
+            </div>
 
-        <h2>2. Use of Accessibility Services</h2>
-        <div class="highlight">
-            <strong>IMPORTANT:</strong> Our application utilizes the Android <strong>AccessibilityService API</strong> to power the "Guardian Shield" feature.
-            <br><br>
-            <strong>How it is used:</strong> The Accessibility Service is used solely to detect user-defined keywords, application names, and URLs to prevent access to distracting or harmful content. This is essential for the core habit-breaking functionality of the app.
-            <br><br>
-            <strong>Data Privacy:</strong> We do NOT monitor, collect, or store any personal data through the Accessibility Service. No data captured by this service is ever transmitted to our servers or third parties. All processing happens locally and privately on your device.
-        </div>
+            <div class="border-l-4 border-primary pl-6 py-2">
+                <h2 class="text-xl font-black text-white uppercase tracking-tight mb-4">2. Accessibility Service Usage</h2>
+                <p class="text-on-surface-variant mb-4">NoRelapse utilizes the <strong>AccessibilityService API</strong> to enable its core "Guardian Shield" protocol. This service is mandatory for identifying and intercepting browser-based triggers.</p>
+                <ul class="list-disc list-inside text-sm text-on-surface-variant space-y-2">
+                    <li><strong>URL Monitoring</strong>: Real-time inspection of browser addresses against local blocklists.</li>
+                    <li><strong>Keyword Filtering</strong>: Identification of relapse-triggering search terms inside browser fields.</li>
+                    <li><strong>Zero Data Transmission</strong>: All monitored data is processed locally. We do not store, upload, or share your browsing history.</li>
+                </ul>
+            </div>
 
-        <h2>3. Data Security</h2>
-        <p>We implement industry-standard security measures to protect your local data. Since your streak and habit data are stored locally, your privacy remains under your control.</p>
+            <div>
+                <h2 class="text-xl font-black text-white uppercase tracking-tight mb-4">3. Request Install Packages</h2>
+                <p class="text-on-surface-variant">We utilize the <strong>Request Install Packages</strong> permission solely to facilitate secure self-updates. This ensures that the application can receive critical security patches and "Guardian Shield" optimization directly from our servers.</p>
+            </div>
 
-        <h2>4. Changes to This Policy</h2>
-        <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page.</p>
+            <div>
+                <h2 class="text-xl font-black text-white uppercase tracking-tight mb-4">4. Data Collection</h2>
+                <p class="text-on-surface-variant">NoRelapse does not collect personal identifiers, location data, or contact lists. Any data stored within the app (such as streaks and local settings) remains encrypted on your device.</p>
+            </div>
 
-        <h2>5. Contact Us</h2>
-        <p>If you have any questions about this Privacy Policy, please contact us via the Warrior App support channel.</p>
+            <div>
+                <h2 class="text-xl font-black text-white uppercase tracking-tight mb-4">5. Contact Information</h2>
+                <p class="text-on-surface-variant">For privacy-related inquiries or technical transparency requests, contact us at: <br/><strong>developer@norelapse.app</strong></p>
+            </div>
+        </section>
 
-        <footer>
-            &copy; 2026 Warrior App. All rights reserved.
+        <footer class="text-center text-[0.6rem] uppercase tracking-widest text-on-surface-variant opacity-40">
+            © 2026 NoRelapse App. The Sovereign Vault.
         </footer>
     </div>
 </body>
