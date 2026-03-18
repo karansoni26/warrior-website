@@ -4,70 +4,182 @@
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <title>Installation Protocol | NoRelapse</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "tertiary-fixed": "#ffe16d",
+                        "on-secondary": "#313030",
+                        "outline-variant": "#414754",
+                        "on-primary-fixed": "#001a41",
+                        "secondary": "#c8c6c5",
+                        "surface-dim": "#131313",
+                        "on-tertiary-fixed-variant": "#544600",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "on-secondary-fixed-variant": "#474746",
+                        "on-error": "#690005",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "primary-fixed": "#d8e2ff",
+                        "surface-bright": "#3a3939",
+                        "on-surface": "#e5e2e1",
+                        "surface-container": "#201f1f",
+                        "on-background": "#e5e2e1",
+                        "on-tertiary-container": "#4c3f00",
+                        "on-tertiary-fixed": "#221b00",
+                        "inverse-surface": "#e5e2e1",
+                        "on-primary-fixed-variant": "#004493",
+                        "tertiary": "#e9c400",
+                        "on-error-container": "#ffdad6",
+                        "primary": "#adc7ff",
+                        "secondary-container": "#474746",
+                        "primary-container": "#4a8eff",
+                        "surface-container-low": "#1c1b1b",
+                        "inverse-primary": "#005bc0",
+                        "secondary-fixed": "#e5e2e1",
+                        "surface-container-high": "#2a2a2a",
+                        "surface-tint": "#adc7ff",
+                        "surface-container-highest": "#353534",
+                        "surface": "#131313",
+                        "tertiary-fixed-dim": "#e9c400",
+                        "background": "#131313",
+                        "on-primary-container": "#00285b",
+                        "on-secondary-container": "#b7b5b4",
+                        "on-surface-variant": "#c1c6d7",
+                        "inverse-on-surface": "#313030",
+                        "tertiary-container": "#c9a900",
+                        "primary-fixed-dim": "#adc7ff",
+                        "surface-variant": "#353534",
+                        "outline": "#8b90a0",
+                        "error-container": "#93000a",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-tertiary": "#3a3000",
+                        "on-primary": "#002e68",
+                        "error": "#ffb4ab"
+                    },
+                    fontFamily: {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                },
+            },
+        }
+    </script>
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #0e0e0e; color: #e5e2e1; }
-        .glass-card { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.05); }
+        body {
+            background-color: #131313;
+            color: #e5e2e1;
+            font-family: 'Inter', sans-serif;
+            background-image: radial-gradient(circle at 50% 0%, rgba(173, 199, 255, 0.05) 0%, transparent 50%);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glow-blue {
+            box-shadow: 0 0 20px rgba(173, 199, 255, 0.15);
+        }
     </style>
 </head>
-<body class="p-6 md:p-20">
-    <div class="max-w-4xl mx-auto space-y-12">
-        <a href="index.html" class="text-primary font-bold uppercase tracking-widest text-xs inline-flex items-center gap-2 hover:opacity-80 transition-all">
-            <span class="material-symbols-outlined text-sm">arrow_back</span> Back to Home
-        </a>
-        
-        <header>
-            <h1 class="text-4xl md:text-6xl font-black tracking-tighter text-white mb-4 uppercase">Installation <span class="text-primary italic">Protocol</span></h1>
-            <p class="text-on-surface-variant font-bold uppercase tracking-[0.3em] text-xs">Official Distribution Guide v1.1</p>
+<body class="selection:bg-primary/30">
+    <!-- TopNavBar -->
+    <nav class="fixed top-0 w-full z-50 bg-[#131313]/80 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.5)]">
+        <div class="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto">
+            <div class="flex items-center gap-2 text-xl font-black text-[#e5e2e1] uppercase tracking-wider">
+                NoRelapse
+            </div>
+            <div class="hidden md:flex items-center gap-8 font-['Inter'] font-bold tracking-tight">
+                <a class="text-[#c1c6d7] hover:text-[#e5e2e1] transition-colors" href="index.html">Home</a>
+                <a class="text-[#c1c6d7] hover:text-[#e5e2e1] transition-colors" href="privacy.html">Privacy</a>
+                <a class="text-[#c1c6d7] hover:text-[#e5e2e1] transition-colors" href="mailto:developer@norelapse.app">Support</a>
+            </div>
+            <button class="download-btn-trigger bg-primary text-on-primary-container px-5 py-2 rounded-lg font-bold active:scale-95 transition-transform">
+                Download Now
+            </button>
+        </div>
+        <div class="bg-gradient-to-r from-transparent via-[#414754]/15 to-transparent h-[1px] w-full absolute bottom-0"></div>
+    </nav>
+
+    <main class="pt-32 pb-24 px-6 max-w-3xl mx-auto">
+        <!-- Hero Banner -->
+        <header class="mb-20 flex flex-col items-center text-center">
+            <div class="w-20 h-20 mb-6 flex items-center justify-center rounded-full bg-surface-container-high border border-outline-variant/20 relative">
+                <span class="material-symbols-outlined text-4xl text-primary" style="font-variation-settings: 'FILL' 1;">terminal</span>
+                <div class="absolute inset-0 bg-primary/10 blur-xl rounded-full"></div>
+            </div>
+            <h1 class="text-3xl md:text-5xl font-black tracking-tighter text-on-surface uppercase mb-4">
+                Installation <span class="text-primary italic">Protocol</span>
+            </h1>
+            <p class="text-on-surface-variant text-lg tracking-wide font-medium uppercase">
+                Official Distribution Guide v1.1
+            </p>
         </header>
 
-        <section class="glass-card p-10 rounded-2xl space-y-10 leading-relaxed">
-            <div class="space-y-6">
+        <section class="space-y-12">
+            <div class="bg-surface-container-low p-8 border border-white/5 rounded-2xl space-y-8">
                 <div class="flex gap-8 items-start">
-                    <div class="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center text-primary font-black shrink-0">01</div>
+                    <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary font-black shrink-0">01</div>
                     <div>
-                        <h2 class="text-xl font-black text-white uppercase tracking-tight mb-2">Secure Download</h2>
-                        <p class="text-on-surface-variant">Click the "Download APK" button on the homepage. If your browser displays a "File might be harmful" warning, select <strong>"Download anyway"</strong>. This is a standard notification for files not hosted on the Play Store.</p>
+                        <h2 class="text-xl font-black text-white uppercase tracking-tight mb-2 italic">Secure Download</h2>
+                        <p class="text-on-surface-variant leading-relaxed">Click the "Download APK" button. If your browser displays a "File might be harmful" warning, select <strong>"Download anyway"</strong>. This is standard for direct distribution.</p>
                     </div>
                 </div>
 
                 <div class="flex gap-8 items-start">
-                    <div class="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center text-primary font-black shrink-0">02</div>
+                    <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary font-black shrink-0">02</div>
                     <div>
-                        <h2 class="text-xl font-black text-white uppercase tracking-tight mb-2">System Authorization</h2>
-                        <p class="text-on-surface-variant font-medium">Allow Installation from Browser</p>
-                        <p class="text-on-surface-variant text-sm mt-2">Go to <strong>Settings</strong> -> <strong>Allow from this source</strong> to enable the system-level installer. This is required for the application to manage its own security updates.</p>
+                        <h2 class="text-xl font-black text-white uppercase tracking-tight mb-2 italic">System Authorization</h2>
+                        <p class="text-on-surface-variant leading-relaxed">Open the downloaded file. Go to <strong>Settings</strong> and enable <strong>"Allow from this source"</strong> for your browser. This enables secure self-updates.</p>
                     </div>
                 </div>
 
                 <div class="flex gap-8 items-start">
-                    <div class="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center text-primary font-black shrink-0">03</div>
+                    <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary font-black shrink-0">03</div>
                     <div>
-                        <h2 class="text-xl font-black text-white uppercase tracking-tight mb-2">Play Protect Verification</h2>
-                        <p class="text-on-surface-variant">When the prompt appears, tap <strong>"More details"</strong> and then select <strong>"Install anyway"</strong>. Every NoRelapse build is VirusTotal scanned and verified safe.</p>
+                        <h2 class="text-xl font-black text-white uppercase tracking-tight mb-2 italic">Play Protect Override</h2>
+                        <p class="text-on-surface-variant leading-relaxed">If a Play Protect block appears, tap <strong>"More details"</strong> and then <strong>"Install anyway"</strong>. Our binaries are signed and verified safe.</p>
                     </div>
                 </div>
             </div>
 
             <div class="p-8 bg-primary/5 border border-primary/20 rounded-xl space-y-4">
                 <h3 class="text-primary font-black uppercase tracking-widest text-xs flex items-center gap-2">
-                    <span class="material-symbols-outlined text-sm">info</span> Technical Transparency
+                    <span class="material-symbols-outlined text-sm">verified_user</span> Security Assurance
                 </h3>
-                <p class="text-xs text-on-surface-variant leading-relaxed uppercase">NoRelapse requires <strong>AccessibilityService</strong> and <strong>Request Install Packages</strong> permissions to maintain real-time "Guardian Shield" protection and secure, direct self-updates.</p>
+                <p class="text-xs text-on-surface-variant leading-relaxed uppercase tracking-wider">
+                    NoRelapse utilizes <strong>AccessibilityService</strong> for the Guardian Shield and <strong>Request Install Packages</strong> for secure updates. No user data is transmitted to external servers.
+                </p>
             </div>
             
             <div class="text-center pt-6">
-                <button class="download-btn-trigger py-4 px-10 bg-primary text-on-primary-container font-black text-lg rounded-xl hover:brightness-110 transition-all">
+                <button class="download-btn-trigger py-5 px-12 bg-primary text-on-primary-container font-black text-xl rounded-xl hover:brightness-110 active:scale-95 transition-all w-full md:w-auto">
                     DOWNLOAD APK NOW
                 </button>
             </div>
         </section>
+    </main>
 
-        <footer class="text-center text-[0.6rem] uppercase tracking-widest text-on-surface-variant opacity-40">
-            © 2026 NoRelapse App. Official Distribution Guide.
-        </footer>
-    </div>
+    <!-- Footer -->
+    <footer class="bg-[#0e0e0e] w-full py-16 border-t border-white/5">
+        <div class="flex flex-col md:flex-row justify-between items-center w-full px-8 max-w-7xl mx-auto gap-10">
+            <div class="text-2xl font-black text-white uppercase tracking-tighter italic">
+                NoRelapse<span class="text-on-surface-variant font-normal lowercase not-italic opacity-50 ml-1">.vault</span>
+            </div>
+            <div class="flex flex-wrap justify-center gap-10 text-[0.7rem] font-black uppercase tracking-widest text-[#c1c6d7]">
+                <a class="hover:text-primary transition-colors" href="terms.html">Terms of Service</a>
+                <a class="hover:text-primary transition-colors" href="privacy.html">Privacy Policy</a>
+                <a class="hover:text-primary transition-colors" href="mailto:developer@norelapse.app">Support</a>
+            </div>
+            <div class="text-right text-[0.65rem] font-black uppercase tracking-widest text-on-surface-variant opacity-60">
+                © 2026 NoRelapse. The Sovereign Vault.
+            </div>
+        </div>
+    </footer>
     <script type="module" src="./src/main.ts"></script>
 </body>
 </html>

@@ -4,59 +4,254 @@
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <title>Privacy Policy | NoRelapse</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "tertiary-fixed": "#ffe16d",
+                        "on-secondary": "#313030",
+                        "outline-variant": "#414754",
+                        "on-primary-fixed": "#001a41",
+                        "secondary": "#c8c6c5",
+                        "surface-dim": "#131313",
+                        "on-tertiary-fixed-variant": "#544600",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "on-secondary-fixed-variant": "#474746",
+                        "on-error": "#690005",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "primary-fixed": "#d8e2ff",
+                        "surface-bright": "#3a3939",
+                        "on-surface": "#e5e2e1",
+                        "surface-container": "#201f1f",
+                        "on-background": "#e5e2e1",
+                        "on-tertiary-container": "#4c3f00",
+                        "on-tertiary-fixed": "#221b00",
+                        "inverse-surface": "#e5e2e1",
+                        "on-primary-fixed-variant": "#004493",
+                        "tertiary": "#e9c400",
+                        "on-error-container": "#ffdad6",
+                        "primary": "#adc7ff",
+                        "secondary-container": "#474746",
+                        "primary-container": "#4a8eff",
+                        "surface-container-low": "#1c1b1b",
+                        "inverse-primary": "#005bc0",
+                        "secondary-fixed": "#e5e2e1",
+                        "surface-container-high": "#2a2a2a",
+                        "surface-tint": "#adc7ff",
+                        "surface-container-highest": "#353534",
+                        "surface": "#131313",
+                        "tertiary-fixed-dim": "#e9c400",
+                        "background": "#131313",
+                        "on-primary-container": "#00285b",
+                        "on-secondary-container": "#b7b5b4",
+                        "on-surface-variant": "#c1c6d7",
+                        "inverse-on-surface": "#313030",
+                        "tertiary-container": "#c9a900",
+                        "primary-fixed-dim": "#adc7ff",
+                        "surface-variant": "#353534",
+                        "outline": "#8b90a0",
+                        "error-container": "#93000a",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-tertiary": "#3a3000",
+                        "on-primary": "#002e68",
+                        "error": "#ffb4ab"
+                    },
+                    fontFamily: {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                },
+            },
+        }
+    </script>
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #0e0e0e; color: #e5e2e1; }
-        .glass-card { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.05); }
+        body {
+            background-color: #131313;
+            color: #e5e2e1;
+            font-family: 'Inter', sans-serif;
+            background-image: radial-gradient(circle at 50% 0%, rgba(173, 199, 255, 0.05) 0%, transparent 50%);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glow-blue {
+            box-shadow: 0 0 20px rgba(173, 199, 255, 0.15);
+        }
+        .sidebar-active {
+            color: #adc7ff;
+            border-left: 2px solid #adc7ff;
+        }
     </style>
 </head>
-<body class="p-6 md:p-20">
-    <div class="max-w-4xl mx-auto space-y-12">
-        <a href="index.html" class="text-primary font-bold uppercase tracking-widest text-xs inline-flex items-center gap-2 hover:opacity-80 transition-all">
-            <span class="material-symbols-outlined text-sm">arrow_back</span> Back to Home
-        </a>
-        
-        <header>
-            <h1 class="text-4xl md:text-6xl font-black tracking-tighter text-white mb-4">Privacy Policy</h1>
-            <p class="text-on-surface-variant font-bold uppercase tracking-[0.3em] text-xs">Last Updated: March 2026</p>
+<body class="selection:bg-primary/30">
+    <!-- TopNavBar -->
+    <nav class="fixed top-0 w-full z-50 bg-[#131313]/80 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.5)]">
+        <div class="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto">
+            <div class="flex items-center gap-2 text-xl font-black text-[#e5e2e1] uppercase tracking-wider">
+                NoRelapse
+            </div>
+            <div class="hidden md:flex items-center gap-8 font-['Inter'] font-bold tracking-tight">
+                <a class="text-[#c1c6d7] hover:text-[#e5e2e1] transition-colors" href="index.html">Home</a>
+                <a class="text-[#adc7ff] border-b-2 border-[#adc7ff] pb-1" href="privacy.html">Privacy</a>
+                <a class="text-[#c1c6d7] hover:text-[#e5e2e1] transition-colors" href="mailto:developer@norelapse.app">Support</a>
+            </div>
+            <button class="download-btn-trigger bg-primary text-on-primary-container px-5 py-2 rounded-lg font-bold active:scale-95 transition-transform">
+                Download Now
+            </button>
+        </div>
+        <div class="bg-gradient-to-r from-transparent via-[#414754]/15 to-transparent h-[1px] w-full absolute bottom-0"></div>
+    </nav>
+
+    <main class="pt-32 pb-24 px-6 max-w-7xl mx-auto">
+        <!-- Hero Banner -->
+        <header class="mb-20 flex flex-col items-center text-center">
+            <div class="w-20 h-20 mb-6 flex items-center justify-center rounded-full bg-surface-container-high border border-outline-variant/20 relative">
+                <span class="material-symbols-outlined text-4xl text-[#4aff8c]" style="font-variation-settings: 'FILL' 1;">shield</span>
+                <div class="absolute inset-0 bg-[#4aff8c]/10 blur-xl rounded-full"></div>
+            </div>
+            <h1 class="text-3xl md:text-5xl font-black tracking-tighter text-on-surface uppercase mb-4">
+                Your Privacy is Our Architecture
+            </h1>
+            <p class="text-on-surface-variant text-lg tracking-wide font-medium">
+                Zero-Knowledge. 100% On-Device. No Exceptions.
+            </p>
         </header>
 
-        <section class="glass-card p-10 rounded-2xl space-y-8 leading-relaxed">
-            <div>
-                <h2 class="text-xl font-black text-white uppercase tracking-tight mb-4">1. Technical Overview</h2>
-                <p class="text-on-surface-variant">NoRelapse is a discipline-building tool designed with a "Safety-First, Data-Last" architecture. We prioritize on-device processing to ensure maximum user privacy.</p>
-            </div>
+        <div class="flex flex-col md:flex-row gap-16">
+            <!-- Sticky Sidebar -->
+            <aside class="md:w-64 flex-shrink-0">
+                <nav class="sticky top-40 flex flex-col gap-6 text-sm font-bold uppercase tracking-widest text-on-surface-variant/60">
+                    <a class="sidebar-active pl-4 py-1 transition-all" href="#preamble">Preamble</a>
+                    <a class="pl-4 py-1 hover:text-on-surface transition-all" href="#accessibility">Accessibility Service</a>
+                    <a class="pl-4 py-1 hover:text-on-surface transition-all" href="#package">System Integrity</a>
+                    <a class="pl-4 py-1 hover:text-on-surface transition-all" href="#retention">The Vault Logic</a>
+                </nav>
+            </aside>
 
-            <div class="border-l-4 border-primary pl-6 py-2">
-                <h2 class="text-xl font-black text-white uppercase tracking-tight mb-4">2. Accessibility Service Usage</h2>
-                <p class="text-on-surface-variant mb-4">NoRelapse utilizes the <strong>AccessibilityService API</strong> to enable its core "Guardian Shield" protocol. This service is mandatory for identifying and intercepting browser-based triggers.</p>
-                <ul class="list-disc list-inside text-sm text-on-surface-variant space-y-2">
-                    <li><strong>URL Monitoring</strong>: Real-time inspection of browser addresses against local blocklists.</li>
-                    <li><strong>Keyword Filtering</strong>: Identification of relapse-triggering search terms inside browser fields.</li>
-                    <li><strong>Zero Data Transmission</strong>: All monitored data is processed locally. We do not store, upload, or share your browsing history.</li>
-                </ul>
-            </div>
+            <!-- Content Area -->
+            <div class="flex-grow space-y-24">
+                <!-- Section: Preamble -->
+                <section class="max-w-2xl" id="preamble">
+                    <h2 class="text-on-tertiary-fixed text-xs font-black tracking-[0.3em] uppercase mb-6">01. The Sovereign Protocol</h2>
+                    <p class="text-on-surface text-lg leading-relaxed mb-6">
+                        NoRelapse operates as a sovereign vault. We believe that recovery data is the most sensitive information a human can generate. 
+                    </p>
+                    <blockquote class="border-l-4 border-primary pl-6 my-8 italic text-on-surface-variant/80 text-xl font-headline">
+                        "If we don't own your data, we can't lose it. If we can't see your data, we can't judge it."
+                    </blockquote>
+                    <p class="text-on-surface-variant leading-relaxed">
+                        Our architecture is designed to prevent data leakage at the hardware level. Every decision we make prioritizes your digital autonomy over our analytics.
+                    </p>
+                </section>
 
-            <div>
-                <h2 class="text-xl font-black text-white uppercase tracking-tight mb-4">3. Request Install Packages</h2>
-                <p class="text-on-surface-variant">We utilize the <strong>Request Install Packages</strong> permission solely to facilitate secure self-updates. This ensures that the application can receive critical security patches and "Guardian Shield" optimization directly from our servers.</p>
-            </div>
+                <!-- Section: Accessibility Service -->
+                <section class="scroll-mt-32" id="accessibility">
+                    <h2 class="text-primary text-xs font-black tracking-[0.3em] uppercase mb-8">02. Technical Implementation</h2>
+                    <div class="bg-surface-container-low p-8 md:p-12 border border-primary/20 glow-blue rounded-xl">
+                        <div class="flex items-center gap-4 mb-8">
+                            <span class="material-symbols-outlined text-primary text-3xl">accessible</span>
+                            <h3 class="text-2xl font-bold tracking-tight">Accessibility Service Usage</h3>
+                        </div>
+                        <p class="text-on-surface-variant text-base mb-10 leading-relaxed">
+                            NoRelapse utilizes the **AccessibilityService API** to enable its core "Guardian Shield" protocol. This service is mandatory for identifying and intercepting browser-based triggers in real-time.
+                        </p>
+                        <div class="grid md:grid-cols-1 gap-6 mb-10">
+                            <div class="flex gap-4 items-start p-4 bg-surface-container-high/50 rounded-lg">
+                                <span class="material-symbols-outlined text-[#4aff8c]">check_circle</span>
+                                <div>
+                                    <h4 class="font-bold text-on-surface mb-1 uppercase text-xs tracking-widest">URL Filtering</h4>
+                                    <p class="text-on-surface-variant text-sm leading-snug">Real-time inspection of browser addresses against your local blocklist to prevent unauthorized access to high-risk domains.</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-4 items-start p-4 bg-surface-container-high/50 rounded-lg">
+                                <span class="material-symbols-outlined text-[#4aff8c]">check_circle</span>
+                                <div>
+                                    <h4 class="font-bold text-on-surface mb-1 uppercase text-xs tracking-widest">Keyword Detection</h4>
+                                    <p class="text-on-surface-variant text-sm leading-snug">Identification of user-defined triggering terms within browser search fields to intercept relapses before they occur.</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-4 items-start p-4 bg-surface-container-high/50 rounded-lg">
+                                <span class="material-symbols-outlined text-[#4aff8c]">check_circle</span>
+                                <div>
+                                    <h4 class="font-bold text-on-surface mb-1 uppercase text-xs tracking-widest">Real-time Defense</h4>
+                                    <p class="text-on-surface-variant text-sm leading-snug">Automatic redirection or display of recovery overlays when a breach of protocol is detected.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-primary/5 border-l-4 border-primary p-6 flex items-center gap-6">
+                            <span class="material-symbols-outlined text-primary text-4xl">verified_user</span>
+                            <p class="text-primary font-black text-sm tracking-wide uppercase">
+                                100% Local Processing: Data never leaves your hardware.
+                            </p>
+                        </div>
+                    </div>
+                </section>
 
-            <div>
-                <h2 class="text-xl font-black text-white uppercase tracking-tight mb-4">4. Data Collection</h2>
-                <p class="text-on-surface-variant">NoRelapse does not collect personal identifiers, location data, or contact lists. Any data stored within the app (such as streaks and local settings) remains encrypted on your device.</p>
-            </div>
+                <!-- Section: Package Management -->
+                <section class="scroll-mt-32" id="package">
+                    <h2 class="text-on-tertiary-fixed text-xs font-black tracking-[0.3em] uppercase mb-8">03. System Integrity</h2>
+                    <div class="bg-surface-container p-10 rounded-xl border border-outline-variant/10 flex flex-col md:flex-row items-center gap-10">
+                        <div class="w-20 h-20 rounded-2xl bg-surface-container-highest flex items-center justify-center text-primary border border-primary/20 shrink-0">
+                            <span class="material-symbols-outlined text-4xl">inventory_2</span>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-black mb-4 uppercase tracking-tight">Request Install Packages</h3>
+                            <p class="text-on-surface-variant leading-relaxed text-base">
+                                NoRelapse utilizes this permission solely to facilitate **secure, direct self-updates**. This ensures your Guardian Shield always remains fortified with the latest protection layers and security patches.
+                            </p>
+                        </div>
+                    </div>
+                </section>
 
-            <div>
-                <h2 class="text-xl font-black text-white uppercase tracking-tight mb-4">5. Contact Information</h2>
-                <p class="text-on-surface-variant">For privacy-related inquiries or technical transparency requests, contact us at: <br/><strong>developer@norelapse.app</strong></p>
+                <!-- Section: Data Retention -->
+                <section class="scroll-mt-32" id="retention">
+                    <h2 class="text-on-tertiary-fixed text-xs font-black tracking-[0.3em] uppercase mb-8">04. The Vault Logic</h2>
+                    <div class="grid md:grid-cols-2 gap-8 text-center sm:text-left">
+                        <div class="bg-[#0e0e0e] p-10 rounded-xl border border-tertiary/20 relative overflow-hidden group">
+                            <h3 class="text-tertiary font-black text-xl uppercase mb-4 tracking-tighter">Zero-Knowledge Architecture</h3>
+                            <p class="text-on-surface-variant text-sm leading-relaxed mb-6">
+                                Your streaks and milestones are encrypted using device-specific keys. We maintain zero servers for storing your personal recovery data.
+                            </p>
+                            <div class="flex items-center justify-center sm:justify-start gap-3 text-on-surface font-black text-xs uppercase tracking-widest">
+                                <span class="material-symbols-outlined text-tertiary">lock</span>
+                                0 Cloud Storage
+                            </div>
+                        </div>
+                        <div class="bg-surface-container-low p-10 rounded-xl border border-outline-variant/10">
+                            <h3 class="font-black text-xl mb-4 uppercase">Hardware-Level Wipe</h3>
+                            <p class="text-on-surface-variant text-sm leading-relaxed">
+                                Uninstalling NoRelapse initiates an immediate purge of the application sandbox. No fragments or "shadow profiles" are maintained.
+                            </p>
+                        </div>
+                    </div>
+                </section>
             </div>
-        </section>
+        </div>
+    </main>
 
-        <footer class="text-center text-[0.6rem] uppercase tracking-widest text-on-surface-variant opacity-40">
-            © 2026 NoRelapse App. The Sovereign Vault.
-        </footer>
-    </div>
+    <!-- Footer -->
+    <footer class="bg-[#0e0e0e] w-full py-16 border-t border-white/5">
+        <div class="flex flex-col md:flex-row justify-between items-center w-full px-8 max-w-7xl mx-auto gap-10">
+            <div class="text-2xl font-black text-white uppercase tracking-tighter italic">
+                NoRelapse<span class="text-on-surface-variant font-normal lowercase not-italic opacity-50 ml-1">.vault</span>
+            </div>
+            <div class="flex flex-wrap justify-center gap-10 text-[0.7rem] font-black uppercase tracking-widest text-[#c1c6d7]">
+                <a class="hover:text-primary transition-colors" href="terms.html">Terms of Service</a>
+                <a class="text-primary" href="privacy.html">Privacy Policy</a>
+                <a class="hover:text-primary transition-colors" href="mailto:developer@norelapse.app">Support</a>
+            </div>
+            <div class="text-right text-[0.65rem] font-black uppercase tracking-widest text-on-surface-variant opacity-60">
+                © 2026 NoRelapse. The Sovereign Vault.
+            </div>
+        </div>
+    </footer>
+    <script type="module" src="./src/main.ts"></script>
 </body>
 </html>
