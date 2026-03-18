@@ -3,170 +3,260 @@
 <head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>Installation Protocol | NoRelapse</title>
+    <title>The Sovereign Vault | Installation Protocol</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
     <script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        "tertiary-fixed": "#ffe16d",
-                        "on-secondary": "#313030",
-                        "outline-variant": "#414754",
-                        "on-primary-fixed": "#001a41",
-                        "secondary": "#c8c6c5",
-                        "surface-dim": "#131313",
-                        "on-tertiary-fixed-variant": "#544600",
-                        "on-secondary-fixed": "#1c1b1b",
-                        "on-secondary-fixed-variant": "#474746",
-                        "on-error": "#690005",
-                        "secondary-fixed-dim": "#c8c6c5",
-                        "primary-fixed": "#d8e2ff",
-                        "surface-bright": "#3a3939",
-                        "on-surface": "#e5e2e1",
-                        "surface-container": "#201f1f",
-                        "on-background": "#e5e2e1",
-                        "on-tertiary-container": "#4c3f00",
-                        "on-tertiary-fixed": "#221b00",
-                        "inverse-surface": "#e5e2e1",
-                        "on-primary-fixed-variant": "#004493",
-                        "tertiary": "#e9c400",
-                        "on-error-container": "#ffdad6",
-                        "primary": "#adc7ff",
-                        "secondary-container": "#474746",
-                        "primary-container": "#4a8eff",
-                        "surface-container-low": "#1c1b1b",
-                        "inverse-primary": "#005bc0",
-                        "secondary-fixed": "#e5e2e1",
-                        "surface-container-high": "#2a2a2a",
-                        "surface-tint": "#adc7ff",
-                        "surface-container-highest": "#353534",
-                        "surface": "#131313",
-                        "tertiary-fixed-dim": "#e9c400",
-                        "background": "#131313",
-                        "on-primary-container": "#00285b",
-                        "on-secondary-container": "#b7b5b4",
-                        "on-surface-variant": "#c1c6d7",
-                        "inverse-on-surface": "#313030",
-                        "tertiary-container": "#c9a900",
-                        "primary-fixed-dim": "#adc7ff",
-                        "surface-variant": "#353534",
-                        "outline": "#8b90a0",
-                        "error-container": "#93000a",
-                        "surface-container-lowest": "#0e0e0e",
-                        "on-tertiary": "#3a3000",
-                        "on-primary": "#002e68",
-                        "error": "#ffb4ab"
-                    },
-                    fontFamily: {
-                        "headline": ["Inter"],
-                        "body": ["Inter"],
-                        "label": ["Inter"]
-                    },
-                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
-                },
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container": "#201f1f",
+              "tertiary": "#e9c400",
+              "surface-tint": "#adc7ff",
+              "on-background": "#e5e2e1",
+              "on-surface-variant": "#c1c6d7",
+              "primary-fixed-dim": "#adc7ff",
+              "primary-container": "#4a8eff",
+              "on-secondary": "#313030",
+              "on-primary-fixed": "#001a41",
+              "on-tertiary": "#3a3000",
+              "on-primary": "#002e68",
+              "inverse-primary": "#005bc0",
+              "surface-dim": "#131313",
+              "surface-bright": "#3a3939",
+              "on-primary-fixed-variant": "#004493",
+              "on-error": "#690005",
+              "secondary-fixed-dim": "#c8c6c5",
+              "on-surface": "#e5e2e1",
+              "primary-fixed": "#d8e2ff",
+              "outline-variant": "#414754",
+              "inverse-surface": "#e5e2e1",
+              "surface-container-lowest": "#0e0e0e",
+              "tertiary-fixed": "#ffe16d",
+              "secondary-fixed": "#e5e2e1",
+              "on-primary-container": "#00285b",
+              "outline": "#8b90a0",
+              "on-tertiary-fixed": "#221b00",
+              "tertiary-container": "#c9a900",
+              "background": "#131313",
+              "secondary-container": "#474746",
+              "inverse-on-surface": "#313030",
+              "error-container": "#93000a",
+              "on-secondary-fixed-variant": "#474746",
+              "surface-variant": "#353534",
+              "tertiary-fixed-dim": "#e9c400",
+              "on-secondary-container": "#b7b5b4",
+              "on-secondary-fixed": "#1c1b1b",
+              "secondary": "#c8c6c5",
+              "on-error-container": "#ffdad6",
+              "on-tertiary-container": "#4c3f00",
+              "surface": "#131313",
+              "surface-container-highest": "#353534",
+              "surface-container-high": "#2a2a2a",
+              "on-tertiary-fixed-variant": "#544600",
+              "surface-container-low": "#1c1b1b",
+              "primary": "#adc7ff",
+              "error": "#ffb4ab"
             },
-        }
+            fontFamily: {
+              "headline": ["Inter"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
     </script>
     <style>
-        body {
-            background-color: #131313;
-            color: #e5e2e1;
-            font-family: 'Inter', sans-serif;
-            background-image: radial-gradient(circle at 50% 0%, rgba(173, 199, 255, 0.05) 0%, transparent 50%);
-        }
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
-        .glow-blue {
-            box-shadow: 0 0 20px rgba(173, 199, 255, 0.15);
+        .noise-overlay {
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.03;
         }
     </style>
 </head>
-<body class="selection:bg-primary/30">
-    <!-- TopNavBar -->
-    <nav class="fixed top-0 w-full z-50 bg-[#131313]/80 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.5)]">
-        <div class="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto">
-            <div class="flex items-center gap-2 text-xl font-black text-[#e5e2e1] uppercase tracking-wider">
+<body class="bg-surface-container-lowest text-on-surface font-body selection:bg-primary selection:text-on-primary-container">
+    <div class="noise-overlay fixed inset-0 pointer-events-none z-50"></div>
+    
+    <!-- TopAppBar Navigation -->
+    <header class="fixed top-0 w-full z-50 bg-[#131313] dark:bg-[#0e0e0e] backdrop-blur-md bg-opacity-90 border-b border-[#414754]/15 shadow-[0_4px_30px_rgba(173,199,255,0.05)]">
+        <nav class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
+            <div class="text-xl font-black uppercase tracking-[0.2em] text-[#adc7ff] font-['Inter']">
                 NoRelapse
             </div>
-            <div class="hidden md:flex items-center gap-8 font-['Inter'] font-bold tracking-tight">
-                <a class="text-[#c1c6d7] hover:text-[#e5e2e1] transition-colors" href="index.html">Home</a>
-                <a class="text-[#c1c6d7] hover:text-[#e5e2e1] transition-colors" href="privacy.html">Privacy</a>
-                <a class="text-[#c1c6d7] hover:text-[#e5e2e1] transition-colors" href="mailto:developer@norelapse.app">Support</a>
+            <div class="hidden md:flex gap-8 items-center">
+                <a class="text-[#c1c6d7] hover:text-[#e5e2e1] transition-all duration-200 font-bold" href="index.html">Home</a>
+                <a class="text-[#adc7ff] border-b-2 border-[#adc7ff] pb-1 font-bold" href="install.html">Guide</a>
+                <a class="text-[#c1c6d7] hover:text-[#e5e2e1] transition-all duration-200" href="privacy.html">Privacy</a>
+                <a class="text-[#c1c6d7] hover:text-[#e5e2e1] transition-all duration-200" href="mailto:developer@norelapse.app">Support</a>
             </div>
-            <button class="download-btn-trigger bg-primary text-on-primary-container px-5 py-2 rounded-lg font-bold active:scale-95 transition-transform">
-                Download Now
+            <button class="download-btn-trigger bg-primary text-on-primary-container px-6 py-2 rounded-lg font-bold active:scale-95 transition-transform">
+                Get v1.1
             </button>
-        </div>
-        <div class="bg-gradient-to-r from-transparent via-[#414754]/15 to-transparent h-[1px] w-full absolute bottom-0"></div>
-    </nav>
+        </nav>
+    </header>
 
-    <main class="pt-32 pb-24 px-6 max-w-3xl mx-auto">
+    <main class="pt-24 pb-32 max-w-5xl mx-auto px-6">
         <!-- Hero Banner -->
-        <header class="mb-20 flex flex-col items-center text-center">
-            <div class="w-20 h-20 mb-6 flex items-center justify-center rounded-full bg-surface-container-high border border-outline-variant/20 relative">
-                <span class="material-symbols-outlined text-4xl text-primary" style="font-variation-settings: 'FILL' 1;">terminal</span>
-                <div class="absolute inset-0 bg-primary/10 blur-xl rounded-full"></div>
-            </div>
-            <h1 class="text-3xl md:text-5xl font-black tracking-tighter text-on-surface uppercase mb-4">
+        <section class="mt-12 mb-20 text-center">
+            <h1 class="text-4xl md:text-6xl font-black tracking-tighter text-on-surface mb-4 uppercase">
                 Installation <span class="text-primary italic">Protocol</span>
             </h1>
-            <p class="text-on-surface-variant text-lg tracking-wide font-medium uppercase">
-                Official Distribution Guide v1.1
+            <p class="text-on-surface-variant text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
+                Direct distribution preserves our advanced Guardian Shield technology. Follow these steps to secure your vault.
             </p>
-        </header>
-
-        <section class="space-y-12">
-            <div class="bg-surface-container-low p-8 border border-white/5 rounded-2xl space-y-8">
-                <div class="flex gap-8 items-start">
-                    <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary font-black shrink-0">01</div>
-                    <div>
-                        <h2 class="text-xl font-black text-white uppercase tracking-tight mb-2 italic">Secure Download</h2>
-                        <p class="text-on-surface-variant leading-relaxed">Click the "Download APK" button. If your browser displays a "File might be harmful" warning, select <strong>"Download anyway"</strong>. This is standard for direct distribution.</p>
-                    </div>
-                </div>
-
-                <div class="flex gap-8 items-start">
-                    <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary font-black shrink-0">02</div>
-                    <div>
-                        <h2 class="text-xl font-black text-white uppercase tracking-tight mb-2 italic">System Authorization</h2>
-                        <p class="text-on-surface-variant leading-relaxed">Open the downloaded file. Go to <strong>Settings</strong> and enable <strong>"Allow from this source"</strong> for your browser. This enables secure self-updates.</p>
-                    </div>
-                </div>
-
-                <div class="flex gap-8 items-start">
-                    <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary font-black shrink-0">03</div>
-                    <div>
-                        <h2 class="text-xl font-black text-white uppercase tracking-tight mb-2 italic">Play Protect Override</h2>
-                        <p class="text-on-surface-variant leading-relaxed">If a Play Protect block appears, tap <strong>"More details"</strong> and then <strong>"Install anyway"</strong>. Our binaries are signed and verified safe.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="p-8 bg-primary/5 border border-primary/20 rounded-xl space-y-4">
-                <h3 class="text-primary font-black uppercase tracking-widest text-xs flex items-center gap-2">
-                    <span class="material-symbols-outlined text-sm">verified_user</span> Security Assurance
-                </h3>
-                <p class="text-xs text-on-surface-variant leading-relaxed uppercase tracking-wider">
-                    NoRelapse utilizes <strong>AccessibilityService</strong> for the Guardian Shield and <strong>Request Install Packages</strong> for secure updates. No user data is transmitted to external servers.
-                </p>
-            </div>
             
-            <div class="text-center pt-6">
-                <button class="download-btn-trigger py-5 px-12 bg-primary text-on-primary-container font-black text-xl rounded-xl hover:brightness-110 active:scale-95 transition-all w-full md:w-auto">
-                    DOWNLOAD APK NOW
-                </button>
+            <!-- Visual Progress Bar -->
+            <div class="mt-16 flex items-center justify-between max-w-3xl mx-auto relative px-4">
+                <div class="absolute top-1/2 left-0 w-full h-0.5 bg-surface-container-high -translate-y-1/2 -z-10"></div>
+                <div class="flex flex-col items-center gap-2">
+                    <div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-on-primary-container font-black text-lg shadow-[0_0_20px_rgba(173,199,255,0.3)]">1</div>
+                    <span class="text-[10px] font-black uppercase tracking-widest text-primary">Download</span>
+                </div>
+                <div class="flex flex-col items-center gap-2">
+                    <div class="w-10 h-10 rounded-full bg-surface-container-high border border-outline-variant/30 flex items-center justify-center text-on-surface-variant font-black text-lg">2</div>
+                    <span class="text-[10px] font-black uppercase tracking-widest text-on-surface-variant">Authorize</span>
+                </div>
+                <div class="flex flex-col items-center gap-2">
+                    <div class="w-10 h-10 rounded-full bg-surface-container-high border border-outline-variant/30 flex items-center justify-center text-on-surface-variant font-black text-lg">3</div>
+                    <span class="text-[10px] font-black uppercase tracking-widest text-on-surface-variant">Protect</span>
+                </div>
             </div>
+        </section>
+
+        <!-- Step 1: Secure Download -->
+        <section class="mb-32 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            <div class="order-2 md:order-1">
+                <div class="text-7xl font-black text-primary opacity-10 mb-[-1.5rem] select-none italic text-right md:text-left pr-4">STEP 01</div>
+                <h2 class="text-3xl font-black tracking-tight mb-4 uppercase italic">Secure Download</h2>
+                <p class="text-on-surface-variant mb-6 leading-relaxed">
+                    The NoRelapse APK is distributed directly to bypass restrictive marketplace policies that limit our deep-system filtering technology.
+                </p>
+                <div class="bg-surface-container-low p-6 rounded-xl border-l-4 border-primary/50">
+                    <p class="text-on-surface text-sm italic font-medium">
+                        "Your browser may flag this file as potentially harmful. This is a standard notice for all direct APK distributions."
+                    </p>
+                </div>
+            </div>
+            <div class="order-1 md:order-2">
+                <div class="relative bg-surface-container-high p-8 rounded-2xl border border-outline-variant/15 shadow-2xl backdrop-blur-xl">
+                    <div class="flex items-center gap-3 mb-6">
+                        <span class="material-symbols-outlined text-tertiary" style="font-variation-settings: 'FILL' 1;">warning</span>
+                        <span class="font-black text-xs uppercase tracking-widest">System Warning</span>
+                    </div>
+                    <div class="bg-surface-container p-4 rounded-lg mb-6 text-sm text-on-surface-variant leading-tight border border-white/5">
+                        File might be harmful. Do you want to download <span class="text-on-surface font-mono font-bold">NoRelapse_v1.1.apk</span> anyway?
+                    </div>
+                    <div class="flex justify-end gap-6 items-center">
+                        <div class="text-on-surface-variant font-bold text-xs uppercase opacity-50">Cancel</div>
+                        <div class="px-6 py-2.5 bg-primary/20 text-primary rounded-lg font-black text-xs uppercase tracking-widest border border-primary/30 relative">
+                            Download anyway
+                            <div class="absolute -top-12 -right-2 animate-bounce">
+                                <span class="material-symbols-outlined text-4xl text-primary">south</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Step 2: System Authorization -->
+        <section class="mb-32 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            <div>
+                <div class="relative bg-surface-container-high p-8 rounded-2xl border border-outline-variant/15 shadow-2xl backdrop-blur-xl">
+                    <div class="flex items-center justify-between mb-8">
+                        <div>
+                            <h4 class="font-black text-xs uppercase tracking-widest">Install unknown apps</h4>
+                            <p class="text-[10px] text-on-surface-variant uppercase tracking-[0.2em] mt-1 font-bold">Browser / Files</p>
+                        </div>
+                        <span class="material-symbols-outlined text-on-surface-variant text-sm">close</span>
+                    </div>
+                    <div class="flex items-center justify-between p-5 bg-surface-container-low rounded-xl border border-primary/20 glow-blue">
+                        <span class="text-sm font-black uppercase tracking-tight">Allow from this source</span>
+                        <div class="w-10 h-5 bg-primary rounded-full relative">
+                            <div class="absolute right-0.5 top-0.5 w-4 h-4 bg-on-primary-container rounded-full"></div>
+                        </div>
+                    </div>
+                    <div class="mt-6 text-[11px] text-on-surface-variant font-medium leading-relaxed opacity-60">
+                        This one-time authorization allows your system to execute the NoRelapse protocol.
+                    </div>
+                </div>
+            </div>
+            <div class="pl-0 md:pl-12">
+                <div class="text-7xl font-black text-primary opacity-10 mb-[-1.5rem] select-none italic">STEP 02</div>
+                <h2 class="text-3xl font-black tracking-tight mb-4 uppercase italic">System Authorization</h2>
+                <p class="text-on-surface-variant mb-6 leading-relaxed">
+                    Android requires manual confirmation to install apps from outside the Play Store. This verification ensures you remain the ultimate authority of your device.
+                </p>
+                <div class="bg-primary/10 p-6 rounded-xl border border-primary/10">
+                    <p class="text-primary font-black uppercase tracking-[0.2em] text-[0.7rem]">
+                        Required for secure self-updates.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Step 3: Play Protect -->
+        <section class="mb-32 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            <div class="order-2 md:order-1">
+                <div class="text-7xl font-black text-primary opacity-10 mb-[-1.5rem] select-none italic text-right md:text-left pr-4">STEP 03</div>
+                <h2 class="text-3xl font-black tracking-tight mb-4 uppercase italic">Play Protect Override</h2>
+                <p class="text-on-surface-variant mb-6 leading-relaxed">
+                    Play Protect may flag NoRelapse due to our advanced **AccessibilityService** permissions. These are technically mandatory to intercept and block browser-based triggers.
+                </p>
+                <div class="bg-surface-container-high p-8 rounded-2xl border border-primary/20">
+                    <div class="flex gap-4 items-start">
+                        <span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+                        <div>
+                            <p class="text-on-surface font-black uppercase tracking-widest text-sm mb-2 italic">Integrity Verification</p>
+                            <p class="text-on-surface-variant text-xs leading-relaxed font-medium">
+                                We utilize these permissions solely for real-time protection. Every NoRelapse binary is signed and 100% data-safe.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="order-1 md:order-2">
+                <div class="relative bg-surface-container-high p-8 rounded-2xl border border-outline-variant/15 shadow-2xl backdrop-blur-xl">
+                    <div class="flex items-center gap-3 mb-6">
+                        <span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">block</span>
+                        <span class="font-black text-xs uppercase tracking-widest">Blocked by Play Protect</span>
+                    </div>
+                    <div class="text-xs text-on-surface-variant mb-8 font-medium leading-relaxed italic">
+                        "This app can collect data that could be used to track you."
+                    </div>
+                    <div class="flex flex-col gap-4">
+                        <div class="text-primary font-black text-[0.65rem] uppercase tracking-[0.2em] py-2">More details</div>
+                        <div class="flex justify-between items-center bg-primary/20 p-5 rounded-xl border border-primary/40">
+                            <span class="text-primary font-black text-xs uppercase tracking-widest">Install anyway</span>
+                            <span class="material-symbols-outlined text-primary text-sm">arrow_forward</span>
+                        </div>
+                        <div class="bg-surface-container text-on-surface-variant text-center py-4 rounded-xl text-xs font-black uppercase opacity-40">Got it</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bottom CTA -->
+        <section class="mt-24 text-center">
+            <button class="download-btn-trigger bg-primary text-on-primary-container font-black py-6 px-16 rounded-2xl text-xl uppercase tracking-[0.2em] shadow-[0_20px_60px_rgba(173,199,255,0.2)] hover:scale-105 active:scale-95 transition-all duration-300">
+                DOWNLOAD APK NOW
+            </button>
+            <p class="mt-8 text-on-surface-variant text-xs font-black uppercase tracking-[0.3em] opacity-60">
+                Support: <span class="text-primary underline decoration-primary/30 font-black">developer@norelapse.app</span>
+            </p>
         </section>
     </main>
 
     <!-- Footer -->
-    <footer class="bg-[#0e0e0e] w-full py-16 border-t border-white/5">
-        <div class="flex flex-col md:flex-row justify-between items-center w-full px-8 max-w-7xl mx-auto gap-10">
+    <footer class="bg-[#0e0e0e] w-full py-16 px-8 border-t border-white/5">
+        <div class="flex flex-col md:flex-row justify-between items-center gap-10 max-w-7xl mx-auto">
             <div class="text-2xl font-black text-white uppercase tracking-tighter italic">
                 NoRelapse<span class="text-on-surface-variant font-normal lowercase not-italic opacity-50 ml-1">.vault</span>
             </div>
@@ -175,11 +265,28 @@
                 <a class="hover:text-primary transition-colors" href="privacy.html">Privacy Policy</a>
                 <a class="hover:text-primary transition-colors" href="mailto:developer@norelapse.app">Support</a>
             </div>
-            <div class="text-right text-[0.65rem] font-black uppercase tracking-widest text-on-surface-variant opacity-60">
+            <div class="text-[0.65rem] font-black uppercase tracking-widest text-on-surface-variant opacity-60">
                 © 2026 NoRelapse. The Sovereign Vault.
             </div>
         </div>
     </footer>
+
+    <!-- BottomNavBar for Mobile -->
+    <nav class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-6 pt-3 bg-[#0e0e0e]/95 backdrop-blur-xl border-t border-white/5 z-50">
+        <a href="install.html" class="flex flex-col items-center justify-center text-primary">
+            <span class="material-symbols-outlined">install_mobile</span>
+            <span class="text-[9px] font-black uppercase tracking-widest mt-1">Guide</span>
+        </a>
+        <a href="privacy.html" class="flex flex-col items-center justify-center text-on-surface-variant opacity-60">
+            <span class="material-symbols-outlined">verified_user</span>
+            <span class="text-[9px] font-black uppercase tracking-widest mt-1">Security</span>
+        </a>
+        <a href="mailto:developer@norelapse.app" class="flex flex-col items-center justify-center text-on-surface-variant opacity-60">
+            <span class="material-symbols-outlined">contact_support</span>
+            <span class="text-[9px] font-black uppercase tracking-widest mt-1">Support</span>
+        </a>
+    </nav>
+
     <script type="module" src="./src/main.ts"></script>
 </body>
 </html>
