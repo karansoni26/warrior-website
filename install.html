@@ -1,296 +1,279 @@
 <!DOCTYPE html>
-<html class="dark" lang="en">
+<html lang="en">
 <head>
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>The Sovereign Vault | Installation Protocol</title>
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-    <script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            colors: {
-              "surface-container": "#201f1f",
-              "tertiary": "#e9c400",
-              "surface-tint": "#adc7ff",
-              "on-background": "#e5e2e1",
-              "on-surface-variant": "#c1c6d7",
-              "primary-fixed-dim": "#adc7ff",
-              "primary-container": "#4a8eff",
-              "on-secondary": "#313030",
-              "on-primary-fixed": "#001a41",
-              "on-tertiary": "#3a3000",
-              "on-primary": "#002e68",
-              "inverse-primary": "#005bc0",
-              "surface-dim": "#131313",
-              "surface-bright": "#3a3939",
-              "on-primary-fixed-variant": "#004493",
-              "on-error": "#690005",
-              "secondary-fixed-dim": "#c8c6c5",
-              "on-surface": "#e5e2e1",
-              "primary-fixed": "#d8e2ff",
-              "outline-variant": "#414754",
-              "inverse-surface": "#e5e2e1",
-              "surface-container-lowest": "#0e0e0e",
-              "tertiary-fixed": "#ffe16d",
-              "secondary-fixed": "#e5e2e1",
-              "on-primary-container": "#00285b",
-              "outline": "#8b90a0",
-              "on-tertiary-fixed": "#221b00",
-              "tertiary-container": "#c9a900",
-              "background": "#131313",
-              "secondary-container": "#474746",
-              "inverse-on-surface": "#313030",
-              "error-container": "#93000a",
-              "on-secondary-fixed-variant": "#474746",
-              "surface-variant": "#353534",
-              "tertiary-fixed-dim": "#e9c400",
-              "on-secondary-container": "#b7b5b4",
-              "on-secondary-fixed": "#1c1b1b",
-              "secondary": "#c8c6c5",
-              "on-error-container": "#ffdad6",
-              "on-tertiary-container": "#4c3f00",
-              "surface": "#131313",
-              "surface-container-highest": "#353534",
-              "surface-container-high": "#2a2a2a",
-              "on-tertiary-fixed-variant": "#544600",
-              "surface-container-low": "#1c1b1b",
-              "primary": "#adc7ff",
-              "error": "#ffb4ab"
-            },
-            fontFamily: {
-              "headline": ["Inter"],
-              "body": ["Inter"],
-              "label": ["Inter"]
-            },
-            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
-          },
-        },
-      }
-    </script>
-    <style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-        .noise-overlay {
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-            opacity: 0.03;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Installation Protocol — NoRelapse</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@300;400;600;700&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--black:#070709;--deep:#0d0d12;--vault:#111118;--steel:#1a1a24;--iron:#252530;--wire:#3a3a4a;--smoke:#6b6b7e;--ghost:#9898aa;--bone:#c8c8d4;--white:#e8e8f0;--red:#b81c1c;--rh:#e02020;--gold:#d4a017;--fd:'Bebas Neue',sans-serif;--fc:'Barlow Condensed',sans-serif;--fb:'Barlow',sans-serif}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--white);font-family:var(--fb);overflow-x:hidden;cursor:crosshair}
+body::before{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");opacity:.022}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:18px 60px;display:flex;justify-content:space-between;align-items:center;background:rgba(7,7,9,.97);border-bottom:1px solid rgba(58,58,74,.3);backdrop-filter:blur(6px)}
+.nav-logo{font-family:var(--fd);font-size:1.5rem;letter-spacing:.15em;color:var(--white);text-decoration:none}
+.nav-logo span{color:var(--rh)}
+.nav-links{display:flex;gap:26px;list-style:none}
+.nav-links a{font-family:var(--fc);font-size:.76rem;letter-spacing:.2em;text-transform:uppercase;color:var(--smoke);text-decoration:none;transition:color .2s}
+.nav-links a:hover,.nav-links a.active{color:var(--bone)}
+.nav-cta{font-family:var(--fc);font-weight:700;font-size:.8rem;letter-spacing:.22em;text-transform:uppercase;color:var(--black);background:var(--rh);padding:10px 26px;text-decoration:none;clip-path:polygon(6px 0%,100% 0%,calc(100% - 6px) 100%,0% 100%);transition:background .2s}
+.nav-cta:hover{background:#ff2a2a}
+
+.page-hero{min-height:40vh;display:flex;flex-direction:column;justify-content:flex-end;position:relative;padding:130px 60px 56px;overflow:hidden;border-bottom:1px solid var(--iron)}
+.page-hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(58,58,74,.09) 1px,transparent 1px),linear-gradient(90deg,rgba(58,58,74,.09) 1px,transparent 1px);background-size:60px 60px;mask-image:linear-gradient(to bottom,transparent,rgba(0,0,0,.5) 40%,rgba(0,0,0,.5) 100%)}
+.page-glow{position:absolute;bottom:-10%;left:20%;width:600px;height:400px;background:radial-gradient(ellipse,rgba(184,28,28,.07) 0%,transparent 65%);pointer-events:none}
+.page-label{font-family:var(--fc);font-weight:600;font-size:.72rem;letter-spacing:.45em;text-transform:uppercase;color:var(--rh);margin-bottom:16px;display:flex;align-items:center;gap:10px;position:relative;animation:fadeUp .7s ease both}
+.page-label::before{content:'';display:block;width:22px;height:1px;background:var(--rh)}
+.page-h1{font-family:var(--fd);font-size:clamp(3rem,7vw,6.5rem);line-height:.92;letter-spacing:.02em;max-width:800px;animation:fadeUp .7s .1s ease both;position:relative}
+.page-sub{font-family:var(--fc);font-size:1.1rem;font-weight:300;letter-spacing:.08em;color:var(--ghost);max-width:540px;margin-top:20px;line-height:1.6;animation:fadeUp .7s .2s ease both;position:relative}
+
+/* STEP TRACKER */
+.step-tracker{display:flex;gap:0;border-bottom:1px solid var(--iron);background:var(--deep)}
+.st-step{flex:1;padding:20px 28px;display:flex;align-items:center;gap:14px;border-right:1px solid var(--iron);position:relative;cursor:default}
+.st-step:last-child{border-right:none}
+.st-step.active{background:var(--vault)}
+.st-step.active::after{content:'';position:absolute;bottom:-1px;left:0;right:0;height:2px;background:var(--rh)}
+.st-n{font-family:var(--fd);font-size:1.8rem;color:var(--iron);line-height:1;transition:color .3s}
+.st-step.active .st-n{color:var(--rh)}
+.st-label{font-family:var(--fc);font-weight:700;font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;color:var(--smoke)}
+.st-step.active .st-label{color:var(--white)}
+
+.page-body{max-width:900px;margin:0 auto;padding:72px 60px 96px}
+.section-block{margin-bottom:72px;padding-bottom:72px;border-bottom:1px solid var(--iron)}
+.section-block:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.sec-num{font-family:var(--fc);font-weight:700;font-size:.7rem;letter-spacing:.4em;text-transform:uppercase;color:var(--rh);margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.sec-num::before{content:'';display:block;width:18px;height:1px;background:var(--rh)}
+.sec-title{font-family:var(--fd);font-size:clamp(1.8rem,3.5vw,3rem);letter-spacing:.03em;color:var(--white);margin-bottom:24px}
+.sec-body{font-family:var(--fb);font-size:.95rem;font-weight:300;line-height:1.85;color:var(--ghost)}
+.sec-body p{margin-bottom:14px}
+.sec-body p:last-child{margin-bottom:0}
+.sec-body strong{color:var(--bone);font-weight:500}
+
+/* WARNING MOCKUP */
+.warning-mock{background:var(--steel);border:1px solid var(--wire);padding:22px 24px;margin:22px 0;display:flex;gap:14px;align-items:flex-start}
+.wm-icon{font-size:1.3rem;line-height:1;min-width:26px;margin-top:2px}
+.wm-title{font-family:var(--fc);font-weight:700;font-size:.92rem;letter-spacing:.08em;text-transform:uppercase;color:var(--white);margin-bottom:5px}
+.wm-body{font-family:var(--fb);font-size:.85rem;font-weight:300;color:var(--smoke);line-height:1.65}
+.wm-actions{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}
+.wm-btn{font-family:var(--fc);font-weight:600;font-size:.75rem;letter-spacing:.15em;text-transform:uppercase;padding:8px 18px;border:1px solid var(--wire);color:var(--smoke);cursor:default}
+.wm-btn.primary{background:var(--rh);border-color:var(--rh);color:var(--black)}
+
+.callout{background:var(--vault);border-left:3px solid var(--gold);padding:18px 22px;margin:22px 0;font-family:var(--fc);font-size:.9rem;color:var(--bone);line-height:1.65}
+.callout strong{color:var(--gold)}
+
+.steps-visual{display:flex;flex-direction:column;gap:2px;margin:28px 0}
+.sv-row{background:var(--vault);border:1px solid var(--iron);padding:20px 24px;display:flex;gap:20px;align-items:flex-start;transition:background .25s}
+.sv-row:hover{background:var(--steel)}
+.sv-num{font-family:var(--fd);font-size:1.8rem;color:var(--rh);line-height:1;min-width:36px}
+.sv-content .sv-title{font-family:var(--fc);font-weight:700;font-size:.9rem;letter-spacing:.1em;text-transform:uppercase;color:var(--white);margin-bottom:5px}
+.sv-content .sv-text{font-family:var(--fb);font-size:.85rem;font-weight:300;color:var(--smoke);line-height:1.65}
+
+.download-block{background:var(--vault);border:1px solid var(--iron);border-left:3px solid var(--rh);padding:28px 32px;margin:28px 0;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+.db-info .db-version{font-family:var(--fc);font-weight:700;font-size:.7rem;letter-spacing:.35em;text-transform:uppercase;color:var(--rh);margin-bottom:6px}
+.db-info .db-name{font-family:var(--fd);font-size:1.6rem;letter-spacing:.06em;color:var(--white);margin-bottom:4px}
+.db-info .db-meta{font-family:var(--fc);font-size:.78rem;letter-spacing:.1em;color:var(--smoke)}
+.btn-dl{font-family:var(--fc);font-weight:700;font-size:.85rem;letter-spacing:.22em;text-transform:uppercase;color:var(--black);background:var(--rh);padding:14px 32px;text-decoration:none;clip-path:polygon(7px 0%,100% 0%,calc(100% - 7px) 100%,0% 100%);transition:all .2s;display:flex;align-items:center;gap:10px;white-space:nowrap;cursor:pointer}
+.btn-dl:hover{background:#ff2828;box-shadow:0 10px 36px rgba(224,32,32,.28)}
+.btn-dl svg{width:15px;height:15px}
+
+footer{background:var(--black);border-top:1px solid var(--iron);padding:32px 60px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+.ft-logo{font-family:var(--fd);font-size:1.1rem;letter-spacing:.15em;color:var(--smoke)}
+.ft-logo span{color:var(--red)}
+.ft-links{display:flex;gap:24px;list-style:none;flex-wrap:wrap}
+.ft-links a{font-family:var(--fc);font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:var(--smoke);text-decoration:none;transition:color .2s}
+.ft-links a:hover{color:var(--bone)}
+.ft-copy{font-family:var(--fb);font-size:.7rem;color:var(--wire)}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+@media(max-width:860px){nav{padding:14px 20px}.nav-links{display:none}.page-hero{padding:100px 20px 44px}.page-body{padding:48px 20px 72px}.step-tracker{flex-direction:column}.st-step{border-right:none;border-bottom:1px solid var(--iron)}.download-block{flex-direction:column}footer{padding:24px 20px;flex-direction:column;align-items:flex-start}}
+</style>
 </head>
-<body class="bg-surface-container-lowest text-on-surface font-body selection:bg-primary selection:text-on-primary-container">
-    <div class="noise-overlay fixed inset-0 pointer-events-none z-50"></div>
-    
-    <!-- TopAppBar Navigation -->
-    <header class="fixed top-0 w-full z-50 bg-[#131313]/80 backdrop-blur-xl border-b border-white/5">
-        <nav class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
-            <div class="flex items-center gap-2 text-2xl font-black text-white uppercase tracking-tighter">
-                NoRelapse
-            </div>
-            <div class="hidden md:flex gap-8 items-center">
-                <a class="text-on-surface-variant hover:text-white transition-colors font-bold tracking-tight" href="index.html">Home</a>
-                <a class="text-primary font-bold tracking-tight" href="./install.html">Guide</a>
-                <a class="text-on-surface-variant hover:text-white transition-colors font-bold tracking-tight" href="./privacy.html">Privacy</a>
-                <a class="text-on-surface-variant hover:text-white transition-colors font-bold tracking-tight" href="mailto:soni.110051@gmail.com">Support</a>
-            </div>
-            <button class="download-btn-trigger bg-gradient-to-r from-primary to-primary-container text-on-primary-container px-6 py-2.5 font-bold tracking-tight rounded-md">
-                Get v1.1
-            </button>
-        </nav>
-    </header>
+<body>
 
-    <main class="pt-24 pb-32 max-w-5xl mx-auto px-6 reveal">
-        <!-- Hero Banner -->
-        <section class="mt-12 mb-20 text-center">
-            <h1 class="text-4xl md:text-6xl font-black tracking-tighter text-on-surface mb-4 uppercase">
-                Installation <span class="text-primary italic">Protocol</span>
-            </h1>
-            <p class="text-on-surface-variant text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
-                Direct distribution preserves our advanced Guardian Shield technology. Follow these steps to secure your vault.
-            </p>
-            
-            <!-- Visual Progress Bar -->
-            <div class="mt-16 flex items-center justify-between max-w-3xl mx-auto relative px-4 reveal delay-100">
-                <div class="absolute top-1/2 left-0 w-full h-0.5 bg-surface-container-high -translate-y-1/2 -z-10"></div>
-                <div class="flex flex-col items-center gap-2">
-                    <div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-on-primary-container font-black text-lg shadow-[0_0_20px_rgba(173,199,255,0.3)]">1</div>
-                    <span class="text-[10px] font-black uppercase tracking-widest text-primary">Download</span>
-                </div>
-                <div class="flex flex-col items-center gap-2">
-                    <div class="w-10 h-10 rounded-full bg-surface-container-high border border-outline-variant/30 flex items-center justify-center text-on-surface-variant font-black text-lg">2</div>
-                    <span class="text-[10px] font-black uppercase tracking-widest text-on-surface-variant">Authorize</span>
-                </div>
-                <div class="flex flex-col items-center gap-2">
-                    <div class="w-10 h-10 rounded-full bg-surface-container-high border border-outline-variant/30 flex items-center justify-center text-on-surface-variant font-black text-lg">3</div>
-                    <span class="text-[10px] font-black uppercase tracking-widest text-on-surface-variant">Protect</span>
-                </div>
-            </div>
-        </section>
+<nav>
+  <a href="./index.html" class="nav-logo">NO<span>RELAPSE</span></a>
+  <ul class="nav-links">
+    <li><a href="./index.html">Home</a></li>
+    <li><a href="./install.html" class="active">Install Guide</a></li>
+    <li><a href="./privacy.html">Privacy</a></li>
+    <li><a href="mailto:soni.110051@gmail.com">Support</a></li>
+  </ul>
+  <a href="#download" class="nav-cta">Get APK</a>
+</nav>
 
-        <!-- Step 1: Secure Download -->
-        <section class="mb-32 grid grid-cols-1 md:grid-cols-2 gap-16 items-center reveal delay-200">
-            <div class="order-2 md:order-1">
-                <div class="text-7xl font-black text-primary opacity-10 mb-[-1.5rem] select-none italic text-right md:text-left pr-4">STEP 01</div>
-                <h2 class="text-3xl font-black tracking-tight mb-4 uppercase italic">Secure Download</h2>
-                <p class="text-on-surface-variant mb-6 leading-relaxed">
-                    The NoRelapse APK is distributed directly to bypass restrictive marketplace policies that limit our deep-system filtering technology.
-                </p>
-                <div class="bg-surface-container-low p-6 rounded-xl border-l-4 border-primary/50">
-                    <p class="text-on-surface text-sm italic font-medium">
-                        "Your browser may flag this file as potentially harmful. This is a standard notice for all direct APK distributions."
-                    </p>
-                </div>
-            </div>
-            <div class="order-1 md:order-2">
-                <div class="relative bg-surface-container-high p-8 rounded-2xl border border-outline-variant/15 shadow-2xl backdrop-blur-xl">
-                    <div class="flex items-center gap-3 mb-6">
-                        <span class="material-symbols-outlined text-tertiary" style="font-variation-settings: 'FILL' 1;">warning</span>
-                        <span class="font-black text-xs uppercase tracking-widest">System Warning</span>
-                    </div>
-                    <div class="bg-surface-container p-4 rounded-lg mb-6 text-sm text-on-surface-variant leading-tight border border-white/5">
-                        File might be harmful. Do you want to download <span class="text-on-surface font-mono font-bold">NoRelapse_v1.1.apk</span> anyway?
-                    </div>
-                    <div class="flex justify-end gap-6 items-center">
-                        <div class="text-on-surface-variant font-bold text-xs uppercase opacity-50">Cancel</div>
-                        <div class="download-btn-trigger px-6 py-2.5 bg-primary/20 text-primary rounded-lg font-black text-xs uppercase tracking-widest border border-primary/30 relative cursor-pointer">
-                            Download anyway
-                            <div class="absolute -top-12 -right-2 animate-bounce">
-                                <span class="material-symbols-outlined text-4xl text-primary">south</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+<div class="page-hero">
+  <div class="page-hero-grid"></div>
+  <div class="page-glow"></div>
+  <div class="page-label">Deployment Manual</div>
+  <h1 class="page-h1">INSTALLATION PROTOCOL</h1>
+  <p class="page-sub">Direct distribution preserves the Guardian Shield's full capability. Three steps. Under five minutes.</p>
+</div>
 
-        <!-- Step 2: System Authorization -->
-        <section class="mb-32 grid grid-cols-1 md:grid-cols-2 gap-16 items-center reveal">
-            <div>
-                <div class="relative bg-surface-container-high p-8 rounded-2xl border border-outline-variant/15 shadow-2xl backdrop-blur-xl">
-                    <div class="flex items-center justify-between mb-8">
-                        <div>
-                            <h4 class="font-black text-xs uppercase tracking-widest">Install unknown apps</h4>
-                            <p class="text-[10px] text-on-surface-variant uppercase tracking-[0.2em] mt-1 font-bold">Browser / Files</p>
-                        </div>
-                        <span class="material-symbols-outlined text-on-surface-variant text-sm">close</span>
-                    </div>
-                    <div class="flex items-center justify-between p-5 bg-surface-container-low rounded-xl border border-primary/20">
-                        <span class="text-sm font-black uppercase tracking-tight">Allow from this source</span>
-                        <div class="w-10 h-5 bg-primary rounded-full relative">
-                            <div class="absolute right-0.5 top-0.5 w-4 h-4 bg-on-primary-container rounded-full"></div>
-                        </div>
-                    </div>
-                    <div class="mt-6 text-[11px] text-on-surface-variant font-medium leading-relaxed opacity-60">
-                        This one-time authorization allows your system to execute the NoRelapse protocol.
-                    </div>
-                </div>
-            </div>
-            <div class="pl-0 md:pl-12">
-                <div class="text-7xl font-black text-primary opacity-10 mb-[-1.5rem] select-none italic">STEP 02</div>
-                <h2 class="text-3xl font-black tracking-tight mb-4 uppercase italic">System Authorization</h2>
-                <p class="text-on-surface-variant mb-6 leading-relaxed">
-                    Android requires manual confirmation to install apps from outside the Play Store. This verification ensures you remain the ultimate authority of your device.
-                </p>
-                <div class="bg-primary/10 p-6 rounded-xl border border-primary/10">
-                    <p class="text-primary font-black uppercase tracking-[0.2em] text-[0.7rem]">
-                        Required for secure self-updates.
-                    </p>
-                </div>
-            </div>
-        </section>
+<div class="step-tracker">
+  <div class="st-step active"><span class="st-n">01</span><span class="st-label">Download</span></div>
+  <div class="st-step"><span class="st-n">02</span><span class="st-label">Authorize</span></div>
+  <div class="st-step"><span class="st-n">03</span><span class="st-label">Protect</span></div>
+</div>
 
-        <!-- Step 3: Play Protect -->
-        <section class="mb-32 grid grid-cols-1 md:grid-cols-2 gap-16 items-center reveal">
-            <div class="order-2 md:order-1">
-                <div class="text-7xl font-black text-primary opacity-10 mb-[-1.5rem] select-none italic text-right md:text-left pr-4">STEP 03</div>
-                <h2 class="text-3xl font-black tracking-tight mb-4 uppercase italic">Play Protect Override</h2>
-                <p class="text-on-surface-variant mb-6 leading-relaxed">
-                    Play Protect may flag NoRelapse due to our advanced **AccessibilityService** permissions. These are technically mandatory to intercept and block browser-based triggers.
-                </p>
-                <div class="bg-surface-container-high p-8 rounded-2xl border border-primary/20">
-                    <div class="flex gap-4 items-start">
-                        <span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings: 'FILL' 1;">verified_user</span>
-                        <div>
-                            <p class="text-on-surface font-black uppercase tracking-widest text-sm mb-2 italic">Integrity Verification</p>
-                            <p class="text-on-surface-variant text-xs leading-relaxed font-medium">
-                                We utilize these permissions solely for real-time protection. Every NoRelapse binary is signed and 100% data-safe.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="order-1 md:order-2">
-                <div class="relative bg-surface-container-high p-8 rounded-2xl border border-outline-variant/15 shadow-2xl backdrop-blur-xl">
-                    <div class="flex items-center gap-3 mb-6">
-                        <span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">block</span>
-                        <span class="font-black text-xs uppercase tracking-widest">Blocked by Play Protect</span>
-                    </div>
-                    <div class="text-xs text-on-surface-variant mb-8 font-medium leading-relaxed italic">
-                        "This app can collect data that could be used to track you."
-                    </div>
-                    <div class="flex flex-col gap-4">
-                        <div class="text-primary font-black text-[0.65rem] uppercase tracking-[0.2em] py-2">More details</div>
-                        <div class="flex justify-between items-center bg-primary/20 p-5 rounded-xl border border-primary/40 cursor-pointer download-btn-trigger">
-                            <span class="text-primary font-black text-xs uppercase tracking-widest">Install anyway</span>
-                            <span class="material-symbols-outlined text-primary text-sm">arrow_forward</span>
-                        </div>
-                        <div class="bg-surface-container text-on-surface-variant text-center py-4 rounded-xl text-xs font-black uppercase opacity-40">Got it</div>
-                    </div>
-                </div>
-            </div>
-        </section>
+<div class="page-body">
 
-        <!-- Bottom CTA -->
-        <section class="mt-24 text-center reveal">
-            <button class="download-btn-trigger bg-primary text-on-primary-container font-black py-6 px-16 rounded-2xl text-xl uppercase tracking-[0.2em] shadow-[0_20px_60px_rgba(173,199,255,0.2)] hover:scale-105 active:scale-95 transition-all duration-300">
-                DOWNLOAD APK NOW
-            </button>
-            <p class="mt-8 text-on-surface-variant text-xs font-black uppercase tracking-[0.3em] opacity-60">
-                Support: <span class="text-primary underline decoration-primary/30 font-black">soni.110051@gmail.com</span>
-            </p>
-        </section>
-    </main>
+  <!-- WHY APK -->
+  <div class="section-block reveal">
+    <div class="sec-num">Why Direct APK?</div>
+    <h2 class="sec-title">NO PLAY STORE. BY DESIGN.</h2>
+    <div class="sec-body">
+      <p>Google Play restricts applications that use deep AccessibilityService permissions — the exact layer that makes NoRelapse effective. Distribution through Play Store would require gutting the Guardian Shield to satisfy marketplace policies.</p>
+      <p>Distributing directly means <strong>NoRelapse operates at full capability</strong>. Your install is not associated with your Google account. Google does not know this app is on your device. The install is not tracked, logged, or reportable by any third party.</p>
+      <p>This is an architectural choice made in your interest, not ours.</p>
+    </div>
+    <div class="callout"><strong>Security note:</strong> Only download the NoRelapse APK from this domain. Verify the SHA-256 checksum listed on the download card against the file you receive before installing.</div>
+  </div>
 
-    <!-- Footer -->
-    <footer class="bg-[#0e0e0e] border-t border-white/5 py-20 px-8">
-        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-1 lg:grid-cols-3 gap-12 items-center">
-            <div class="text-2xl font-black text-white uppercase text-center lg:text-left">NoRelapse</div>
-            <div class="flex justify-center gap-10">
-                <a class="text-xs font-black uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="./privacy.html">Privacy Policy</a>
-                <a class="text-xs font-black uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="./terms.html">Terms</a>
-                <a class="text-xs font-black uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="./install.html">Install Guide</a>
-                <a class="text-xs font-black uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="mailto:soni.110051@gmail.com">Contact</a>
-            </div>
-            <div class="text-center lg:text-right text-[0.65rem] font-black uppercase tracking-widest text-on-surface-variant opacity-60 leading-relaxed">
-                © 2026 NoRelapse Ecosystem.<br/>Reclaim Your Sovereignty.
-            </div>
+  <!-- STEP 01 -->
+  <div class="section-block reveal" id="download">
+    <div class="sec-num">Step 01</div>
+    <h2 class="sec-title">SECURE DOWNLOAD</h2>
+
+    <div class="download-block">
+      <div class="db-info">
+        <div class="db-version">Latest Release — v1.1</div>
+        <div class="db-name">NoRelapse_v1.1.apk</div>
+        <div class="db-meta">Android 6.0+ &nbsp;·&nbsp; ~6.2 MB &nbsp;·&nbsp; Signed &amp; Verified</div>
+      </div>
+      <a class="btn-dl download-btn-trigger">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 3v13M6 11l6 6 6-6"/><path d="M3 20h18"/></svg>
+        Download APK
+      </a>
+    </div>
+
+    <div class="sec-body">
+      <p>Your browser will display a security warning when downloading the APK. This is a <strong>standard Android browser notice for all direct APK files</strong> — it does not indicate the file is harmful. It indicates the file did not come through the Play Store.</p>
+    </div>
+
+    <div class="warning-mock">
+      <div class="wm-icon">⚠️</div>
+      <div>
+        <div class="wm-title">System Warning</div>
+        <p class="wm-body">"File might be harmful. Do you want to download NoRelapse_v1.1.apk anyway?"</p>
+        <div class="wm-actions">
+          <div class="wm-btn">Cancel</div>
+          <div class="wm-btn primary">Download anyway</div>
         </div>
-    </footer>
+      </div>
+    </div>
 
-    <script>
-        // Intersection Observer for Scroll Animations
-        const observerOptions = { threshold: 0.1 };
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                }
-            });
-        }, observerOptions);
+    <div class="callout"><strong>Correct action:</strong> Tap "Download anyway." This warning fires for every APK distributed outside Play Store — including major apps like Telegram, Signal Beta, and browser updates from manufacturers. It is not specific to NoRelapse.</div>
+  </div>
 
-        document.querySelectorAll('.reveal').forEach((el) => {
-            observer.observe(el);
-        });
+  <!-- STEP 02 -->
+  <div class="section-block reveal">
+    <div class="sec-num">Step 02</div>
+    <h2 class="sec-title">SYSTEM AUTHORIZATION</h2>
+    <div class="sec-body">
+      <p>Android requires one-time authorization to install apps from outside the Play Store. This is a security gate that ensures <strong>you remain the authority</strong> over what installs on your device.</p>
+    </div>
 
-        // Download Button Logic
-        document.querySelectorAll('.download-btn-trigger').forEach(btn => {
-            btn.onclick = () => {
-                window.location.href = 'https://aiicylzukkkhxcimsycb.supabase.co/storage/v1/object/public/app-releases/warrior-release-v1773860079307.apk';
-            };
-        });
-    </script>
+    <div class="steps-visual">
+      <div class="sv-row">
+        <div class="sv-num">1</div>
+        <div class="sv-content">
+          <div class="sv-title">Open the downloaded APK file</div>
+          <p class="sv-text">Find NoRelapse_v1.1.apk in your Downloads folder (or in the browser's download notification) and tap it.</p>
+        </div>
+      </div>
+      <div class="sv-row">
+        <div class="sv-num">2</div>
+        <div class="sv-content">
+          <div class="sv-title">Enable "Install unknown apps" for your browser</div>
+          <p class="sv-text">Android will prompt: "Allow from this source?" Toggle it on for the browser you used to download. This one-time permission allows the install. You can revoke it after.</p>
+        </div>
+      </div>
+      <div class="sv-row">
+        <div class="sv-num">3</div>
+        <div class="sv-content">
+          <div class="sv-title">Confirm the install</div>
+          <p class="sv-text">Tap "Install" on the Android install screen. The Guardian Shield will be live within seconds.</p>
+        </div>
+      </div>
+      <div class="sv-row">
+        <div class="sv-num">4</div>
+        <div class="sv-content">
+          <div class="sv-title">Revoke "Install unknown apps" permission</div>
+          <p class="sv-text">Settings → Apps → [Your Browser] → Install unknown apps → Disable. NoRelapse handles its own updates — you don't need this permission enabled permanently.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STEP 03 — PLAY PROTECT -->
+  <div class="section-block reveal">
+    <div class="sec-num">Step 03 — Common Issue</div>
+    <h2 class="sec-title">PLAY PROTECT OVERRIDE</h2>
+    <div class="sec-body">
+      <p>Google Play Protect may flag NoRelapse during install due to its AccessibilityService permissions. Play Protect's algorithm flags any non-Play-Store app requesting this permission level — regardless of intent or safety.</p>
+      <p><strong>NoRelapse is flagged because it is powerful — not because it is unsafe.</strong></p>
+    </div>
+
+    <div class="warning-mock">
+      <div class="wm-icon">🚫</div>
+      <div>
+        <div class="wm-title">Blocked by Play Protect</div>
+        <p class="wm-body">"This app can collect data that could be used to track you."</p>
+        <div class="wm-actions">
+          <div class="wm-btn">More details</div>
+          <div class="wm-btn primary">Install anyway</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout"><strong>Correct action:</strong> Tap "More details" then "Install anyway." This warning appears because AccessibilityService <em>can</em> be misused by malicious apps. NoRelapse uses it solely for URL interception — all on-device. Zero data leaves your phone. You can verify this claim against our <a href="./privacy.html" style="color:var(--rh);text-decoration:none">Privacy Architecture page</a>.</div>
+
+    <div class="sec-body" style="margin-top:22px">
+      <p>After install is complete, NoRelapse will prompt you to <strong>grant AccessibilityService permission</strong>. This is the core of the Guardian Shield. Without it, URL-level blocking cannot function. Follow the on-screen instructions — NoRelapse guides you through the exact path in Android Settings.</p>
+    </div>
+  </div>
+
+  <!-- SUPPORT -->
+  <div class="section-block reveal">
+    <div class="sec-num">Need Help?</div>
+    <h2 class="sec-title">INSTALLATION SUPPORT</h2>
+    <div class="sec-body">
+      <p>If you encounter any issue not covered by this guide — device-specific behavior, manufacturer security restrictions (MIUI, One UI, ColorOS), or unexpected errors — contact support directly.</p>
+      <p style="margin-top:16px"><strong>Email:</strong> <a href="mailto:soni.110051@gmail.com" style="color:var(--rh);text-decoration:none;font-family:var(--fc)">soni.110051@gmail.com</a></p>
+      <p style="margin-top:8px;color:var(--smoke)">Response within 24–48 hours. Include your Android version and device manufacturer for faster resolution.</p>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="ft-logo">NO<span>RELAPSE</span></div>
+  <ul class="ft-links">
+    <li><a href="./privacy.html">Privacy Policy</a></li>
+    <li><a href="./terms.html">Terms of Service</a></li>
+    <li><a href="./install.html">Install Guide</a></li>
+    <li><a href="mailto:soni.110051@gmail.com">Contact</a></li>
+  </ul>
+  <div class="ft-copy">&copy; 2026 NoRelapse Ecosystem. Reclaim Your Sovereignty.</div>
+</footer>
+
+<script>
+const obs=new IntersectionObserver((entries)=>{entries.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('visible'),i*80)}})},{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+// Download Trigger Logic
+document.querySelectorAll('.download-btn-trigger').forEach(btn => {
+    btn.onclick = (e) => {
+        e.preventDefault();
+        window.location.href = 'https://aiicylzukkkhxcimsycb.supabase.co/storage/v1/object/public/app-releases/warrior-release-v1773860079307.apk';
+    };
+});
+</script>
 </body>
 </html>
