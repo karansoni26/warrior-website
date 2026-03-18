@@ -92,32 +92,32 @@
 </head>
 <body class="selection:bg-primary/30">
     <!-- TopNavBar -->
-    <nav class="fixed top-0 w-full z-50 bg-[#131313]/80 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.5)]">
-        <div class="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto">
-            <div class="flex items-center gap-2 text-xl font-black text-[#e5e2e1] uppercase tracking-wider">
+    <nav class="fixed top-0 w-full z-50 bg-[#131313]/80 backdrop-blur-xl border-b border-white/5">
+        <div class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
+            <div class="flex items-center gap-2 text-2xl font-black text-white uppercase tracking-tighter">
                 NoRelapse
             </div>
-            <div class="hidden md:flex items-center gap-8 font-['Inter'] font-bold tracking-tight">
-                <a class="text-[#c1c6d7] hover:text-[#e5e2e1] transition-colors" href="index.html">Home</a>
-                <a class="text-[#adc7ff] border-b-2 border-[#adc7ff] pb-1" href="privacy.html">Privacy</a>
-                <a class="text-[#c1c6d7] hover:text-[#e5e2e1] transition-colors" href="mailto:developer@norelapse.app">Support</a>
+            <div class="hidden md:flex gap-8 items-center">
+                <a class="text-on-surface-variant hover:text-white transition-colors font-bold tracking-tight" href="index.html">Home</a>
+                <a class="text-on-surface-variant hover:text-white transition-colors font-bold tracking-tight" href="install.html">Guide</a>
+                <a class="text-primary font-bold tracking-tight" href="privacy.html">Privacy</a>
+                <a class="text-on-surface-variant hover:text-white transition-colors font-bold tracking-tight" href="mailto:support@norelapse.app">Support</a>
             </div>
-            <button class="download-btn-trigger bg-primary text-on-primary-container px-5 py-2 rounded-lg font-bold active:scale-95 transition-transform">
-                Download Now
+            <button class="download-btn-trigger bg-gradient-to-r from-primary to-primary-container text-on-primary-container px-6 py-2.5 font-bold tracking-tight rounded-md">
+                Get v1.1
             </button>
         </div>
-        <div class="bg-gradient-to-r from-transparent via-[#414754]/15 to-transparent h-[1px] w-full absolute bottom-0"></div>
     </nav>
 
-    <main class="pt-32 pb-24 px-6 max-w-7xl mx-auto">
+    <main class="pt-32 pb-24 px-6 max-w-7xl mx-auto reveal">
         <!-- Hero Banner -->
         <header class="mb-20 flex flex-col items-center text-center">
             <div class="w-20 h-20 mb-6 flex items-center justify-center rounded-full bg-surface-container-high border border-outline-variant/20 relative">
                 <span class="material-symbols-outlined text-4xl text-[#4aff8c]" style="font-variation-settings: 'FILL' 1;">shield</span>
-                <div class="absolute inset-0 bg-[#4aff8c]/10 blur-xl rounded-full"></div>
+                <div class="absolute inset-0 bg-[#4aff8c]/10 blur-xl rounded-full animate-pulse"></div>
             </div>
             <h1 class="text-3xl md:text-5xl font-black tracking-tighter text-on-surface uppercase mb-4">
-                Your Privacy is Our Architecture
+                Privacy Architecture
             </h1>
             <p class="text-on-surface-variant text-lg tracking-wide font-medium">
                 Zero-Knowledge. 100% On-Device. No Exceptions.
@@ -125,109 +125,85 @@
         </header>
 
         <div class="flex flex-col md:flex-row gap-16">
-            <!-- Sticky Sidebar -->
-            <aside class="md:w-64 flex-shrink-0">
-                <nav class="sticky top-40 flex flex-col gap-6 text-sm font-bold uppercase tracking-widest text-on-surface-variant/60">
-                    <a class="sidebar-active pl-4 py-1 transition-all" href="#preamble">Preamble</a>
-                    <a class="pl-4 py-1 hover:text-on-surface transition-all" href="#accessibility">Accessibility Service</a>
-                    <a class="pl-4 py-1 hover:text-on-surface transition-all" href="#package">System Integrity</a>
-                    <a class="pl-4 py-1 hover:text-on-surface transition-all" href="#retention">The Vault Logic</a>
-                </nav>
-            </aside>
-
             <!-- Content Area -->
             <div class="flex-grow space-y-24">
                 <!-- Section: Preamble -->
-                <section class="max-w-2xl" id="preamble">
-                    <h2 class="text-on-tertiary-fixed text-xs font-black tracking-[0.3em] uppercase mb-6">01. The Sovereign Protocol</h2>
+                <section class="max-w-2xl reveal delay-100" id="preamble">
+                    <h2 class="text-primary text-xs font-black tracking-[0.3em] uppercase mb-6">01. Digital Sovereignty</h2>
                     <p class="text-on-surface text-lg leading-relaxed mb-6">
                         NoRelapse operates as a sovereign vault. We believe that recovery data is the most sensitive information a human can generate. 
                     </p>
-                    <blockquote class="border-l-4 border-primary pl-6 my-8 italic text-on-surface-variant/80 text-xl font-headline">
+                    <blockquote class="border-l-4 border-primary pl-6 my-8 italic text-on-surface-variant/80 text-xl">
                         "If we don't own your data, we can't lose it. If we can't see your data, we can't judge it."
                     </blockquote>
-                    <p class="text-on-surface-variant leading-relaxed">
-                        Our architecture is designed to prevent data leakage at the hardware level. Every decision we make prioritizes your digital autonomy over our analytics.
-                    </p>
                 </section>
 
                 <!-- Section: Accessibility Service -->
-                <section class="scroll-mt-32" id="accessibility">
+                <section class="scroll-mt-32 reveal" id="accessibility">
                     <h2 class="text-primary text-xs font-black tracking-[0.3em] uppercase mb-8">02. Technical Implementation</h2>
-                    <div class="bg-surface-container-low p-8 md:p-12 border border-primary/20 glow-blue rounded-xl">
+                    <div class="glass-card p-12 relative overflow-hidden rounded-3xl">
                         <div class="flex items-center gap-4 mb-8">
                             <span class="material-symbols-outlined text-primary text-3xl">accessible</span>
-                            <h3 class="text-2xl font-bold tracking-tight">Accessibility Service Usage</h3>
+                            <h3 class="text-2xl font-bold tracking-tight uppercase">Accessibility Service</h3>
                         </div>
                         <p class="text-on-surface-variant text-base mb-10 leading-relaxed">
-                            NoRelapse utilizes the **AccessibilityService API** to enable its core "Guardian Shield" protocol. This service is mandatory for identifying and intercepting browser-based triggers in real-time.
+                            NoRelapse utilizes the **AccessibilityService API** to enable the Guardian Shield protocol. This is mandatory for real-time interception of browser-based triggers.
                         </p>
-                        <div class="grid md:grid-cols-1 gap-6 mb-10">
-                            <div class="flex gap-4 items-start p-4 bg-surface-container-high/50 rounded-lg">
-                                <span class="material-symbols-outlined text-[#4aff8c]">check_circle</span>
+                        <div class="grid gap-6 mb-10">
+                            <div class="flex gap-4 items-start p-4 bg-white/5 rounded-xl reveal delay-100">
+                                <span class="material-symbols-outlined text-primary">check_circle</span>
                                 <div>
                                     <h4 class="font-bold text-on-surface mb-1 uppercase text-xs tracking-widest">URL Filtering</h4>
-                                    <p class="text-on-surface-variant text-sm leading-snug">Real-time inspection of browser addresses against your local blocklist to prevent unauthorized access to high-risk domains.</p>
+                                    <p class="text-on-surface-variant text-sm leading-snug">Local inspection of browser addresses against your private blocklist.</p>
                                 </div>
                             </div>
-                            <div class="flex gap-4 items-start p-4 bg-surface-container-high/50 rounded-lg">
-                                <span class="material-symbols-outlined text-[#4aff8c]">check_circle</span>
+                            <div class="flex gap-4 items-start p-4 bg-white/5 rounded-xl reveal delay-200">
+                                <span class="material-symbols-outlined text-primary">check_circle</span>
                                 <div>
-                                    <h4 class="font-bold text-on-surface mb-1 uppercase text-xs tracking-widest">Keyword Detection</h4>
-                                    <p class="text-on-surface-variant text-sm leading-snug">Identification of user-defined triggering terms within browser search fields to intercept relapses before they occur.</p>
-                                </div>
-                            </div>
-                            <div class="flex gap-4 items-start p-4 bg-surface-container-high/50 rounded-lg">
-                                <span class="material-symbols-outlined text-[#4aff8c]">check_circle</span>
-                                <div>
-                                    <h4 class="font-bold text-on-surface mb-1 uppercase text-xs tracking-widest">Real-time Defense</h4>
-                                    <p class="text-on-surface-variant text-sm leading-snug">Automatic redirection or display of recovery overlays when a breach of protocol is detected.</p>
+                                    <h4 class="font-bold text-on-surface mb-1 uppercase text-xs tracking-widest">Keyword Interception</h4>
+                                    <p class="text-on-surface-variant text-sm leading-snug">Detection of trigger terms within search fields before processing.</p>
                                 </div>
                             </div>
                         </div>
-                        <div class="bg-primary/5 border-l-4 border-primary p-6 flex items-center gap-6">
+                        <div class="bg-primary/10 border-l-4 border-primary p-6 flex items-center gap-6 rounded-r-xl">
                             <span class="material-symbols-outlined text-primary text-4xl">verified_user</span>
                             <p class="text-primary font-black text-sm tracking-wide uppercase">
-                                100% Local Processing: Data never leaves your hardware.
+                                100% On-Device Analysis: Zero Cloud Transmission.
                             </p>
                         </div>
                     </div>
                 </section>
 
                 <!-- Section: Package Management -->
-                <section class="scroll-mt-32" id="package">
-                    <h2 class="text-on-tertiary-fixed text-xs font-black tracking-[0.3em] uppercase mb-8">03. System Integrity</h2>
-                    <div class="bg-surface-container p-10 rounded-xl border border-outline-variant/10 flex flex-col md:flex-row items-center gap-10">
-                        <div class="w-20 h-20 rounded-2xl bg-surface-container-highest flex items-center justify-center text-primary border border-primary/20 shrink-0">
+                <section class="scroll-mt-32 reveal" id="package">
+                    <h2 class="text-primary text-xs font-black tracking-[0.3em] uppercase mb-8">03. Update Protocol</h2>
+                    <div class="glass-card p-10 rounded-2xl flex flex-col md:flex-row items-center gap-10">
+                        <div class="w-20 h-20 rounded-2xl bg-primary/10 flex items-center justify-center text-primary border border-primary/20 shrink-0">
                             <span class="material-symbols-outlined text-4xl">inventory_2</span>
                         </div>
                         <div>
-                            <h3 class="text-2xl font-black mb-4 uppercase tracking-tight">Request Install Packages</h3>
+                            <h3 class="text-2xl font-black mb-4 uppercase tracking-tight">Package Installation</h3>
                             <p class="text-on-surface-variant leading-relaxed text-base">
-                                NoRelapse utilizes this permission solely to facilitate **secure, direct self-updates**. This ensures your Guardian Shield always remains fortified with the latest protection layers and security patches.
+                                NoRelapse utilizes this permission solely to facilitate **secure, direct self-updates**, ensuring your Guardian Shield remains current without manual intervention.
                             </p>
                         </div>
                     </div>
                 </section>
 
                 <!-- Section: Data Retention -->
-                <section class="scroll-mt-32" id="retention">
-                    <h2 class="text-on-tertiary-fixed text-xs font-black tracking-[0.3em] uppercase mb-8">04. The Vault Logic</h2>
+                <section class="scroll-mt-32 reveal" id="retention">
+                    <h2 class="text-primary text-xs font-black tracking-[0.3em] uppercase mb-8">04. The Vault Logic</h2>
                     <div class="grid md:grid-cols-2 gap-8 text-center sm:text-left">
-                        <div class="bg-[#0e0e0e] p-10 rounded-xl border border-tertiary/20 relative overflow-hidden group">
-                            <h3 class="text-tertiary font-black text-xl uppercase mb-4 tracking-tighter">Zero-Knowledge Architecture</h3>
-                            <p class="text-on-surface-variant text-sm leading-relaxed mb-6">
-                                Your streaks and milestones are encrypted using device-specific keys. We maintain zero servers for storing your personal recovery data.
-                            </p>
-                            <div class="flex items-center justify-center sm:justify-start gap-3 text-on-surface font-black text-xs uppercase tracking-widest">
-                                <span class="material-symbols-outlined text-tertiary">lock</span>
-                                0 Cloud Storage
-                            </div>
-                        </div>
-                        <div class="bg-surface-container-low p-10 rounded-xl border border-outline-variant/10">
-                            <h3 class="font-black text-xl mb-4 uppercase">Hardware-Level Wipe</h3>
+                        <div class="bg-[#0e0e0e] p-10 rounded-xl border border-white/5 relative overflow-hidden group">
+                            <h3 class="text-white font-black text-xl uppercase mb-4 tracking-tighter">Zero-Knowledge</h3>
                             <p class="text-on-surface-variant text-sm leading-relaxed">
-                                Uninstalling NoRelapse initiates an immediate purge of the application sandbox. No fragments or "shadow profiles" are maintained.
+                                Your streaks and progress are encrypted using device-specific keys. We maintain zero servers for your personal recovery data.
+                            </p>
+                        </div>
+                        <div class="bg-[#0e0e0e] p-10 rounded-xl border border-white/5">
+                            <h3 class="font-black text-xl mb-4 uppercase">Device Purge</h3>
+                            <p class="text-on-surface-variant text-sm leading-relaxed">
+                                Uninstalling NoRelapse initiates an immediate, irreversible purge of the application sandbox and all associated data.
                             </p>
                         </div>
                     </div>
@@ -237,21 +213,36 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-[#0e0e0e] w-full py-16 border-t border-white/5">
-        <div class="flex flex-col md:flex-row justify-between items-center w-full px-8 max-w-7xl mx-auto gap-10">
-            <div class="text-2xl font-black text-white uppercase tracking-tighter italic">
-                NoRelapse<span class="text-on-surface-variant font-normal lowercase not-italic opacity-50 ml-1">.vault</span>
+    <footer class="bg-[#0e0e0e] border-t border-white/5 py-20 px-8">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-1 lg:grid-cols-3 gap-12 items-center">
+            <div class="text-2xl font-black text-white uppercase text-center lg:text-left">NoRelapse</div>
+            <div class="flex justify-center gap-10">
+                <a class="text-xs font-black uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="privacy.html">Privacy Policy</a>
+                <a class="text-xs font-black uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="terms.html">Terms</a>
+                <a class="text-xs font-black uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="install.html">Install Guide</a>
+                <a class="text-xs font-black uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="mailto:support@norelapse.app">Contact</a>
             </div>
-            <div class="flex flex-wrap justify-center gap-10 text-[0.7rem] font-black uppercase tracking-widest text-[#c1c6d7]">
-                <a class="hover:text-primary transition-colors" href="terms.html">Terms of Service</a>
-                <a class="text-primary" href="privacy.html">Privacy Policy</a>
-                <a class="hover:text-primary transition-colors" href="mailto:developer@norelapse.app">Support</a>
-            </div>
-            <div class="text-right text-[0.65rem] font-black uppercase tracking-widest text-on-surface-variant opacity-60">
-                © 2026 NoRelapse. The Sovereign Vault.
+            <div class="text-center lg:text-right text-[0.65rem] font-black uppercase tracking-widest text-on-surface-variant opacity-60 leading-relaxed">
+                © 2026 NoRelapse Ecosystem.<br/>Reclaim Your Sovereignty.
             </div>
         </div>
     </footer>
+
+    <script>
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('active');
+            });
+        }, observerOptions);
+        document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+        
+        document.querySelectorAll('.download-btn-trigger').forEach(btn => {
+            btn.onclick = () => window.location.href = 'https://ovjbezznsqvunfshvsqs.supabase.co/storage/v1/object/public/app-releases/app-release.apk';
+        });
+    </script>
+</body>
+</html>
     <script type="module" src="./src/main.ts"></script>
 </body>
 </html>

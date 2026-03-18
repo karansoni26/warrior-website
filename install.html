@@ -85,24 +85,24 @@
     <div class="noise-overlay fixed inset-0 pointer-events-none z-50"></div>
     
     <!-- TopAppBar Navigation -->
-    <header class="fixed top-0 w-full z-50 bg-[#131313] dark:bg-[#0e0e0e] backdrop-blur-md bg-opacity-90 border-b border-[#414754]/15 shadow-[0_4px_30px_rgba(173,199,255,0.05)]">
+    <header class="fixed top-0 w-full z-50 bg-[#131313]/80 backdrop-blur-xl border-b border-white/5">
         <nav class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
-            <div class="text-xl font-black uppercase tracking-[0.2em] text-[#adc7ff] font-['Inter']">
+            <div class="flex items-center gap-2 text-2xl font-black text-white uppercase tracking-tighter">
                 NoRelapse
             </div>
             <div class="hidden md:flex gap-8 items-center">
-                <a class="text-[#c1c6d7] hover:text-[#e5e2e1] transition-all duration-200 font-bold" href="index.html">Home</a>
-                <a class="text-[#adc7ff] border-b-2 border-[#adc7ff] pb-1 font-bold" href="install.html">Guide</a>
-                <a class="text-[#c1c6d7] hover:text-[#e5e2e1] transition-all duration-200" href="privacy.html">Privacy</a>
-                <a class="text-[#c1c6d7] hover:text-[#e5e2e1] transition-all duration-200" href="mailto:developer@norelapse.app">Support</a>
+                <a class="text-on-surface-variant hover:text-white transition-colors font-bold tracking-tight" href="index.html">Home</a>
+                <a class="text-primary font-bold tracking-tight" href="install.html">Guide</a>
+                <a class="text-on-surface-variant hover:text-white transition-colors font-bold tracking-tight" href="privacy.html">Privacy</a>
+                <a class="text-on-surface-variant hover:text-white transition-colors font-bold tracking-tight" href="mailto:support@norelapse.app">Support</a>
             </div>
-            <button class="download-btn-trigger bg-primary text-on-primary-container px-6 py-2 rounded-lg font-bold active:scale-95 transition-transform">
+            <button class="download-btn-trigger bg-gradient-to-r from-primary to-primary-container text-on-primary-container px-6 py-2.5 font-bold tracking-tight rounded-md">
                 Get v1.1
             </button>
         </nav>
     </header>
 
-    <main class="pt-24 pb-32 max-w-5xl mx-auto px-6">
+    <main class="pt-24 pb-32 max-w-5xl mx-auto px-6 reveal">
         <!-- Hero Banner -->
         <section class="mt-12 mb-20 text-center">
             <h1 class="text-4xl md:text-6xl font-black tracking-tighter text-on-surface mb-4 uppercase">
@@ -113,7 +113,7 @@
             </p>
             
             <!-- Visual Progress Bar -->
-            <div class="mt-16 flex items-center justify-between max-w-3xl mx-auto relative px-4">
+            <div class="mt-16 flex items-center justify-between max-w-3xl mx-auto relative px-4 reveal delay-100">
                 <div class="absolute top-1/2 left-0 w-full h-0.5 bg-surface-container-high -translate-y-1/2 -z-10"></div>
                 <div class="flex flex-col items-center gap-2">
                     <div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-on-primary-container font-black text-lg shadow-[0_0_20px_rgba(173,199,255,0.3)]">1</div>
@@ -131,7 +131,7 @@
         </section>
 
         <!-- Step 1: Secure Download -->
-        <section class="mb-32 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+        <section class="mb-32 grid grid-cols-1 md:grid-cols-2 gap-16 items-center reveal delay-200">
             <div class="order-2 md:order-1">
                 <div class="text-7xl font-black text-primary opacity-10 mb-[-1.5rem] select-none italic text-right md:text-left pr-4">STEP 01</div>
                 <h2 class="text-3xl font-black tracking-tight mb-4 uppercase italic">Secure Download</h2>
@@ -155,7 +155,7 @@
                     </div>
                     <div class="flex justify-end gap-6 items-center">
                         <div class="text-on-surface-variant font-bold text-xs uppercase opacity-50">Cancel</div>
-                        <div class="px-6 py-2.5 bg-primary/20 text-primary rounded-lg font-black text-xs uppercase tracking-widest border border-primary/30 relative">
+                        <div class="download-btn-trigger px-6 py-2.5 bg-primary/20 text-primary rounded-lg font-black text-xs uppercase tracking-widest border border-primary/30 relative cursor-pointer">
                             Download anyway
                             <div class="absolute -top-12 -right-2 animate-bounce">
                                 <span class="material-symbols-outlined text-4xl text-primary">south</span>
@@ -167,7 +167,7 @@
         </section>
 
         <!-- Step 2: System Authorization -->
-        <section class="mb-32 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+        <section class="mb-32 grid grid-cols-1 md:grid-cols-2 gap-16 items-center reveal">
             <div>
                 <div class="relative bg-surface-container-high p-8 rounded-2xl border border-outline-variant/15 shadow-2xl backdrop-blur-xl">
                     <div class="flex items-center justify-between mb-8">
@@ -177,7 +177,7 @@
                         </div>
                         <span class="material-symbols-outlined text-on-surface-variant text-sm">close</span>
                     </div>
-                    <div class="flex items-center justify-between p-5 bg-surface-container-low rounded-xl border border-primary/20 glow-blue">
+                    <div class="flex items-center justify-between p-5 bg-surface-container-low rounded-xl border border-primary/20">
                         <span class="text-sm font-black uppercase tracking-tight">Allow from this source</span>
                         <div class="w-10 h-5 bg-primary rounded-full relative">
                             <div class="absolute right-0.5 top-0.5 w-4 h-4 bg-on-primary-container rounded-full"></div>
@@ -203,7 +203,7 @@
         </section>
 
         <!-- Step 3: Play Protect -->
-        <section class="mb-32 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+        <section class="mb-32 grid grid-cols-1 md:grid-cols-2 gap-16 items-center reveal">
             <div class="order-2 md:order-1">
                 <div class="text-7xl font-black text-primary opacity-10 mb-[-1.5rem] select-none italic text-right md:text-left pr-4">STEP 03</div>
                 <h2 class="text-3xl font-black tracking-tight mb-4 uppercase italic">Play Protect Override</h2>
@@ -233,7 +233,7 @@
                     </div>
                     <div class="flex flex-col gap-4">
                         <div class="text-primary font-black text-[0.65rem] uppercase tracking-[0.2em] py-2">More details</div>
-                        <div class="flex justify-between items-center bg-primary/20 p-5 rounded-xl border border-primary/40">
+                        <div class="flex justify-between items-center bg-primary/20 p-5 rounded-xl border border-primary/40 cursor-pointer download-btn-trigger">
                             <span class="text-primary font-black text-xs uppercase tracking-widest">Install anyway</span>
                             <span class="material-symbols-outlined text-primary text-sm">arrow_forward</span>
                         </div>
@@ -244,48 +244,57 @@
         </section>
 
         <!-- Bottom CTA -->
-        <section class="mt-24 text-center">
+        <section class="mt-24 text-center reveal">
             <button class="download-btn-trigger bg-primary text-on-primary-container font-black py-6 px-16 rounded-2xl text-xl uppercase tracking-[0.2em] shadow-[0_20px_60px_rgba(173,199,255,0.2)] hover:scale-105 active:scale-95 transition-all duration-300">
                 DOWNLOAD APK NOW
             </button>
             <p class="mt-8 text-on-surface-variant text-xs font-black uppercase tracking-[0.3em] opacity-60">
-                Support: <span class="text-primary underline decoration-primary/30 font-black">developer@norelapse.app</span>
+                Support: <span class="text-primary underline decoration-primary/30 font-black">support@norelapse.app</span>
             </p>
         </section>
     </main>
 
     <!-- Footer -->
-    <footer class="bg-[#0e0e0e] w-full py-16 px-8 border-t border-white/5">
-        <div class="flex flex-col md:flex-row justify-between items-center gap-10 max-w-7xl mx-auto">
-            <div class="text-2xl font-black text-white uppercase tracking-tighter italic">
-                NoRelapse<span class="text-on-surface-variant font-normal lowercase not-italic opacity-50 ml-1">.vault</span>
+    <footer class="bg-[#0e0e0e] border-t border-white/5 py-20 px-8">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-1 lg:grid-cols-3 gap-12 items-center">
+            <div class="text-2xl font-black text-white uppercase text-center lg:text-left">NoRelapse</div>
+            <div class="flex justify-center gap-10">
+                <a class="text-xs font-black uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="privacy.html">Privacy Policy</a>
+                <a class="text-xs font-black uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="terms.html">Terms</a>
+                <a class="text-xs font-black uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="install.html">Install Guide</a>
+                <a class="text-xs font-black uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="mailto:support@norelapse.app">Contact</a>
             </div>
-            <div class="flex flex-wrap justify-center gap-10 text-[0.7rem] font-black uppercase tracking-widest text-[#c1c6d7]">
-                <a class="hover:text-primary transition-colors" href="terms.html">Terms of Service</a>
-                <a class="hover:text-primary transition-colors" href="privacy.html">Privacy Policy</a>
-                <a class="hover:text-primary transition-colors" href="mailto:developer@norelapse.app">Support</a>
-            </div>
-            <div class="text-[0.65rem] font-black uppercase tracking-widest text-on-surface-variant opacity-60">
-                © 2026 NoRelapse. The Sovereign Vault.
+            <div class="text-center lg:text-right text-[0.65rem] font-black uppercase tracking-widest text-on-surface-variant opacity-60 leading-relaxed">
+                © 2026 NoRelapse Ecosystem.<br/>Reclaim Your Sovereignty.
             </div>
         </div>
     </footer>
 
-    <!-- BottomNavBar for Mobile -->
-    <nav class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-6 pt-3 bg-[#0e0e0e]/95 backdrop-blur-xl border-t border-white/5 z-50">
-        <a href="install.html" class="flex flex-col items-center justify-center text-primary">
-            <span class="material-symbols-outlined">install_mobile</span>
-            <span class="text-[9px] font-black uppercase tracking-widest mt-1">Guide</span>
-        </a>
-        <a href="privacy.html" class="flex flex-col items-center justify-center text-on-surface-variant opacity-60">
-            <span class="material-symbols-outlined">verified_user</span>
-            <span class="text-[9px] font-black uppercase tracking-widest mt-1">Security</span>
-        </a>
-        <a href="mailto:developer@norelapse.app" class="flex flex-col items-center justify-center text-on-surface-variant opacity-60">
-            <span class="material-symbols-outlined">contact_support</span>
-            <span class="text-[9px] font-black uppercase tracking-widest mt-1">Support</span>
-        </a>
-    </nav>
+    <script>
+        // Intersection Observer for Scroll Animations
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach((el) => {
+            observer.observe(el);
+        });
+
+        // Download Button Logic
+        document.querySelectorAll('.download-btn-trigger').forEach(btn => {
+            btn.onclick = () => {
+                window.location.href = 'https://ovjbezznsqvunfshvsqs.supabase.co/storage/v1/object/public/app-releases/app-release.apk';
+            };
+        });
+    </script>
+</body>
+</html>
+
 
     <script type="module" src="./src/main.ts"></script>
 </body>

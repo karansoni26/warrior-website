@@ -94,28 +94,30 @@
     <div class="noise-overlay"></div>
     
     <!-- TopNavBar -->
-    <nav class="fixed top-0 w-full z-50 bg-[#131313]/80 backdrop-blur-xl border-b border-[#414754]/15 shadow-[0_8px_32_rgba(173,199,255,0.08)]">
-        <div class="flex justify-between items-center px-6 h-16 w-full max-w-7xl mx-auto">
-            <div class="text-xl font-black tracking-tighter text-[#adc7ff] uppercase">NoRelapse</div>
-            <div class="hidden md:flex items-center gap-8">
-                <a class="text-[#c1c6d7] hover:text-[#adc7ff] transition-colors font-label font-bold uppercase tracking-widest text-[0.6875rem]" href="index.html">Home</a>
-                <a class="text-[#c1c6d7] hover:text-[#adc7ff] transition-colors font-label font-bold uppercase tracking-widest text-[0.6875rem]" href="install.html">Guide</a>
-                <a class="text-[#c1c6d7] hover:text-[#adc7ff] transition-colors font-label font-bold uppercase tracking-widest text-[0.6875rem]" href="privacy.html">Privacy</a>
-                <a class="text-[#adc7ff] border-b-2 border-[#adc7ff] py-1 font-label font-bold uppercase tracking-widest text-[0.6875rem]" href="terms.html">Terms</a>
+    <nav class="fixed top-0 w-full z-50 bg-[#131313]/80 backdrop-blur-xl border-b border-white/5">
+        <div class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
+            <div class="flex items-center gap-2 text-2xl font-black text-white uppercase tracking-tighter">
+                NoRelapse
             </div>
-            <div class="flex items-center gap-4">
-                <button class="download-btn-trigger bg-primary text-on-primary-container px-4 py-1.5 rounded-lg font-black text-[0.6875rem] uppercase tracking-widest active:scale-95 transition-transform">Get v1.1</button>
+            <div class="hidden md:flex gap-8 items-center">
+                <a class="text-on-surface-variant hover:text-white transition-colors font-bold tracking-tight" href="index.html">Home</a>
+                <a class="text-on-surface-variant hover:text-white transition-colors font-bold tracking-tight" href="install.html">Guide</a>
+                <a class="text-on-surface-variant hover:text-white transition-colors font-bold tracking-tight" href="privacy.html">Privacy</a>
+                <a class="text-on-surface-variant hover:text-white transition-colors font-bold tracking-tight" href="mailto:support@norelapse.app">Support</a>
             </div>
+            <button class="download-btn-trigger bg-gradient-to-r from-primary to-primary-container text-on-primary-container px-6 py-2.5 font-bold tracking-tight rounded-md">
+                Get v1.1
+            </button>
         </div>
     </nav>
 
-    <main class="pt-32 pb-24 px-6 max-w-7xl mx-auto">
+    <main class="pt-32 pb-24 px-6 max-w-7xl mx-auto reveal">
         <!-- Hero Header -->
         <header class="mb-20">
             <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 border-l-4 border-primary pl-8 py-2">
                 <div>
-                    <div class="inline-flex items-center gap-2 px-3 py-1 bg-surface-container-high rounded-lg mb-4">
-                        <span class="w-2 h-2 rounded-full bg-tertiary"></span>
+                    <div class="inline-flex items-center gap-2 px-3 py-1 bg-white/5 rounded-lg mb-4">
+                        <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
                         <span class="text-[0.6875rem] font-bold tracking-widest uppercase text-on-surface-variant">Last updated: March 2026</span>
                     </div>
                     <h1 class="text-5xl md:text-7xl font-black tracking-tighter text-on-surface mb-4 uppercase italic">Terms of <span class="text-primary">Service</span></h1>
@@ -125,35 +127,11 @@
         </header>
 
         <div class="flex flex-col lg:flex-row gap-16">
-            <!-- SideNavBar -->
-            <aside class="hidden lg:block sticky top-32 h-fit w-64 shrink-0">
-                <div class="flex flex-col py-4">
-                    <div class="mb-8 px-4">
-                        <p class="text-[#e9c400] font-bold uppercase tracking-widest text-[0.6875rem]">Legal Framework</p>
-                        <p class="text-on-surface-variant text-[0.6875rem] opacity-60 mt-1">v1.1 Sovereign</p>
-                    </div>
-                    <nav class="space-y-1 text-on-surface-variant">
-                        <a class="hover:text-primary px-4 py-3 flex items-center gap-3 transition-all duration-300 ease-in-out font-label font-bold uppercase tracking-widest text-[0.6875rem]" href="#intro">
-                            <span class="material-symbols-outlined text-sm">info</span> Introduction
-                        </a>
-                        <a class="hover:text-primary px-4 py-3 flex items-center gap-3 transition-all duration-300 ease-in-out font-label font-bold uppercase tracking-widest text-[0.6875rem]" href="#security">
-                            <span class="material-symbols-outlined text-sm">security</span> Guardian Shield
-                        </a>
-                        <a class="hover:text-primary px-4 py-3 flex items-center gap-3 transition-all duration-300 ease-in-out font-label font-bold uppercase tracking-widest text-[0.6875rem]" href="#conduct">
-                            <span class="material-symbols-outlined text-sm">gavel</span> User Conduct
-                        </a>
-                        <a class="hover:text-primary px-4 py-3 flex items-center gap-3 transition-all duration-300 ease-in-out font-label font-bold uppercase tracking-widest text-[0.6875rem]" href="#termination">
-                            <span class="material-symbols-outlined text-sm">cancel</span> Termination
-                        </a>
-                    </nav>
-                </div>
-            </aside>
-
             <!-- Content Area -->
             <div class="flex-1 space-y-20">
                 <!-- Section 1: Introduction -->
-                <section class="relative group" id="intro">
-                    <div class="relative bg-surface-container-low border border-primary/10 p-8 md:p-12 rounded-xl backdrop-blur-md">
+                <section class="relative group reveal delay-100" id="intro">
+                    <div class="glass-card p-12 rounded-3xl">
                         <div class="flex items-center gap-4 mb-8">
                             <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
                                 <span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">info</span>
@@ -168,16 +146,16 @@
                 </section>
 
                 <!-- Section 2: Guardian Shield -->
-                <section class="relative" id="security">
-                    <div class="bg-surface-container-high p-8 md:p-12 rounded-xl border border-outline-variant/15 shadow-2xl">
+                <section class="relative reveal" id="security">
+                    <div class="glass-card p-12 rounded-3xl border border-white/5">
                         <div class="flex items-center gap-4 mb-8">
-                            <div class="w-12 h-12 rounded-lg bg-tertiary/10 flex items-center justify-center">
-                                <span class="material-symbols-outlined text-tertiary" style="font-variation-settings: 'FILL' 1;">security</span>
+                            <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
+                                <span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">security</span>
                             </div>
-                            <h2 class="text-2xl font-black tracking-tight text-on-surface uppercase">02. The Guardian Shield Protocol</h2>
+                            <h2 class="text-2xl font-black tracking-tight text-on-surface uppercase">02. Guardian Shield Protocol</h2>
                         </div>
                         <div class="space-y-8">
-                            <div class="p-6 bg-primary/5 border-l-4 border-primary rounded-r-lg">
+                            <div class="p-6 bg-primary/10 border-l-4 border-primary rounded-r-xl">
                                 <p class="text-lg font-black text-primary uppercase tracking-tight">Technical Acknowledgment</p>
                                 <p class="text-on-surface-variant mt-2 leading-relaxed">You explicitly acknowledge that the **AccessibilityService API** is required for the advanced interception and blocking capabilities of the NoRelapse protocol.</p>
                             </div>
@@ -187,13 +165,13 @@
                 </section>
 
                 <!-- Section 3: User Conduct -->
-                <section id="conduct">
-                    <div class="bg-surface-container-low p-8 md:p-12 rounded-xl border-l-4 border-tertiary">
+                <section class="reveal" id="conduct">
+                    <div class="glass-card p-12 rounded-3xl border-l-4 border-primary">
                         <div class="flex items-center gap-4 mb-8">
-                            <div class="w-12 h-12 rounded-lg bg-surface-container-highest flex items-center justify-center text-on-surface">
+                            <div class="w-12 h-12 rounded-lg bg-white/5 flex items-center justify-center text-on-surface">
                                 <span class="material-symbols-outlined">gavel</span>
                             </div>
-                            <h2 class="text-2xl font-black tracking-tight text-on-surface uppercase font-headline">03. Software License & Conduct</h2>
+                            <h2 class="text-2xl font-black tracking-tight text-on-surface uppercase font-headline">03. License & Conduct</h2>
                         </div>
                         <div class="grid md:grid-cols-2 gap-10">
                             <div class="space-y-6">
@@ -201,18 +179,18 @@
                                 <p class="text-on-surface-variant text-sm leading-relaxed">NoRelapse grants a non-transferable license to use our signed binaries. This license is restricted to personal recovery and personal discipline management. Redistribution or unauthorized binary modification is strictly prohibited.</p>
                             </div>
                             <div class="space-y-6">
-                                <h3 class="font-black text-error uppercase text-[0.7rem] tracking-[0.2em] italic">Binary Integrity</h3>
-                                <p class="text-on-surface-variant text-sm leading-relaxed font-medium capitalize">Any attempts to reverse-engineer, decompile, or bypass the core encryption of the NoRelapse vault will result in immediate termination of access to our services and community.</p>
+                                <h3 class="font-black text-primary uppercase text-[0.7rem] tracking-[0.2em] italic">Binary Integrity</h3>
+                                <p class="text-on-surface-variant text-sm leading-relaxed font-medium">Any attempts to reverse-engineer, decompile, or bypass the core encryption of the NoRelapse vault will result in immediate termination of access to our services and community.</p>
                             </div>
                         </div>
                     </div>
                 </section>
 
                 <!-- Section 4: Termination -->
-                <section class="bg-surface-container-low p-8 md:p-12 rounded-xl border border-outline-variant/15" id="termination">
+                <section class="glass-card p-12 rounded-3xl reveal" id="termination">
                     <div class="flex items-center gap-4 mb-8">
-                        <div class="w-12 h-12 rounded-lg bg-error-container/20 flex items-center justify-center">
-                            <span class="material-symbols-outlined text-error">cancel</span>
+                        <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
+                            <span class="material-symbols-outlined text-primary">cancel</span>
                         </div>
                         <h2 class="text-2xl font-black tracking-tight text-on-surface uppercase">04. Limitation of Liability</h2>
                     </div>
@@ -226,23 +204,36 @@
     </main>
 
     <!-- Footer -->
-    <footer class="w-full py-16 border-t border-white/5 bg-[#0e0e0e]">
-        <div class="max-w-7xl mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-10">
-            <div class="flex flex-col items-center md:items-start">
-                <div class="text-white text-2xl font-black tracking-tighter uppercase italic mb-2">NoRelapse</div>
-                <p class="font-['Inter'] text-[0.65rem] tracking-[0.2em] uppercase text-on-surface-variant opacity-60">© 2026 Sovereign Vault Systems.</p>
+    <footer class="bg-[#0e0e0e] border-t border-white/5 py-20 px-8">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-1 lg:grid-cols-3 gap-12 items-center">
+            <div class="text-2xl font-black text-white uppercase text-center lg:text-left">NoRelapse</div>
+            <div class="flex justify-center gap-10">
+                <a class="text-xs font-black uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="privacy.html">Privacy Policy</a>
+                <a class="text-xs font-black uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="terms.html">Terms</a>
+                <a class="text-xs font-black uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="install.html">Install Guide</a>
+                <a class="text-xs font-black uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="mailto:support@norelapse.app">Contact</a>
             </div>
-            <div class="flex flex-wrap justify-center gap-10 text-[0.7rem] font-black uppercase tracking-widest text-[#c1c6d7]">
-                <a class="hover:text-primary transition-colors" href="privacy.html">Privacy Protocol</a>
-                <a class="text-primary" href="terms.html">Terms</a>
-                <a class="hover:text-primary transition-colors" href="install.html">Security Guide</a>
-                <a class="hover:text-primary transition-colors" href="mailto:developer@norelapse.app">Support</a>
-            </div>
-            <div class="text-right text-[0.65rem] font-black uppercase tracking-widest text-on-surface-variant opacity-40">
-                Contact: <span class="text-primary lowercase opacity-100">developer@norelapse.app</span>
+            <div class="text-center lg:text-right text-[0.65rem] font-black uppercase tracking-widest text-on-surface-variant opacity-60 leading-relaxed">
+                © 2026 NoRelapse Ecosystem.<br/>Reclaim Your Sovereignty.
             </div>
         </div>
     </footer>
+
+    <script>
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('active');
+            });
+        }, observerOptions);
+        document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+        
+        document.querySelectorAll('.download-btn-trigger').forEach(btn => {
+            btn.onclick = () => window.location.href = 'https://ovjbezznsqvunfshvsqs.supabase.co/storage/v1/object/public/app-releases/app-release.apk';
+        });
+    </script>
+</body>
+</html>
     <script type="module" src="./src/main.ts"></script>
 </body>
 </html>
