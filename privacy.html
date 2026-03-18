@@ -1,245 +1,252 @@
 <!DOCTYPE html>
-<html class="dark" lang="en">
+<html lang="en">
 <head>
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>Privacy Policy | NoRelapse</title>
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-    <script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        "tertiary-fixed": "#ffe16d",
-                        "on-secondary": "#313030",
-                        "outline-variant": "#414754",
-                        "on-primary-fixed": "#001a41",
-                        "secondary": "#c8c6c5",
-                        "surface-dim": "#131313",
-                        "on-tertiary-fixed-variant": "#544600",
-                        "on-secondary-fixed": "#1c1b1b",
-                        "on-secondary-fixed-variant": "#474746",
-                        "on-error": "#690005",
-                        "secondary-fixed-dim": "#c8c6c5",
-                        "primary-fixed": "#d8e2ff",
-                        "surface-bright": "#3a3939",
-                        "on-surface": "#e5e2e1",
-                        "surface-container": "#201f1f",
-                        "on-background": "#e5e2e1",
-                        "on-tertiary-container": "#4c3f00",
-                        "on-tertiary-fixed": "#221b00",
-                        "inverse-surface": "#e5e2e1",
-                        "on-primary-fixed-variant": "#004493",
-                        "tertiary": "#e9c400",
-                        "on-error-container": "#ffdad6",
-                        "primary": "#adc7ff",
-                        "secondary-container": "#474746",
-                        "primary-container": "#4a8eff",
-                        "surface-container-low": "#1c1b1b",
-                        "inverse-primary": "#005bc0",
-                        "secondary-fixed": "#e5e2e1",
-                        "surface-container-high": "#2a2a2a",
-                        "surface-tint": "#adc7ff",
-                        "surface-container-highest": "#353534",
-                        "surface": "#131313",
-                        "tertiary-fixed-dim": "#e9c400",
-                        "background": "#131313",
-                        "on-primary-container": "#00285b",
-                        "on-secondary-container": "#b7b5b4",
-                        "on-surface-variant": "#c1c6d7",
-                        "inverse-on-surface": "#313030",
-                        "tertiary-container": "#c9a900",
-                        "primary-fixed-dim": "#adc7ff",
-                        "surface-variant": "#353534",
-                        "outline": "#8b90a0",
-                        "error-container": "#93000a",
-                        "surface-container-lowest": "#0e0e0e",
-                        "on-tertiary": "#3a3000",
-                        "on-primary": "#002e68",
-                        "error": "#ffb4ab"
-                    },
-                    fontFamily: {
-                        "headline": ["Inter"],
-                        "body": ["Inter"],
-                        "label": ["Inter"]
-                    },
-                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
-                },
-            },
-        }
-    </script>
-    <style>
-        body {
-            background-color: #131313;
-            color: #e5e2e1;
-            font-family: 'Inter', sans-serif;
-            background-image: radial-gradient(circle at 50% 0%, rgba(173, 199, 255, 0.05) 0%, transparent 50%);
-        }
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-        .glow-blue {
-            box-shadow: 0 0 20px rgba(173, 199, 255, 0.15);
-        }
-        .sidebar-active {
-            color: #adc7ff;
-            border-left: 2px solid #adc7ff;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Architecture — NoRelapse</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@300;400;600;700&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--black:#070709;--deep:#0d0d12;--vault:#111118;--steel:#1a1a24;--iron:#252530;--wire:#3a3a4a;--smoke:#6b6b7e;--ghost:#9898aa;--bone:#c8c8d4;--white:#e8e8f0;--red:#b81c1c;--rh:#e02020;--gold:#d4a017;--fd:'Bebas Neue',sans-serif;--fc:'Barlow Condensed',sans-serif;--fb:'Barlow',sans-serif}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--white);font-family:var(--fb);overflow-x:hidden;cursor:crosshair}
+body::before{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");opacity:.022}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:18px 60px;display:flex;justify-content:space-between;align-items:center;background:rgba(7,7,9,.97);border-bottom:1px solid rgba(58,58,74,.3);backdrop-filter:blur(6px)}
+.nav-logo{font-family:var(--fd);font-size:1.5rem;letter-spacing:.15em;color:var(--white);text-decoration:none}
+.nav-logo span{color:var(--rh)}
+.nav-links{display:flex;gap:26px;list-style:none}
+.nav-links a{font-family:var(--fc);font-size:.76rem;letter-spacing:.2em;text-transform:uppercase;color:var(--smoke);text-decoration:none;transition:color .2s}
+.nav-links a:hover,.nav-links a.active{color:var(--bone)}
+.nav-cta{font-family:var(--fc);font-weight:700;font-size:.8rem;letter-spacing:.22em;text-transform:uppercase;color:var(--black);background:var(--rh);padding:10px 26px;text-decoration:none;clip-path:polygon(6px 0%,100% 0%,calc(100% - 6px) 100%,0% 100%);transition:background .2s}
+.nav-cta:hover{background:#ff2a2a}
+
+.page-hero{min-height:42vh;display:flex;flex-direction:column;justify-content:flex-end;position:relative;padding:130px 60px 56px;overflow:hidden;border-bottom:1px solid var(--iron)}
+.page-hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(58,58,74,.09) 1px,transparent 1px),linear-gradient(90deg,rgba(58,58,74,.09) 1px,transparent 1px);background-size:60px 60px;mask-image:linear-gradient(to bottom,transparent,rgba(0,0,0,.5) 40%,rgba(0,0,0,.5) 100%)}
+.page-glow{position:absolute;top:-20%;right:10%;width:500px;height:500px;background:radial-gradient(circle,rgba(184,28,28,.08) 0%,transparent 65%);pointer-events:none}
+.page-label{font-family:var(--fc);font-weight:600;font-size:.72rem;letter-spacing:.45em;text-transform:uppercase;color:var(--rh);margin-bottom:16px;display:flex;align-items:center;gap:10px;position:relative;animation:fadeUp .7s ease both}
+.page-label::before{content:'';display:block;width:22px;height:1px;background:var(--rh)}
+.page-h1{font-family:var(--fd);font-size:clamp(3rem,7vw,6.5rem);line-height:.92;letter-spacing:.02em;max-width:800px;animation:fadeUp .7s .1s ease both;position:relative}
+.page-sub{font-family:var(--fc);font-size:1.1rem;font-weight:300;letter-spacing:.08em;color:var(--ghost);max-width:540px;margin-top:20px;line-height:1.6;animation:fadeUp .7s .2s ease both;position:relative}
+
+.page-body{max-width:900px;margin:0 auto;padding:72px 60px 96px}
+
+.section-block{margin-bottom:64px;padding-bottom:64px;border-bottom:1px solid var(--iron)}
+.section-block:last-child{border-bottom:none;margin-bottom:0}
+.sec-num{font-family:var(--fc);font-weight:700;font-size:.7rem;letter-spacing:.4em;text-transform:uppercase;color:var(--rh);margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.sec-num::before{content:'';display:block;width:18px;height:1px;background:var(--rh)}
+.sec-title{font-family:var(--fd);font-size:clamp(1.8rem,3.5vw,3rem);letter-spacing:.03em;color:var(--white);margin-bottom:24px}
+.sec-body{font-family:var(--fb);font-size:.95rem;font-weight:300;line-height:1.85;color:var(--ghost)}
+.sec-body p{margin-bottom:16px}
+.sec-body p:last-child{margin-bottom:0}
+.sec-body strong{color:var(--bone);font-weight:500}
+
+.pullquote{border-left:3px solid var(--rh);padding:18px 24px;background:var(--vault);margin:28px 0;font-family:var(--fc);font-size:1.1rem;font-weight:600;color:var(--white);letter-spacing:.04em;line-height:1.55}
+
+.spec-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;margin:28px 0}
+.spec-card{background:var(--vault);border:1px solid var(--iron);padding:26px 24px;position:relative;overflow:hidden;transition:background .25s}
+.spec-card:hover{background:var(--steel)}
+.spec-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--rh);transform:scaleX(0);transform-origin:left;transition:transform .35s}
+.spec-card:hover::before{transform:scaleX(1)}
+.sc-label{font-family:var(--fc);font-weight:700;font-size:.68rem;letter-spacing:.35em;text-transform:uppercase;color:var(--rh);margin-bottom:10px}
+.sc-title{font-family:var(--fc);font-weight:700;font-size:1rem;letter-spacing:.08em;text-transform:uppercase;color:var(--white);margin-bottom:8px}
+.sc-text{font-family:var(--fb);font-size:.85rem;font-weight:300;line-height:1.7;color:var(--smoke)}
+
+.permission-table{width:100%;border-collapse:collapse;margin:24px 0}
+.permission-table th{font-family:var(--fc);font-weight:700;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--smoke);padding:12px 18px;text-align:left;border-bottom:2px solid var(--iron)}
+.permission-table td{font-family:var(--fc);font-size:.88rem;padding:14px 18px;border-bottom:1px solid rgba(58,58,74,.35);color:var(--ghost);vertical-align:top}
+.permission-table td:first-child{color:var(--bone);font-weight:600}
+.permission-table tr:hover td{background:rgba(26,26,36,.4)}
+.yes{color:var(--rh);font-weight:700}
+.no{color:var(--wire)}
+
+.verdict-box{background:var(--vault);border:1px solid var(--rh);padding:28px 32px;margin:28px 0;display:flex;gap:20px;align-items:flex-start}
+.vb-icon{font-family:var(--fd);font-size:2.5rem;color:var(--rh);line-height:1;min-width:40px}
+.vb-title{font-family:var(--fc);font-weight:700;font-size:.92rem;letter-spacing:.12em;text-transform:uppercase;color:var(--white);margin-bottom:8px}
+.vb-text{font-family:var(--fb);font-size:.88rem;font-weight:300;line-height:1.72;color:var(--ghost)}
+
+footer{background:var(--black);border-top:1px solid var(--iron);padding:32px 60px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+.ft-logo{font-family:var(--fd);font-size:1.1rem;letter-spacing:.15em;color:var(--smoke)}
+.ft-logo span{color:var(--red)}
+.ft-links{display:flex;gap:24px;list-style:none;flex-wrap:wrap}
+.ft-links a{font-family:var(--fc);font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:var(--smoke);text-decoration:none;transition:color .2s}
+.ft-links a:hover{color:var(--bone)}
+.ft-copy{font-family:var(--fb);font-size:.7rem;color:var(--wire)}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+@media(max-width:860px){nav{padding:14px 20px}.nav-links{display:none}.page-hero{padding:100px 20px 44px}.page-body{padding:48px 20px 72px}.spec-grid{grid-template-columns:1fr}footer{padding:24px 20px;flex-direction:column;align-items:flex-start}}
+</style>
 </head>
-<body class="selection:bg-primary/30">
-    <!-- TopNavBar -->
-    <nav class="fixed top-0 w-full z-50 bg-[#131313]/80 backdrop-blur-xl border-b border-white/5">
-        <div class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
-            <div class="flex items-center gap-2 text-2xl font-black text-white uppercase tracking-tighter">
-                NoRelapse
-            </div>
-            <div class="hidden md:flex gap-8 items-center">
-                <a class="text-on-surface-variant hover:text-white transition-colors font-bold tracking-tight" href="index.html">Home</a>
-                <a class="text-on-surface-variant hover:text-white transition-colors font-bold tracking-tight" href="./install.html">Guide</a>
-                <a class="text-primary font-bold tracking-tight" href="./privacy.html">Privacy</a>
-                <a class="text-on-surface-variant hover:text-white transition-colors font-bold tracking-tight" href="mailto:soni.110051@gmail.com">Support</a>
-            </div>
-            <button class="download-btn-trigger bg-gradient-to-r from-primary to-primary-container text-on-primary-container px-6 py-2.5 font-bold tracking-tight rounded-md">
-                Get v1.1
-            </button>
-        </div>
-    </nav>
+<body>
 
-    <main class="pt-32 pb-24 px-6 max-w-7xl mx-auto reveal">
-        <!-- Hero Banner -->
-        <header class="mb-20 flex flex-col items-center text-center">
-            <div class="w-20 h-20 mb-6 flex items-center justify-center rounded-full bg-surface-container-high border border-outline-variant/20 relative">
-                <span class="material-symbols-outlined text-4xl text-[#4aff8c]" style="font-variation-settings: 'FILL' 1;">shield</span>
-                <div class="absolute inset-0 bg-[#4aff8c]/10 blur-xl rounded-full animate-pulse"></div>
-            </div>
-            <h1 class="text-3xl md:text-5xl font-black tracking-tighter text-on-surface uppercase mb-4">
-                Privacy Architecture
-            </h1>
-            <p class="text-on-surface-variant text-lg tracking-wide font-medium">
-                Zero-Knowledge. 100% On-Device. No Exceptions.
-            </p>
-        </header>
+<nav>
+  <a href="./index.html" class="nav-logo">NO<span>RELAPSE</span></a>
+  <ul class="nav-links">
+    <li><a href="./index.html">Home</a></li>
+    <li><a href="./install.html">Install Guide</a></li>
+    <li><a href="./privacy.html" class="active">Privacy</a></li>
+    <li><a href="mailto:soni.110051@gmail.com">Support</a></li>
+  </ul>
+  <a href="./install.html" class="nav-cta">Get APK</a>
+</nav>
 
-        <div class="flex flex-col md:flex-row gap-16">
-            <!-- Content Area -->
-            <div class="flex-grow space-y-24">
-                <!-- Section: Preamble -->
-                <section class="max-w-2xl reveal delay-100" id="preamble">
-                    <h2 class="text-primary text-xs font-black tracking-[0.3em] uppercase mb-6">01. Digital Sovereignty</h2>
-                    <p class="text-on-surface text-lg leading-relaxed mb-6">
-                        NoRelapse operates as a sovereign vault. We believe that recovery data is the most sensitive information a human can generate. 
-                    </p>
-                    <blockquote class="border-l-4 border-primary pl-6 my-8 italic text-on-surface-variant/80 text-xl">
-                        "If we don't own your data, we can't lose it. If we can't see your data, we can't judge it."
-                    </blockquote>
-                </section>
+<div class="page-hero">
+  <div class="page-hero-grid"></div>
+  <div class="page-glow"></div>
+  <div class="page-label">Legal &amp; Technical Document</div>
+  <h1 class="page-h1">PRIVACY ARCHITECTURE</h1>
+  <p class="page-sub">Zero-Knowledge. 100% On-Device. No Exceptions.</p>
+</div>
 
-                <!-- Section: Accessibility Service -->
-                <section class="scroll-mt-32 reveal" id="accessibility">
-                    <h2 class="text-primary text-xs font-black tracking-[0.3em] uppercase mb-8">02. Technical Implementation</h2>
-                    <div class="glass-card p-12 relative overflow-hidden rounded-3xl">
-                        <div class="flex items-center gap-4 mb-8">
-                            <span class="material-symbols-outlined text-primary text-3xl">accessible</span>
-                            <h3 class="text-2xl font-bold tracking-tight uppercase">Accessibility Service</h3>
-                        </div>
-                        <p class="text-on-surface-variant text-base mb-10 leading-relaxed">
-                            NoRelapse utilizes the **AccessibilityService API** to enable the Guardian Shield protocol. This is mandatory for real-time interception of browser-based triggers.
-                        </p>
-                        <div class="grid gap-6 mb-10">
-                            <div class="flex gap-4 items-start p-4 bg-white/5 rounded-xl reveal delay-100">
-                                <span class="material-symbols-outlined text-primary">check_circle</span>
-                                <div>
-                                    <h4 class="font-bold text-on-surface mb-1 uppercase text-xs tracking-widest">URL Filtering</h4>
-                                    <p class="text-on-surface-variant text-sm leading-snug">Local inspection of browser addresses against your private blocklist.</p>
-                                </div>
-                            </div>
-                            <div class="flex gap-4 items-start p-4 bg-white/5 rounded-xl reveal delay-200">
-                                <span class="material-symbols-outlined text-primary">check_circle</span>
-                                <div>
-                                    <h4 class="font-bold text-on-surface mb-1 uppercase text-xs tracking-widest">Keyword Interception</h4>
-                                    <p class="text-on-surface-variant text-sm leading-snug">Detection of trigger terms within search fields before processing.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="bg-primary/10 border-l-4 border-primary p-6 flex items-center gap-6 rounded-r-xl">
-                            <span class="material-symbols-outlined text-primary text-4xl">verified_user</span>
-                            <p class="text-primary font-black text-sm tracking-wide uppercase">
-                                100% On-Device Analysis: Zero Cloud Transmission.
-                            </p>
-                        </div>
-                    </div>
-                </section>
+<div class="page-body">
 
-                <!-- Section: Package Management -->
-                <section class="scroll-mt-32 reveal" id="package">
-                    <h2 class="text-primary text-xs font-black tracking-[0.3em] uppercase mb-8">03. Update Protocol</h2>
-                    <div class="glass-card p-10 rounded-2xl flex flex-col md:flex-row items-center gap-10">
-                        <div class="w-20 h-20 rounded-2xl bg-primary/10 flex items-center justify-center text-primary border border-primary/20 shrink-0">
-                            <span class="material-symbols-outlined text-4xl">inventory_2</span>
-                        </div>
-                        <div>
-                            <h3 class="text-2xl font-black mb-4 uppercase tracking-tight">Package Installation</h3>
-                            <p class="text-on-surface-variant leading-relaxed text-base">
-                                NoRelapse utilizes this permission solely to facilitate **secure, direct self-updates**, ensuring your Guardian Shield remains current without manual intervention.
-                            </p>
-                        </div>
-                    </div>
-                </section>
+  <!-- 01 -->
+  <div class="section-block reveal">
+    <div class="sec-num">01</div>
+    <h2 class="sec-title">DIGITAL SOVEREIGNTY</h2>
+    <div class="sec-body">
+      <p>NoRelapse operates as a sovereign vault. We believe recovery data is the most sensitive information a human can generate — more sensitive than financial data, more sensitive than medical records, because it reveals the exact nature of your private struggle.</p>
+      <p>Our architecture was designed around one principle: <strong>we cannot lose what we never hold.</strong></p>
+    </div>
+    <div class="pullquote">"If we don't own your data, we can't lose it. If we can't see your data, we can't judge it."</div>
+    <div class="sec-body">
+      <p>This is not a privacy policy designed to satisfy a legal minimum. It is a technical commitment backed by architectural choices that make data collection structurally impossible — not merely prohibited by policy.</p>
+    </div>
+  </div>
 
-                <!-- Section: Data Retention -->
-                <section class="scroll-mt-32 reveal" id="retention">
-                    <h2 class="text-primary text-xs font-black tracking-[0.3em] uppercase mb-8">04. The Vault Logic</h2>
-                    <div class="grid md:grid-cols-2 gap-8 text-center sm:text-left">
-                        <div class="bg-[#0e0e0e] p-10 rounded-xl border border-white/5 relative overflow-hidden group">
-                            <h3 class="text-white font-black text-xl uppercase mb-4 tracking-tighter">Zero-Knowledge</h3>
-                            <p class="text-on-surface-variant text-sm leading-relaxed">
-                                Your streaks and progress are encrypted using device-specific keys. We maintain zero servers for your personal recovery data.
-                            </p>
-                        </div>
-                        <div class="bg-[#0e0e0e] p-10 rounded-xl border border-white/5">
-                            <h3 class="font-black text-xl mb-4 uppercase">Device Purge</h3>
-                            <p class="text-on-surface-variant text-sm leading-relaxed">
-                                Uninstalling NoRelapse initiates an immediate, irreversible purge of the application sandbox and all associated data.
-                            </p>
-                        </div>
-                    </div>
-                </section>
-            </div>
-        </div>
-    </main>
+  <!-- 02 -->
+  <div class="section-block reveal">
+    <div class="sec-num">02</div>
+    <h2 class="sec-title">TECHNICAL IMPLEMENTATION</h2>
+    <div class="sec-body">
+      <p>NoRelapse requires two Android permissions to operate. Below is the complete breakdown of what each permission allows, what it does not allow, and exactly how NoRelapse uses it.</p>
+    </div>
 
-    <!-- Footer -->
-    <footer class="bg-[#0e0e0e] border-t border-white/5 py-20 px-8">
-        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-1 lg:grid-cols-3 gap-12 items-center">
-            <div class="text-2xl font-black text-white uppercase text-center lg:text-left">NoRelapse</div>
-            <div class="flex justify-center gap-10">
-                <a class="text-xs font-black uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="./privacy.html">Privacy Policy</a>
-                <a class="text-xs font-black uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="./terms.html">Terms</a>
-                <a class="text-xs font-black uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="./install.html">Install Guide</a>
-                <a class="text-xs font-black uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="mailto:soni.110051@gmail.com">Contact</a>
-            </div>
-            <div class="text-center lg:text-right text-[0.65rem] font-black uppercase tracking-widest text-on-surface-variant opacity-60 leading-relaxed">
-                © 2026 NoRelapse Ecosystem.<br/>Reclaim Your Sovereignty.
-            </div>
-        </div>
-    </footer>
+    <table class="permission-table">
+      <thead>
+        <tr>
+          <th>Permission</th>
+          <th>Purpose</th>
+          <th>Data Collected</th>
+          <th>Transmitted</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>AccessibilityService</td>
+          <td>Real-time URL inspection against local blocklist</td>
+          <td>Current URL string (in memory only)</td>
+          <td class="no">NEVER</td>
+        </tr>
+        <tr>
+          <td>Install Packages</td>
+          <td>Secure self-update from this domain only</td>
+          <td>None</td>
+          <td class="no">NEVER</td>
+        </tr>
+      </tbody>
+    </table>
 
-    <script>
-        const observerOptions = { threshold: 0.1 };
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) entry.target.classList.add('active');
-            });
-        }, observerOptions);
-        document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
-        
-        document.querySelectorAll('.download-btn-trigger').forEach(btn => {
-            btn.onclick = () => window.location.href = 'https://aiicylzukkkhxcimsycb.supabase.co/storage/v1/object/public/app-releases/warrior-release-v1773860079307.apk';
-        });
-    </script>
+    <div class="spec-grid">
+      <div class="spec-card">
+        <div class="sc-label">AccessibilityService</div>
+        <div class="sc-title">URL Filtering</div>
+        <p class="sc-text">NoRelapse reads the active URL from the browser's window. This string is checked against your local blocklist in memory, then immediately discarded. It is never written to storage. Never transmitted. Never logged.</p>
+      </div>
+      <div class="spec-card">
+        <div class="sc-label">AccessibilityService</div>
+        <div class="sc-title">Keyword Interception</div>
+        <p class="sc-text">Search terms entered in browser address bars are scanned for trigger keywords before the query executes. This detection runs locally. No search history is recorded or stored anywhere on the device or off it.</p>
+      </div>
+      <div class="spec-card">
+        <div class="sc-label">Install Permission</div>
+        <div class="sc-title">Secure Self-Update</div>
+        <p class="sc-text">Used only to install signed NoRelapse update packages from this domain. No other apps can be installed through this permission. You can verify the package signature against the public key on this page.</p>
+      </div>
+      <div class="spec-card">
+        <div class="sc-label">No Permission Required</div>
+        <div class="sc-title">Everything Else</div>
+        <p class="sc-text">NoRelapse does not request access to contacts, camera, microphone, location, SMS, calendar, external storage, or any personal data store. If it is not listed above, NoRelapse cannot access it.</p>
+      </div>
+    </div>
+
+    <div class="verdict-box reveal">
+      <div class="vb-icon">&#8594;</div>
+      <div>
+        <div class="vb-title">100% On-Device Analysis: Zero Cloud Transmission</div>
+        <p class="vb-text">Every analysis, every blocklist check, every streak calculation runs inside the Android application sandbox on your device. There are no API calls to external servers. There is no analytics endpoint. There is no crash reporting service. NoRelapse does not even have a backend server to send data to — by architectural choice.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 03 -->
+  <div class="section-block reveal">
+    <div class="sec-num">03</div>
+    <h2 class="sec-title">UPDATE PROTOCOL</h2>
+    <div class="sec-body">
+      <p>NoRelapse is distributed as a direct APK — outside the Google Play ecosystem. This means updates do not happen automatically through the Play Store. Instead, NoRelapse uses the Install Packages permission to deliver signed updates directly from this domain.</p>
+      <p><strong>How this works:</strong> When an update is available, NoRelapse downloads the signed binary from <code style="font-family:var(--fc);color:var(--bone);">warrior-website-black.vercel.app</code>, verifies the cryptographic signature against the embedded public key, and installs if valid. If the signature does not match, the update is rejected. This ensures no third party can push a modified binary to your device.</p>
+      <p>Updates are not mandatory. You can remain on any version indefinitely. No forced upgrades. No sunset dates for older versions without 90 days advance notice.</p>
+    </div>
+  </div>
+
+  <!-- 04 -->
+  <div class="section-block reveal">
+    <div class="sec-num">04</div>
+    <h2 class="sec-title">THE VAULT LOGIC</h2>
+    <div class="sec-body">
+      <p>Your streak data, blocklist configuration, Vault Lock settings, and Strike Log are stored in the Android application sandbox using device-specific encryption keys generated at install time. These keys never leave the device.</p>
+    </div>
+
+    <div class="spec-grid">
+      <div class="spec-card">
+        <div class="sc-label">Architecture</div>
+        <div class="sc-title">Zero-Knowledge Storage</div>
+        <p class="sc-text">We maintain zero servers for your personal recovery data. No account. No sync. No backup to our infrastructure. Your streak belongs to your device — and only your device.</p>
+      </div>
+      <div class="spec-card">
+        <div class="sc-label">Uninstall Protocol</div>
+        <div class="sc-title">Complete Device Purge</div>
+        <p class="sc-text">Uninstalling NoRelapse initiates an immediate, irreversible purge of the application sandbox and all associated data. No residual files. No ghost data in cloud backups controlled by us, because we have none.</p>
+      </div>
+    </div>
+
+    <div class="sec-body">
+      <p>If you factory reset your device, your NoRelapse data is lost. We cannot recover it. We have no copy. This is the intended behavior. <strong>Sovereignty means your data dies with your device, not with a company breach.</strong></p>
+    </div>
+  </div>
+
+  <!-- 05 -->
+  <div class="section-block reveal">
+    <div class="sec-num">05</div>
+    <h2 class="sec-title">CONTACT &amp; QUESTIONS</h2>
+    <div class="sec-body">
+      <p>If you have a specific technical question about our privacy implementation that is not answered here, contact us directly. We respond within 48 hours.</p>
+      <p style="margin-top:16px"><strong>Support:</strong> <a href="mailto:soni.110051@gmail.com" style="color:var(--rh);text-decoration:none;font-family:var(--fc)">soni.110051@gmail.com</a></p>
+      <p style="margin-top:8px;font-size:.85rem;color:var(--smoke)">Last updated: March 2026 &nbsp;·&nbsp; Sovereign Vault Protocol v1.1</p>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="ft-logo">NO<span>RELAPSE</span></div>
+  <ul class="ft-links">
+    <li><a href="./privacy.html">Privacy Policy</a></li>
+    <li><a href="./terms.html">Terms of Service</a></li>
+    <li><a href="./install.html">Install Guide</a></li>
+    <li><a href="mailto:soni.110051@gmail.com">Contact</a></li>
+  </ul>
+  <div class="ft-copy">&copy; 2026 NoRelapse Ecosystem. Reclaim Your Sovereignty.</div>
+</footer>
+
+<script>
+const obs=new IntersectionObserver((entries)=>{entries.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('visible'),i*80)}})},{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
 </body>
 </html>
