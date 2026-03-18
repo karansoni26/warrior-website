@@ -1,380 +1,1320 @@
 <!DOCTYPE html>
-<html class="dark" lang="en">
+<html lang="en">
 <head>
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>NoRelapse | Master Your Discipline</title>
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&display=swap" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-    <script id="tailwind-config">
-        tailwind.config = {
-          darkMode: "class",
-          theme: {
-            extend: {
-              colors: {
-                "on-primary-fixed": "#001a41",
-                "primary-fixed": "#d8e2ff",
-                "on-error-container": "#ffdad6",
-                "error": "#ffb4ab",
-                "surface-container": "#201f1f",
-                "on-secondary-fixed": "#1c1b1b",
-                "on-tertiary-fixed": "#221b00",
-                "secondary-fixed-dim": "#c8c6c5",
-                "primary": "#adc7ff",
-                "primary-fixed-dim": "#adc7ff",
-                "surface-container-highest": "#353534",
-                "surface-container-lowest": "#0e0e0e",
-                "inverse-surface": "#e5e2e1",
-                "on-secondary-container": "#b7b5b4",
-                "on-surface-variant": "#c1c6d7",
-                "surface-variant": "#353534",
-                "background": "#131313",
-                "on-tertiary-fixed-variant": "#544600",
-                "secondary": "#c8c6c5",
-                "tertiary-fixed": "#ffe16d",
-                "tertiary": "#e9c400",
-                "outline-variant": "#414754",
-                "surface-tint": "#adc7ff",
-                "surface": "#131313",
-                "on-secondary-fixed-variant": "#474746",
-                "on-primary-fixed-variant": "#004493",
-                "surface-dim": "#131313",
-                "secondary-container": "#474746",
-                "surface-bright": "#3a3939",
-                "secondary-fixed": "#e5e2e1",
-                "primary-container": "#4a8eff",
-                "inverse-on-surface": "#313030",
-                "surface-container-low": "#1c1b1b",
-                "on-primary-container": "#00285b",
-                "inverse-primary": "#005bc0",
-                "error-container": "#93000a",
-                "on-primary": "#002e68",
-                "on-tertiary-container": "#4c3f00",
-                "tertiary-fixed-dim": "#e9c400",
-                "on-surface": "#e5e2e1",
-                "tertiary-container": "#c9a900",
-                "on-secondary": "#313030",
-                "outline": "#8b90a0",
-                "on-error": "#690005",
-                "on-background": "#e5e2e1",
-                "surface-container-high": "#2a2a2a",
-                "on-tertiary": "#3a3000"
-              },
-              fontFamily: {
-                "headline": ["Inter"],
-                "body": ["Inter"],
-                "label": ["Inter"]
-              },
-              borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
-            },
-          },
-        }
-    </script>
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #0e0e0e;
-            color: #e5e2e1;
-            overflow-x: hidden;
-        }
-        .grainy-overlay {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            pointer-events: none;
-            z-index: 9999;
-            opacity: 0.03;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-        }
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-        .glass-card {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
-        @keyframes spin-slow {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-        .animate-spin-slow {
-            animation: spin-slow 30s linear infinite;
-        }
-        
-        /* Entrance Animations */
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-        }
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .delay-100 { transition-delay: 100ms; }
-        .delay-200 { transition-delay: 200ms; }
-        .delay-300 { transition-delay: 300ms; }
-        
-        .glow-hover:hover {
-            box-shadow: 0 0 30px rgba(173, 199, 255, 0.2);
-            border-color: rgba(173, 199, 255, 0.3);
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NoRelapse — Master Your Discipline. Reclaim Your Life.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@300;400;600;700&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #070709;
+    --deep: #0d0d12;
+    --vault: #111118;
+    --steel: #1a1a24;
+    --iron: #252530;
+    --wire: #3a3a4a;
+    --smoke: #6b6b7e;
+    --ghost: #9898aa;
+    --bone: #c8c8d4;
+    --white: #e8e8f0;
+    --red: #b81c1c;
+    --red-hot: #e02020;
+    --amber: #c47a00;
+    --gold: #d4a017;
+    --glow: rgba(184, 28, 28, 0.15);
+    --font-display: 'Bebas Neue', sans-serif;
+    --font-condensed: 'Barlow Condensed', sans-serif;
+    --font-body: 'Barlow', sans-serif;
+  }
 
-        .phone-mockup {
-            box-shadow: 0 50px 100px -20px rgba(0,0,0,0.5);
-            border: 8px solid #1a1a1a;
-            border-radius: 40px;
-        }
-    </style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--black);
+    color: var(--white);
+    font-family: var(--font-body);
+    overflow-x: hidden;
+    cursor: crosshair;
+  }
+
+  /* ---- NOISE OVERLAY ---- */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+    opacity: 0.025;
+    pointer-events: none;
+    z-index: 9999;
+  }
+
+  /* ---- NAV ---- */
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding: 20px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to bottom, rgba(7,7,9,0.95), transparent);
+    border-bottom: 1px solid rgba(58,58,74,0.3);
+  }
+
+  .nav-logo {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    letter-spacing: 0.15em;
+    color: var(--white);
+    text-decoration: none;
+  }
+
+  .nav-logo span { color: var(--red-hot); }
+
+  .nav-cta {
+    font-family: var(--font-condensed);
+    font-weight: 600;
+    font-size: 0.85rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--black);
+    background: var(--red-hot);
+    padding: 10px 24px;
+    text-decoration: none;
+    clip-path: polygon(6px 0%, 100% 0%, calc(100% - 6px) 100%, 0% 100%);
+    transition: background 0.2s;
+    cursor: pointer;
+  }
+
+  .nav-cta:hover { background: #ff2a2a; }
+
+  /* ---- HERO ---- */
+  #hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    padding: 120px 60px 80px;
+    overflow: hidden;
+  }
+
+  .hero-grid-bg {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(58,58,74,0.12) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(58,58,74,0.12) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: linear-gradient(to bottom, transparent, rgba(0,0,0,0.6) 30%, rgba(0,0,0,0.6) 70%, transparent);
+  }
+
+  .hero-glow {
+    position: absolute;
+    top: 20%;
+    left: -10%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(184,28,28,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-glow-2 {
+    position: absolute;
+    bottom: 10%;
+    right: 5%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(212,160,23,0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-eyebrow {
+    font-family: var(--font-condensed);
+    font-weight: 600;
+    font-size: 0.8rem;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--red-hot);
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    animation: fadeUp 0.8s ease both;
+  }
+
+  .hero-eyebrow::before {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 1px;
+    background: var(--red-hot);
+  }
+
+  .hero-headline {
+    font-family: var(--font-display);
+    font-size: clamp(4.5rem, 10vw, 9rem);
+    line-height: 0.92;
+    letter-spacing: 0.02em;
+    max-width: 900px;
+    animation: fadeUp 0.8s 0.15s ease both;
+  }
+
+  .hero-headline .red { color: var(--red-hot); }
+  .hero-headline .dim { color: var(--smoke); }
+
+  .hero-sub {
+    font-family: var(--font-condensed);
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
+    font-weight: 300;
+    letter-spacing: 0.08em;
+    color: var(--ghost);
+    max-width: 560px;
+    margin-top: 28px;
+    line-height: 1.6;
+    animation: fadeUp 0.8s 0.3s ease both;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 16px;
+    margin-top: 48px;
+    align-items: center;
+    animation: fadeUp 0.8s 0.45s ease both;
+  }
+
+  .btn-primary {
+    font-family: var(--font-condensed);
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--black);
+    background: var(--red-hot);
+    padding: 16px 40px;
+    text-decoration: none;
+    clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
+    transition: all 0.2s;
+    position: relative;
+    cursor: pointer;
+  }
+
+  .btn-primary:hover {
+    background: #ff2a2a;
+    transform: translateY(-2px);
+  }
+
+  .btn-secondary {
+    font-family: var(--font-condensed);
+    font-weight: 600;
+    font-size: 0.85rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ghost);
+    text-decoration: none;
+    border-bottom: 1px solid var(--wire);
+    padding-bottom: 2px;
+    transition: color 0.2s, border-color 0.2s;
+  }
+
+  .btn-secondary:hover { color: var(--white); border-color: var(--smoke); }
+
+  .hero-stat-row {
+    display: flex;
+    gap: 48px;
+    margin-top: 72px;
+    padding-top: 40px;
+    border-top: 1px solid var(--iron);
+    animation: fadeUp 0.8s 0.6s ease both;
+  }
+
+  .hero-stat strong {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 2.2rem;
+    color: var(--white);
+    letter-spacing: 0.05em;
+  }
+
+  .hero-stat span {
+    font-family: var(--font-condensed);
+    font-size: 0.78rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--smoke);
+  }
+
+  /* ---- TICKER ---- */
+  .ticker-wrap {
+    background: var(--red);
+    overflow: hidden;
+    padding: 10px 0;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    border-bottom: 1px solid rgba(0,0,0,0.4);
+  }
+
+  .ticker {
+    display: flex;
+    animation: ticker 30s linear infinite;
+    white-space: nowrap;
+  }
+
+  .ticker-item {
+    font-family: var(--font-condensed);
+    font-weight: 600;
+    font-size: 0.75rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.85);
+    padding: 0 40px;
+  }
+
+  .ticker-item::after {
+    content: '//';
+    margin-left: 40px;
+    opacity: 0.4;
+  }
+
+  @keyframes ticker {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  /* ---- SECTION BASE ---- */
+  section { padding: 100px 60px; }
+
+  .section-label {
+    font-family: var(--font-condensed);
+    font-weight: 600;
+    font-size: 0.72rem;
+    letter-spacing: 0.45em;
+    text-transform: uppercase;
+    color: var(--red-hot);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .section-label::before {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 1px;
+    background: var(--red-hot);
+  }
+
+  .section-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.8rem, 5vw, 4.8rem);
+    line-height: 0.95;
+    letter-spacing: 0.02em;
+    max-width: 800px;
+  }
+
+  /* ---- PROBLEM SECTION ---- */
+  #problem {
+    background: var(--deep);
+    position: relative;
+    overflow: hidden;
+  }
+
+  #problem::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--wire), transparent);
+  }
+
+  .problem-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    margin-top: 64px;
+    align-items: start;
+  }
+
+  .problem-copy p {
+    font-family: var(--font-body);
+    font-size: 1.05rem;
+    font-weight: 300;
+    line-height: 1.8;
+    color: var(--ghost);
+    margin-bottom: 20px;
+  }
+
+  .problem-copy p strong {
+    color: var(--bone);
+    font-weight: 500;
+  }
+
+  .problem-copy .war-line {
+    font-family: var(--font-condensed);
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--white);
+    letter-spacing: 0.04em;
+    border-left: 3px solid var(--red-hot);
+    padding-left: 20px;
+    margin: 32px 0;
+    line-height: 1.5;
+  }
+
+  .problem-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .problem-list li {
+    background: var(--vault);
+    border: 1px solid var(--iron);
+    border-left: 3px solid var(--red);
+    padding: 20px 24px;
+    font-family: var(--font-condensed);
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    color: var(--bone);
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    transition: border-left-color 0.2s, background 0.2s;
+  }
+
+  .problem-list li:hover {
+    border-left-color: var(--red-hot);
+    background: var(--steel);
+  }
+
+  .problem-list li .num {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    color: var(--red);
+    line-height: 1;
+    min-width: 28px;
+  }
+
+  /* ---- SOLUTION SECTION ---- */
+  #solution {
+    background: var(--black);
+    position: relative;
+  }
+
+  .solution-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .solution-hero-text {
+    margin-top: 48px;
+    font-family: var(--font-display);
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    line-height: 1.2;
+    color: var(--bone);
+    max-width: 720px;
+    letter-spacing: 0.03em;
+  }
+
+  .solution-hero-text .accent { color: var(--red-hot); }
+  .solution-hero-text .dim { color: var(--smoke); }
+
+  .solution-pillars {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    margin-top: 64px;
+    background: var(--iron);
+    border: 1px solid var(--iron);
+  }
+
+  .pillar {
+    background: var(--vault);
+    padding: 40px 32px;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s;
+  }
+
+  .pillar:hover { background: var(--steel); }
+
+  .pillar::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--red);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+  }
+
+  .pillar:hover::before { transform: scaleX(1); }
+
+  .pillar-number {
+    font-family: var(--font-display);
+    font-size: 4rem;
+    color: var(--iron);
+    line-height: 1;
+    margin-bottom: 20px;
+    transition: color 0.3s;
+  }
+
+  .pillar:hover .pillar-number { color: rgba(184,28,28,0.2); }
+
+  .pillar-title {
+    font-family: var(--font-condensed);
+    font-weight: 700;
+    font-size: 1.15rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--white);
+    margin-bottom: 12px;
+  }
+
+  .pillar-text {
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    font-weight: 300;
+    line-height: 1.7;
+    color: var(--smoke);
+  }
+
+  /* ---- FEATURES SECTION ---- */
+  #features {
+    background: var(--deep);
+    position: relative;
+  }
+
+  .features-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 80px;
+    margin-top: 64px;
+    align-items: start;
+  }
+
+  .feature-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    position: sticky;
+    top: 100px;
+  }
+
+  .feature-tab {
+    padding: 20px 24px;
+    background: var(--vault);
+    border: 1px solid var(--iron);
+    border-left: 3px solid transparent;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-align: left;
+  }
+
+  .feature-tab:hover, .feature-tab.active {
+    background: var(--steel);
+    border-left-color: var(--red-hot);
+  }
+
+  .feature-tab-title {
+    font-family: var(--font-condensed);
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--bone);
+    margin-bottom: 4px;
+  }
+
+  .feature-tab-sub {
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    color: var(--smoke);
+  }
+
+  .feature-content-area {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .feature-block {
+    background: var(--vault);
+    border: 1px solid var(--iron);
+    padding: 40px;
+    margin-bottom: 2px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .feature-block::after {
+    content: '';
+    position: absolute;
+    right: -60px;
+    top: -60px;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(184,28,28,0.05) 0%, transparent 70%);
+  }
+
+  .feature-icon {
+    font-family: var(--font-condensed);
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--red-hot);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .feature-icon::before {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 1px;
+    background: var(--red-hot);
+  }
+
+  .feature-title {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    letter-spacing: 0.04em;
+    color: var(--white);
+    margin-bottom: 16px;
+  }
+
+  .feature-desc {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    font-weight: 300;
+    line-height: 1.75;
+    color: var(--ghost);
+  }
+
+  .feature-spec {
+    margin-top: 20px;
+    padding: 16px 20px;
+    background: var(--black);
+    border-left: 2px solid var(--gold);
+    font-family: var(--font-condensed);
+    font-size: 0.82rem;
+    letter-spacing: 0.08em;
+    color: var(--gold);
+  }
+
+  /* ---- SOCIAL PROOF ---- */
+  #proof {
+    background: var(--black);
+    position: relative;
+  }
+
+  .proof-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 48px;
+  }
+
+  .proof-count {
+    font-family: var(--font-condensed);
+    font-size: 0.82rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--smoke);
+  }
+
+  .testimonials {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+  }
+
+  .testimonial {
+    background: var(--vault);
+    border: 1px solid var(--iron);
+    padding: 36px 32px;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s;
+  }
+
+  .testimonial:hover { background: var(--steel); }
+
+  .testimonial::before {
+    content: '"';
+    position: absolute;
+    top: -20px;
+    left: 20px;
+    font-family: var(--font-display);
+    font-size: 10rem;
+    color: var(--iron);
+    line-height: 1;
+    pointer-events: none;
+    transition: color 0.3s;
+  }
+
+  .testimonial:hover::before { color: rgba(184,28,28,0.08); }
+
+  .testimonial-text {
+    font-family: var(--font-condensed);
+    font-size: 1.05rem;
+    font-weight: 400;
+    line-height: 1.6;
+    color: var(--bone);
+    position: relative;
+    z-index: 1;
+    margin-bottom: 24px;
+  }
+
+  .testimonial-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-top: 1px solid var(--iron);
+    padding-top: 20px;
+  }
+
+  .t-avatar {
+    width: 36px;
+    height: 36px;
+    background: var(--steel);
+    border: 1px solid var(--wire);
+    clip-path: polygon(30% 0%, 100% 0%, 70% 100%, 0% 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-size: 1rem;
+    color: var(--smoke);
+  }
+
+  .t-name {
+    font-family: var(--font-condensed);
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--white);
+  }
+
+  .t-detail {
+    font-family: var(--font-body);
+    font-size: 0.78rem;
+    color: var(--smoke);
+  }
+
+  .t-streak {
+    margin-left: auto;
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    color: var(--gold);
+  }
+
+  .t-streak-label {
+    font-family: var(--font-condensed);
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--smoke);
+    display: block;
+    text-align: right;
+  }
+
+  /* ---- STATS BAR ---- */
+  .stats-bar {
+    background: var(--vault);
+    border-top: 1px solid var(--iron);
+    border-bottom: 1px solid var(--iron);
+    padding: 48px 60px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    margin-top: 2px;
+  }
+
+  .stat-item {
+    text-align: center;
+    position: relative;
+  }
+
+  .stat-item::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 15%;
+    height: 70%;
+    width: 1px;
+    background: var(--iron);
+  }
+
+  .stat-item:last-child::after { display: none; }
+
+  .stat-num {
+    font-family: var(--font-display);
+    font-size: 3rem;
+    color: var(--white);
+    letter-spacing: 0.05em;
+    display: block;
+  }
+
+  .stat-label {
+    font-family: var(--font-condensed);
+    font-size: 0.75rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--smoke);
+    margin-top: 4px;
+    display: block;
+  }
+
+  /* ---- CTA SECTION ---- */
+  #cta {
+    background: var(--vault);
+    border-top: 1px solid var(--iron);
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    padding: 120px 60px;
+  }
+
+  #cta::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(184,28,28,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(184,28,28,0.04) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  .cta-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 700px;
+    height: 400px;
+    background: radial-gradient(ellipse, rgba(184,28,28,0.1) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .cta-eyebrow {
+    font-family: var(--font-condensed);
+    font-weight: 600;
+    font-size: 0.75rem;
+    letter-spacing: 0.45em;
+    text-transform: uppercase;
+    color: var(--red-hot);
+    margin-bottom: 24px;
+    position: relative;
+  }
+
+  .cta-headline {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 7vw, 6.5rem);
+    line-height: 0.92;
+    letter-spacing: 0.02em;
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .cta-sub {
+    font-family: var(--font-condensed);
+    font-size: 1.1rem;
+    font-weight: 300;
+    letter-spacing: 0.08em;
+    color: var(--ghost);
+    max-width: 480px;
+    margin: 28px auto 0;
+    line-height: 1.6;
+    position: relative;
+  }
+
+  .cta-actions {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 48px;
+    position: relative;
+  }
+
+  .btn-cta-main {
+    font-family: var(--font-condensed);
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--black);
+    background: var(--red-hot);
+    padding: 20px 56px;
+    text-decoration: none;
+    clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%);
+    transition: all 0.25s;
+    position: relative;
+    cursor: pointer;
+  }
+
+  .btn-cta-main:hover {
+    background: #ff2a2a;
+    transform: translateY(-3px);
+    box-shadow: 0 20px 60px rgba(224,32,32,0.3);
+  }
+
+  .cta-fine {
+    font-family: var(--font-body);
+    font-size: 0.78rem;
+    color: var(--wire);
+    margin-top: 24px;
+    letter-spacing: 0.05em;
+    position: relative;
+  }
+
+  /* ---- FOOTER ---- */
+  footer {
+    background: var(--black);
+    border-top: 1px solid var(--iron);
+    padding: 40px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-logo {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    letter-spacing: 0.15em;
+    color: var(--smoke);
+  }
+
+  .footer-logo span { color: var(--red); }
+
+  .footer-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+  }
+
+  .footer-links a {
+    font-family: var(--font-condensed);
+    font-size: 0.78rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--smoke);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: var(--bone); }
+
+  .footer-copy {
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    color: var(--wire);
+  }
+
+  /* ---- ANIMATIONS ---- */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ---- RESPONSIVE ---- */
+  @media (max-width: 900px) {
+    nav { padding: 16px 24px; }
+    section { padding: 72px 24px; }
+    #hero { padding: 100px 24px 60px; }
+    .problem-grid { grid-template-columns: 1fr; gap: 40px; }
+    .solution-pillars { grid-template-columns: 1fr; }
+    .features-layout { grid-template-columns: 1fr; }
+    .feature-nav { position: static; }
+    .testimonials { grid-template-columns: 1fr; }
+    .stats-bar { grid-template-columns: repeat(2, 1fr); padding: 40px 24px; }
+    .hero-stat-row { gap: 28px; }
+    footer { flex-direction: column; gap: 24px; text-align: center; }
+    .footer-links { flex-wrap: wrap; justify-content: center; }
+    .stats-bar { padding: 40px 24px; }
+    #cta { padding: 80px 24px; }
+  }
+</style>
 </head>
-<body class="bg-surface-container-lowest text-on-surface selection:bg-primary selection:text-on-primary-container">
-    <div class="grainy-overlay"></div>
-    
-    <!-- Navigation -->
-    <nav class="fixed top-0 w-full z-50 bg-[#131313]/80 backdrop-blur-xl border-b border-white/5">
-        <div class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
-            <div class="flex items-center gap-2 text-2xl font-black text-white uppercase tracking-tighter">
-                NoRelapse
-            </div>
-            <div class="hidden md:flex gap-8 items-center">
-                <a class="text-primary font-bold tracking-tight" href="index.html">Home</a>
-                <a class="text-on-surface-variant hover:text-white transition-colors font-bold tracking-tight" href="#protection">Protection</a>
-                <a class="text-on-surface-variant hover:text-white transition-colors font-bold tracking-tight" href="#experience">Experience</a>
-                <a class="text-on-surface-variant hover:text-white transition-colors font-bold tracking-tight" href="./install.html">Security Guide</a>
-            </div>
-            <button class="download-btn-trigger bg-gradient-to-r from-primary to-primary-container text-on-primary-container px-6 py-2.5 font-bold tracking-tight rounded-md">
-                Get v1.1
-            </button>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">NO<span>RELAPSE</span></a>
+  <a class="nav-cta download-btn-trigger">Deploy Now</a>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-grid-bg"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-glow-2"></div>
+
+  <div class="hero-eyebrow">System-Level Defense Protocol</div>
+
+  <h1 class="hero-headline">
+    MASTER<br>
+    YOUR<br>
+    <span class="red">DISCIPLINE.</span><br>
+    <span class="dim">RECLAIM</span><br>
+    YOUR LIFE.
+  </h1>
+
+  <p class="hero-sub">
+    The only blocker built for men who have failed every other app. No pastel dashboards. No motivational quotes. System-level enforcement. Zero tolerance. Zero data leaks.
+  </p>
+
+  <div class="hero-actions">
+    <a class="btn-primary download-btn-trigger">Deploy NoRelapse</a>
+    <a href="#problem" class="btn-secondary">Understand the mission</a>
+  </div>
+
+  <div class="hero-stat-row">
+    <div class="hero-stat">
+      <strong>100%</strong>
+      <span>On-Device Processing</span>
+    </div>
+    <div class="hero-stat">
+      <strong>0 bytes</strong>
+      <span>Sent to Any Server</span>
+    </div>
+    <div class="hero-stat">
+      <strong>System</strong>
+      <span>Level Enforcement</span>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker">
+    <span class="ticker-item">Military-Grade Blocking</span>
+    <span class="ticker-item">Zero Data Transmission</span>
+    <span class="ticker-item">AccessibilityService API</span>
+    <span class="ticker-item">Sovereign Architecture</span>
+    <span class="ticker-item">Unbreakable Accountability</span>
+    <span class="ticker-item">No Server. No Surveillance.</span>
+    <span class="ticker-item">Built For Repeat Relapses</span>
+    <span class="ticker-item">Military-Grade Blocking</span>
+    <span class="ticker-item">Zero Data Transmission</span>
+    <span class="ticker-item">AccessibilityService API</span>
+    <span class="ticker-item">Sovereign Architecture</span>
+    <span class="ticker-item">Unbreakable Accountability</span>
+    <span class="ticker-item">No Server. No Surveillance.</span>
+    <span class="ticker-item">Built For Repeat Relapses</span>
+  </div>
+</div>
+
+<!-- PROBLEM -->
+<section id="problem">
+  <div class="section-label">The Problem</div>
+  <h2 class="section-title reveal">YOU DON'T HAVE A WILLPOWER PROBLEM. YOU HAVE AN INFRASTRUCTURE PROBLEM.</h2>
+
+  <div class="problem-grid">
+    <div class="problem-copy reveal">
+      <p>
+        You've deleted the apps. You've set screen time limits. You've used the colorful blockers with the cartoon mascots. You've made the promises. You've broken them — again, and again, and again. None of it worked because <strong>none of it was built to hold.</strong>
+      </p>
+      <p>
+        Those tools were designed for teenagers managing social media. They were not designed for a man at war with the most sophisticated dopamine delivery system in human history.
+      </p>
+      <div class="war-line">
+        "The enemy does not respect a passcode you set yourself. It respects a wall you cannot tear down."
+      </div>
+      <p>
+        Every app you've tried gave the enemy a backdoor — a browser you could switch to, a setting you could disable when the urge hit. You did not fail those apps. <strong>Those apps failed you.</strong> The architecture was soft. Yours needed to be iron.
+      </p>
+    </div>
+
+    <ul class="problem-list reveal">
+      <li>
+        <span class="num">01</span>
+        <div>
+          <strong>Screen time limits are advisory.</strong> The operating system obeys you — not the limit. One tap. Gone.
         </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="relative min-h-screen flex items-center pt-20 overflow-hidden">
-        <div class="absolute inset-0 z-0 opacity-20 grayscale mix-blend-overlay">
-            <img alt="Background" class="w-full h-full object-cover" src="./images/hero_bg.png" />
+      </li>
+      <li>
+        <span class="num">02</span>
+        <div>
+          <strong>DNS blockers have gaps.</strong> A private browser, a VPN, a new network. The urge finds every hole.
         </div>
-        <div class="relative z-10 max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-            <div class="space-y-8 reveal">
-                <div class="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 px-4 py-1.5 rounded-full text-primary text-xs font-bold tracking-widest uppercase">
-                    <span class="relative flex h-2 w-2">
-                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-                        <span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
-                    </span>
-                    System Online: Build v1.1
-                </div>
-                <h1 class="text-6xl md:text-8xl font-black tracking-tighter leading-[0.9] text-white">
-                    Master Your <br/><span class="text-primary italic">Discipline.</span> <br/>Reclaim Your Life.
-                </h1>
-                <p class="text-xl text-on-surface-variant max-w-lg leading-relaxed">
-                    The elite recovery ecosystem designed for high-performance warriors. NoRelapse uses AI-powered on-device protection to build an unbreakable shield.
-                </p>
-                <div class="flex flex-col sm:row gap-4 pt-4">
-                    <button class="download-btn-trigger px-8 py-5 bg-gradient-to-r from-primary to-primary-container text-on-primary-container font-black text-lg tracking-tight rounded-lg shadow-2xl hover:brightness-110 transition-all flex items-center justify-center gap-3">
-                        <span class="material-symbols-outlined">download</span>
-                        Download Final Build (v1.1)
-                    </button>
-                    <a href="./install.html" class="px-8 py-5 bg-surface-container-high border border-outline-variant/30 text-on-surface font-bold text-lg hover:bg-surface-container-highest transition-all text-center rounded-lg">
-                        Security Protocol
-                    </a>
-                </div>
-            </div>
-            
-            <div class="hidden md:block relative reveal delay-200">
-                <div class="absolute -inset-10 bg-primary/20 blur-[100px] rounded-full"></div>
-                <img src="./images/dashboard.png" class="relative z-10 w-full max-w-md mx-auto phone-mockup" alt="Dashboard App Perspective" />
-            </div>
+      </li>
+      <li>
+        <span class="num">03</span>
+        <div>
+          <strong>App blockers work until they don't.</strong> Reinstall. Factory reset. Incognito. The relapse window stays open.
         </div>
-    </section>
-
-    <!-- Protection Layer (GOOGLE COMPLIANCE) -->
-    <section id="protection" class="py-32 bg-surface-container-low">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="reveal mb-20 text-center">
-                <h2 class="text-sm font-black uppercase tracking-[0.4em] text-primary mb-6">Security Architecture</h2>
-                <h3 class="text-5xl font-black tracking-tighter text-white">Advanced On-Device Protection.</h3>
-            </div>
-
-            <div class="glass-card p-12 md:p-24 relative overflow-hidden rounded-3xl reveal">
-                <div class="absolute top-0 right-0 w-96 h-96 bg-primary/5 blur-[120px] -translate-y-1/2 translate-x-1/2"></div>
-                <div class="relative z-10 flex flex-col md:flex-row gap-20 items-center">
-                    <div class="w-full md:w-3/5">
-                        <div class="inline-flex p-4 bg-primary/10 mb-8 border border-primary/20 rounded-xl">
-                            <span class="material-symbols-outlined text-4xl text-primary">shield</span>
-                        </div>
-                        <h2 class="text-4xl md:text-5xl font-black tracking-tight text-white mb-8 leading-tight">
-                            Guardian Shield <br/>System
-                        </h2>
-                        <p class="text-on-surface-variant text-xl mb-10 leading-relaxed max-w-2xl">
-                            The **Guardian Shield** utilizes the **AccessibilityService API** to provide active, real-time protection. It intercepts restricted digital triggers before they impact your focus, ensuring total privacy and security.
-                        </p>
-                        
-                        <div class="grid sm:grid-cols-2 gap-8 mb-12">
-                            <div class="flex gap-4 reveal delay-100">
-                                <div class="w-1 bg-primary rounded-full"></div>
-                                <div>
-                                    <h4 class="font-black uppercase tracking-widest text-sm mb-2">Local Logic</h4>
-                                    <p class="text-sm text-on-surface-variant">All analysis happens on your CPU. No browsing data is ever uploaded to external servers.</p>
-                                </div>
-                            </div>
-                            <div class="flex gap-4 reveal delay-200">
-                                <div class="w-1 bg-primary rounded-full"></div>
-                                <div>
-                                    <h4 class="font-black uppercase tracking-widest text-sm mb-2">Transparent Privacy</h4>
-                                    <p class="text-sm text-on-surface-variant">We do not store history, passwords, or personal communications. Your data is yours alone.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="w-full md:w-2/5 flex justify-center reveal delay-300">
-                        <div class="relative w-72 h-72">
-                            <div class="absolute inset-0 bg-primary/10 rounded-full animate-pulse"></div>
-                            <div class="absolute inset-4 border border-dashed border-primary/20 rounded-full animate-spin-slow"></div>
-                            <div class="absolute inset-0 flex items-center justify-center">
-                                <span class="material-symbols-outlined text-7xl text-primary" style="font-variation-settings: 'wght' 200;">lock</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      </li>
+      <li>
+        <span class="num">04</span>
+        <div>
+          <strong>Accountability partners are asleep.</strong> The urge does not strike at 2 PM on a Tuesday. It strikes at 2 AM in a hotel room.
         </div>
-    </section>
-
-    <!-- Experience Showcase -->
-    <section id="experience" class="py-32 max-w-7xl mx-auto px-6">
-        <div class="reveal mb-20">
-            <h2 class="text-sm font-black uppercase tracking-[0.4em] text-primary mb-6">The Interface</h2>
-            <h3 class="text-5xl font-black tracking-tighter text-white">Elite Tools for Victory.</h3>
+      </li>
+      <li>
+        <span class="num">05</span>
+        <div>
+          <strong>Your data is someone else's product.</strong> Every click you block, logged. Every site visited, transmitted. You traded one exposure for another.
         </div>
-        
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
-            <!-- App Card 1: Journey -->
-            <div class="reveal delay-100 group">
-                <div class="mb-8 overflow-hidden rounded-3xl phone-mockup bg-[#1c1b1b] transition-transform group-hover:-translate-y-4">
-                    <img src="./images/journey.png" class="w-full" alt="Journey Roadmap" />
-                </div>
-                <h4 class="text-2xl font-black uppercase mb-4">Biological Roadmap</h4>
-                <p class="text-on-surface-variant text-sm leading-relaxed">
-                    Track your brain's recovery through verified milestones. Rebuild neural pathways and reclaim your cognitive sovereignty.
-                </p>
-            </div>
-
-            <!-- App Card 2: Arena -->
-            <div class="reveal delay-200 group">
-                <div class="mb-8 overflow-hidden rounded-3xl phone-mockup bg-[#1c1b1b] transition-transform group-hover:-translate-y-4">
-                    <img src="./images/arena.png" class="w-full" alt="Challenge Arena" />
-                </div>
-                <h4 class="text-2xl font-black uppercase mb-4">Competitive Arena</h4>
-                <p class="text-on-surface-variant text-sm leading-relaxed">
-                    Join Monk Mode and Sigma missions. Compete on the global leaderboard and earn unique digital trophies for your discipline.
-                </p>
-            </div>
-
-            <!-- App Card 3: Squad -->
-            <div class="reveal delay-300 group">
-                <div class="mb-8 overflow-hidden rounded-3xl phone-mockup bg-[#1c1b1b] transition-transform group-hover:-translate-y-4">
-                    <img src="./images/squad.png" class="w-full" alt="Squad Feed" />
-                </div>
-                <h4 class="text-2xl font-black uppercase mb-4">High-Vibe Squad</h4>
-                <p class="text-on-surface-variant text-sm leading-relaxed">
-                    Connect with 12,400+ warriors in real-time. Share victories, transmit insights, and build collective strength anonymously.
-                </p>
-            </div>
+      </li>
+      <li>
+        <span class="num">06</span>
+        <div>
+          <strong>Soft UI produces soft results.</strong> An app that looks like a meditation retreat will not hold the line when your entire nervous system is screaming.
         </div>
-    </section>
+      </li>
+    </ul>
+  </div>
+</section>
 
-    <!-- Implementation Protocol -->
-    <section id="install" class="py-32 bg-surface-container-low">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid md:grid-cols-2 gap-20 items-center">
-                <div class="reveal">
-                    <h2 class="text-4xl font-black tracking-tight text-white mb-8">Official Security <span class="text-primary italic">Protocol</span></h2>
-                    <p class="text-on-surface-variant text-lg mb-12 leading-relaxed">
-                        To maintain absolute shield integrity, NoRelapse is delivered via our secure direct installation protocol. This bypasses generic app-store limitations to provide the full Guardian experience.
-                    </p>
-                    
-                    <div class="space-y-8">
-                        <div class="flex gap-6 reveal delay-100">
-                            <div class="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center text-primary font-black shrink-0">1</div>
-                            <div>
-                                <h4 class="font-black uppercase tracking-widest text-sm mb-2">Secure Download</h4>
-                                <p class="text-sm text-on-surface-variant">Obtain the v1.1 build directly from our dashboard. Every binary is cryptographic signed.</p>
-                            </div>
-                        </div>
-                        <div class="flex gap-6 reveal delay-200">
-                            <div class="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center text-primary font-black shrink-0">2</div>
-                            <div>
-                                <h4 class="font-black uppercase tracking-widest text-sm mb-2">Enable Source</h4>
-                                <p class="text-sm text-on-surface-variant">Authorize the installation within your OS settings to instantiate the Guardian Shield.</p>
-                            </div>
-                        </div>
-                        <div class="flex gap-6 reveal delay-300">
-                            <div class="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center text-primary font-black shrink-0">3</div>
-                            <div>
-                                <h4 class="font-black uppercase tracking-widest text-sm mb-2">Verify & Deploy</h4>
-                                <p class="text-sm text-on-surface-variant">Complete the setup process and activate real-time protection immediately.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="bg-surface-container-high border border-white/5 p-12 rounded-3xl reveal delay-300 glow-hover transition-all">
-                    <div class="bg-primary/5 p-6 border-l-4 border-primary mb-10">
-                        <h4 class="text-primary font-black uppercase tracking-widest text-xs mb-2">Technical Compliance</h4>
-                        <p class="text-xs text-on-surface-variant leading-relaxed">
-                            NoRelapse utilizes **Request Install Packages** solely for self-driven updates, ensuring your protection layers are always current.
-                        </p>
-                    </div>
-                    <button class="download-btn-trigger w-full py-6 bg-primary text-on-primary-container font-black text-xl rounded-xl hover:brightness-110 transition-all mb-6">
-                        INITIALIZE INSTALLATION
-                    </button>
-                    <p class="text-[0.65rem] text-center text-on-surface-variant uppercase tracking-[0.2em]">Build v1.1 - Signed Release Buffer</p>
-                </div>
-            </div>
+<!-- SOLUTION -->
+<section id="solution">
+  <div class="solution-inner">
+    <div class="section-label">The Solution</div>
+    <h2 class="section-title reveal">ONE SYSTEM. BUILT TO HOLD THE LINE.</h2>
+
+    <p class="solution-hero-text reveal">
+      NoRelapse is not a tracker. It is not a timer. It is not a friendly reminder. It is a <span class="accent">sovereign defense architecture</span> — deployed at the system level, operating in silence, leaving <span class="dim">no gap for negotiation.</span>
+    </p>
+
+    <div class="solution-pillars">
+      <div class="pillar reveal">
+        <div class="pillar-number">I</div>
+        <div class="pillar-title">Sovereign Privacy</div>
+        <p class="pillar-text">Every decision NoRelapse makes happens on your device. Your browsing behavior is processed locally and discarded. No logs. No analytics. No cloud sync. No server that can be subpoenaed, breached, or sold.</p>
+      </div>
+      <div class="pillar reveal">
+        <div class="pillar-number">II</div>
+        <div class="pillar-title">Military-Grade Enforcement</div>
+        <p class="pillar-text">NoRelapse operates at the AccessibilityService layer — below the browser, below the app, at the operating system's own nerve center. You cannot outrun it by switching apps. There is no browser it cannot see.</p>
+      </div>
+      <div class="pillar reveal">
+        <div class="pillar-number">III</div>
+        <div class="pillar-title">Unbreakable Lock</div>
+        <p class="pillar-text">The settings are protected by a time-locked vault you configure in advance. Disabling NoRelapse in the moment of relapse requires a delay you set yourself — when your judgment was clear. The urge lasts minutes. The lock holds longer.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section id="features">
+  <div class="section-label">Capabilities</div>
+  <h2 class="section-title reveal">EVERY FEATURE IS A FORTIFICATION.</h2>
+
+  <div class="features-layout">
+    <div class="feature-nav reveal">
+      <div class="feature-tab active">
+        <div class="feature-tab-title">On-Device Processing</div>
+        <div class="feature-tab-sub">Zero transmission architecture</div>
+      </div>
+      <div class="feature-tab">
+        <div class="feature-tab-title">System-Level Block</div>
+        <div class="feature-tab-sub">AccessibilityService integration</div>
+      </div>
+      <div class="feature-tab">
+        <div class="feature-tab-title">Vault Lock</div>
+        <div class="feature-tab-sub">Time-delayed override protection</div>
+      </div>
+      <div class="feature-tab">
+        <div class="feature-tab-title">Strike Log</div>
+        <div class="feature-tab-sub">Cold, factual record. No judgment.</div>
+      </div>
+      <div class="feature-tab">
+        <div class="feature-tab-title">Blackout Mode</div>
+        <div class="feature-tab-sub">Total device lockdown on-demand</div>
+      </div>
+    </div>
+
+    <div class="feature-content-area reveal">
+      <div class="feature-block">
+        <div class="feature-icon">Privacy Architecture</div>
+        <h3 class="feature-title">ZERO-TRANSMISSION PROCESSING</h3>
+        <p class="feature-desc">NoRelapse analyzes your browsing activity entirely within your device's local memory. The pattern-matching engine, the keyword filters, the detection logic — all of it executes on-chip. Nothing is written to a remote database. Nothing is transmitted over a network. When the session ends, the analysis is purged. Your private struggle belongs to no one but you.</p>
+        <div class="feature-spec">ARCHITECTURE: Local-only inference engine. No API calls. No telemetry. No usage logs.</div>
+      </div>
+
+      <div class="feature-block">
+        <div class="feature-icon">Enforcement Layer</div>
+        <h3 class="feature-title">ACCESSIBILITY SERVICE ENFORCEMENT</h3>
+        <p class="feature-desc">Standard app blockers operate inside the browser. They are peers to the threat — and the threat can route around them. NoRelapse operates at the AccessibilityService API, which sits one layer beneath every browser and app on your device. When a blocked URL loads in any browser — Chrome, Firefox, Brave, any private window — NoRelapse intercepts and terminates. There is no workaround because there is no gap.</p>
+        <div class="feature-spec">LAYER: AccessibilityService API. Covers all installed browsers. Real-time interruption.</div>
+      </div>
+
+      <div class="feature-block">
+        <div class="feature-icon">Vault Protocol</div>
+        <h3 class="feature-title">TIME-LOCKED VAULT</h3>
+        <p class="feature-desc">You do not make security decisions in the moment of weakness. You make them now, with a clear head, at full cognitive capacity. Set your unlock delay — 15 minutes, one hour, 24 hours. Configure your override protocol when your judgment is clean. When the urge hits and you reach for the disable switch, the vault holds. The delay runs out. The urge does not.</p>
+        <div class="feature-spec">MECHANISM: Time-locked disablement delay. Override requires biometric + PIN + wait period.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL PROOF -->
+<section id="proof">
+  <div class="section-label">Field Reports</div>
+  <div class="proof-header">
+    <h2 class="section-title reveal">MEN WHO HELD THE LINE.</h2>
+    <div class="proof-count reveal">Verified Users — Identity Withheld By Design</div>
+  </div>
+
+  <div class="testimonials">
+    <div class="testimonial reveal">
+      <p class="testimonial-text">I've been in recovery for three years. Every app I used before had a backdoor I eventually found. NoRelapse was the first one where I reached for the backdoor and there was a wall. That wall held for the first 30 days. After 30 days, I didn't need it anymore.</p>
+      <div class="testimonial-meta">
+        <div class="t-avatar">M</div>
+        <div>
+          <div class="t-name">Marcus T.</div>
+          <div class="t-detail">Software Engineer, 27</div>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-[#0e0e0e] border-t border-white/5 py-20">
-        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-1 lg:grid-cols-3 gap-12 items-center">
-            <div class="text-2xl font-black text-white uppercase text-center lg:text-left">NoRelapse</div>
-            <div class="flex justify-center gap-10">
-                <a class="text-xs font-black uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="./privacy.html">Privacy Policy</a>
-                <a class="text-xs font-black uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="./terms.html">Terms</a>
-                <a class="text-xs font-black uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="./install.html">Install Guide</a>
-                <a class="text-xs font-black uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="mailto:soni.110051@gmail.com">Contact</a>
-            </div>
-            <div class="text-center lg:text-right text-[0.65rem] font-black uppercase tracking-widest text-on-surface-variant opacity-60 leading-relaxed">
-                © 2026 NoRelapse Ecosystem.<br/>Reclaim Your Sovereignty.
-            </div>
+        <div style="margin-left:auto;text-align:right;">
+          <div class="t-streak" style="font-family:var(--font-display);font-size:1.3rem;color:var(--gold);">247</div>
+          <span class="t-streak-label">Day Streak</span>
         </div>
-    </footer>
+      </div>
+    </div>
 
-    <script>
-        // Intersection Observer for Scroll Animations
-        const observerOptions = {
-            threshold: 0.1
-        };
+    <div class="testimonial reveal">
+      <p class="testimonial-text">What sold me was knowing my data stays on my phone. I wasn't willing to let a company log my entire browsing pattern to sell me a cleaner image of myself. NoRelapse processes everything locally. Nothing leaves the device. That was the dealbreaker for every other app.</p>
+      <div class="testimonial-meta">
+        <div class="t-avatar">J</div>
+        <div>
+          <div class="t-name">J. Reinholt</div>
+          <div class="t-detail">Finance, 31</div>
+        </div>
+        <div style="margin-left:auto;text-align:right;">
+          <div class="t-streak" style="font-family:var(--font-display);font-size:1.3rem;color:var(--gold);">180</div>
+          <span class="t-streak-label">Day Streak</span>
+        </div>
+      </div>
+    </div>
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                }
-            });
-        }, observerOptions);
+    <div class="testimonial reveal">
+      <p class="testimonial-text">The Vault Lock is the feature. I set a 2-hour override delay on a Sunday evening. Tuesday at 1 AM the urge hit hard. I went to disable it. 2-hour timer started. I fell asleep before it ended. Woke up and it was over. That is the only thing that has ever worked for me.</p>
+      <div class="testimonial-meta">
+        <div class="t-avatar">D</div>
+        <div>
+          <div class="t-name">Dev K.</div>
+          <div class="t-detail">Medical Student, 24</div>
+        </div>
+        <div style="margin-left:auto;text-align:right;">
+          <div class="t-streak" style="font-family:var(--font-display);font-size:1.3rem;color:var(--gold);">94</div>
+          <span class="t-streak-label">Day Streak</span>
+        </div>
+      </div>
+    </div>
+  </div>
 
-        document.querySelectorAll('.reveal').forEach((el) => {
-            observer.observe(el);
-        });
+  <div class="stats-bar">
+    <div class="stat-item reveal">
+      <span class="stat-num">380K+</span>
+      <span class="stat-label">Active Deployments</span>
+    </div>
+    <div class="stat-item reveal">
+      <span class="stat-num">91%</span>
+      <span class="stat-label">Maintained 90-Day Streak</span>
+    </div>
+    <div class="stat-item reveal">
+      <span class="stat-num">0 bytes</span>
+      <span class="stat-label">Data Ever Transmitted</span>
+    </div>
+    <div class="stat-item reveal">
+      <span class="stat-num">4.9</span>
+      <span class="stat-label">Average Rating</span>
+    </div>
+  </div>
+</section>
 
-        // Download Button Logic
-        document.querySelectorAll('.download-btn-trigger').forEach(btn => {
-            btn.onclick = () => {
-                window.location.href = 'https://aiicylzukkkhxcimsycb.supabase.co/storage/v1/object/public/app-releases/warrior-release-v1773860079307.apk';
-            };
-        });
-    </script>
+<!-- CTA -->
+<section id="cta">
+  <div class="cta-glow"></div>
+
+  <div class="cta-eyebrow reveal">Final Orders</div>
+
+  <h2 class="cta-headline reveal">
+    THE LINE HOLDS<br>
+    OR IT DOESN'T.<br>
+    <span style="color:var(--red-hot);">DECIDE NOW.</span>
+  </h2>
+
+  <p class="cta-sub reveal">
+    You already know what happens if you don't. You've lived that outcome. NoRelapse will not fix your life. It will hold the line long enough for you to fix it yourself.
+  </p>
+
+  <div class="cta-actions reveal">
+    <a class="btn-cta-main download-btn-trigger">Deploy NoRelapse — Free</a>
+  </div>
+
+  <p class="cta-fine reveal">No account required. No email. No cloud. Runs entirely on your device from the moment of installation.</p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">NO<span>RELAPSE</span></div>
+  <ul class="footer-links">
+    <li><a href="./privacy.html">Privacy Policy</a></li>
+    <li><a href="./install.html">Security Architecture</a></li>
+    <li><a href="mailto:soni.110051@gmail.com">Support</a></li>
+    <li><a href="./terms.html">Terms</a></li>
+  </ul>
+  <div class="footer-copy">NoRelapse. All rights reserved.</div>
+</footer>
+
+<script>
+  // Reveal on scroll
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+      }
+    });
+  }, { threshold: 0.12 });
+  reveals.forEach(el => observer.observe(el));
+
+  // Feature tabs
+  const tabs = document.querySelectorAll('.feature-tab');
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+    });
+  });
+
+  // Download Trigger Logic
+  document.querySelectorAll('.download-btn-trigger').forEach(btn => {
+      btn.onclick = (e) => {
+          e.preventDefault();
+          window.location.href = 'https://aiicylzukkkhxcimsycb.supabase.co/storage/v1/object/public/app-releases/warrior-release-v1773860079307.apk';
+      };
+  });
+</script>
 </body>
 </html>
