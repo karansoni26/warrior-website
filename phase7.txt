@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NoRelapse ??? Master Your Discipline. Reclaim Your Life.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@300;400;600;700&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--black:#070709;--deep:#0d0d12;--vault:#111118;--steel:#1a1a24;--iron:#252530;--wire:#3a3a4a;--smoke:#6b6b7e;--ghost:#9898aa;--bone:#c8c8d4;--white:#e8e8f0;--red:#b81c1c;--rh:#e02020;--gold:#d4a017;--green:#22a34e;--fd:'Bebas Neue',sans-serif;--fc:'Barlow Condensed',sans-serif;--fb:'Barlow',sans-serif}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--white);font-family:var(--fb);overflow-x:hidden;cursor:crosshair}
+body::before{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");opacity:.022}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:18px 60px;display:flex;justify-content:space-between;align-items:center;background:rgba(7,7,9,.96);border-bottom:1px solid rgba(58,58,74,.2);backdrop-filter:blur(6px)}
+.nav-left{display:flex;align-items:center;gap:44px}
+.nav-logo{font-family:var(--fd);font-size:1.55rem;letter-spacing:.15em;color:var(--white);text-decoration:none}
+.nav-logo span{color:var(--rh)}
+.nav-links{display:flex;gap:26px;list-style:none}
+.nav-links a{font-family:var(--fc);font-size:.76rem;letter-spacing:.2em;text-transform:uppercase;color:var(--smoke);text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:var(--bone)}
+.nav-cta{font-family:var(--fc);font-weight:700;font-size:.8rem;letter-spacing:.22em;text-transform:uppercase;color:var(--black);background:var(--rh);padding:10px 26px;text-decoration:none;clip-path:polygon(6px 0%,100% 0%,calc(100% - 6px) 100%,0% 100%);transition:background .2s;cursor:pointer}
+.nav-cta:hover{background:#ff2a2a}
+#hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;position:relative;padding:130px 60px 90px;overflow:hidden}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(58,58,74,.1) 1px,transparent 1px),linear-gradient(90deg,rgba(58,58,74,.1) 1px,transparent 1px);background-size:60px 60px;mask-image:linear-gradient(to bottom,transparent,rgba(0,0,0,.55) 25%,rgba(0,0,0,.55) 75%,transparent)}
+.hero-glow-r{position:absolute;top:10%;left:-10%;width:680px;height:680px;background:radial-gradient(circle,rgba(184,28,28,.13) 0%,transparent 70%);pointer-events:none}
+.hero-glow-g{position:absolute;bottom:0;right:0;width:460px;height:460px;background:radial-gradient(circle,rgba(212,160,23,.05) 0%,transparent 70%);pointer-events:none}
+.hero-ey{font-family:var(--fc);font-weight:600;font-size:.76rem;letter-spacing:.45em;text-transform:uppercase;color:var(--rh);margin-bottom:20px;display:flex;align-items:center;gap:12px;animation:fadeUp .8s ease both}
+.hero-ey::before{content:'';display:block;width:34px;height:1px;background:var(--rh)}
+.hero-hl{font-family:var(--fd);font-size:clamp(4.2rem,10vw,9.5rem);line-height:.91;letter-spacing:.02em;max-width:920px;animation:fadeUp .8s .12s ease both}
+.hero-hl .acc{color:var(--rh)}
+.hero-hl .dim{color:var(--smoke)}
+.hero-sub{font-family:var(--fc);font-size:clamp(1rem,1.8vw,1.3rem);font-weight:300;letter-spacing:.07em;color:var(--ghost);max-width:540px;margin-top:24px;line-height:1.65;animation:fadeUp .8s .24s ease both}
+.hero-acts{display:flex;gap:16px;margin-top:42px;align-items:center;animation:fadeUp .8s .36s ease both}
+.btn-p{font-family:var(--fc);font-weight:700;font-size:.88rem;letter-spacing:.25em;text-transform:uppercase;color:var(--black);background:var(--rh);padding:16px 40px;text-decoration:none;clip-path:polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%);transition:all .2s;cursor:pointer}
+.btn-p:hover{background:#ff2a2a;transform:translateY(-2px)}
+.btn-g{font-family:var(--fc);font-weight:600;font-size:.82rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ghost);text-decoration:none;border-bottom:1px solid var(--wire);padding-bottom:2px;transition:color .2s,border-color .2s}
+.btn-g:hover{color:var(--white);border-color:var(--smoke)}
+.hero-trust{display:flex;gap:40px;margin-top:64px;padding-top:32px;border-top:1px solid var(--iron);animation:fadeUp .8s .5s ease both;flex-wrap:wrap}
+.hero-trust-item strong{display:block;font-family:var(--fd);font-size:2rem;color:var(--white);letter-spacing:.04em}
+.hero-trust-item span{font-family:var(--fc);font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--smoke)}
+.ticker-wrap{background:var(--red);overflow:hidden;padding:9px 0;border-top:1px solid rgba(0,0,0,.3);border-bottom:1px solid rgba(0,0,0,.4)}
+.ticker{display:flex;animation:ticker 38s linear infinite;white-space:nowrap}
+.ticker-item{font-family:var(--fc);font-weight:600;font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(255,255,255,.82);padding:0 34px}
+.ticker-item::after{content:'//';margin-left:34px;opacity:.35}
+@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+section{padding:100px 60px}
+.s-lbl{font-family:var(--fc);font-weight:600;font-size:.68rem;letter-spacing:.45em;text-transform:uppercase;color:var(--rh);margin-bottom:16px;display:flex;align-items:center;gap:10px}
+.s-lbl::before{content:'';display:block;width:20px;height:1px;background:var(--rh)}
+.s-ttl{font-family:var(--fd);font-size:clamp(2.5rem,5vw,4.6rem);line-height:.94;letter-spacing:.02em}
+.divider{height:1px;background:linear-gradient(to right,transparent,var(--wire),transparent);margin:0 60px}
+#problem{background:var(--deep);position:relative;overflow:hidden}
+#problem::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(to right,transparent,var(--wire),transparent)}
+.prob-grid{display:grid;grid-template-columns:1fr 1fr;gap:68px;margin-top:56px;align-items:start}
+.prob-copy p{font-size:.98rem;font-weight:300;line-height:1.85;color:var(--ghost);margin-bottom:16px}
+.prob-copy p strong{color:var(--bone);font-weight:500}
+.war-line{font-family:var(--fc);font-size:1.2rem;font-weight:600;color:var(--white);letter-spacing:.04em;border-left:3px solid var(--rh);padding-left:18px;margin:26px 0;line-height:1.5}
+.prob-list{list-style:none;display:flex;flex-direction:column;gap:2px}
+.prob-list li{background:var(--vault);border:1px solid var(--iron);border-left:3px solid var(--red);padding:17px 20px;font-family:var(--fc);font-size:.94rem;color:var(--bone);display:flex;align-items:flex-start;gap:13px;transition:border-left-color .2s,background .2s}
+.prob-list li:hover{border-left-color:var(--rh);background:var(--steel)}
+.prob-list .num{font-family:var(--fd);font-size:1.3rem;color:var(--red);line-height:1;min-width:24px}
+.prob-list strong{color:var(--white)}
+#how{background:var(--black);position:relative}
+.steps-wrap{margin-top:60px;position:relative}
+.steps-line{position:absolute;top:36px;left:9%;right:9%;height:1px;background:linear-gradient(to right,var(--iron),var(--wire),var(--iron))}
+.steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative;z-index:1}
+.step{padding:0 20px;text-align:center}
+.step-hex{width:72px;height:72px;margin:0 auto 26px;background:var(--vault);border:1px solid var(--wire);clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%);display:flex;align-items:center;justify-content:center;font-family:var(--fd);font-size:1.5rem;color:var(--rh);transition:background .3s}
+.step:hover .step-hex{background:var(--steel)}
+.step-title{font-family:var(--fc);font-weight:700;font-size:.92rem;letter-spacing:.12em;text-transform:uppercase;color:var(--white);margin-bottom:10px}
+.step-text{font-family:var(--fb);font-size:.85rem;font-weight:300;line-height:1.7;color:var(--smoke)}
+#solution{background:var(--deep)}
+.sol-text{font-family:var(--fd);font-size:clamp(1.4rem,3vw,2.2rem);line-height:1.18;color:var(--bone);max-width:680px;letter-spacing:.03em;margin-top:40px}
+.sol-text .acc{color:var(--rh)}
+.sol-text .dim{color:var(--smoke)}
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:56px;background:var(--iron);border:1px solid var(--iron)}
+.pillar{background:var(--vault);padding:38px 28px;position:relative;overflow:hidden;transition:background .3s}
+.pillar:hover{background:var(--steel)}
+.pillar::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--red);transform:scaleX(0);transform-origin:left;transition:transform .4s ease}
+.pillar:hover::before{transform:scaleX(1)}
+.pillar-num{font-family:var(--fd);font-size:3.6rem;color:var(--iron);line-height:1;margin-bottom:16px;transition:color .3s}
+.pillar:hover .pillar-num{color:rgba(184,28,28,.18)}
+.pillar-t{font-family:var(--fc);font-weight:700;font-size:1.05rem;letter-spacing:.12em;text-transform:uppercase;color:var(--white);margin-bottom:10px}
+.pillar-p{font-family:var(--fb);font-size:.86rem;font-weight:300;line-height:1.72;color:var(--smoke)}
+#features{background:var(--black)}
+.feat-layout{display:grid;grid-template-columns:1fr 1.5fr;gap:68px;margin-top:56px;align-items:start}
+.feat-nav{display:flex;flex-direction:column;gap:2px;position:sticky;top:98px}
+.feat-tab{padding:17px 20px;background:var(--vault);border:1px solid var(--iron);border-left:3px solid transparent;cursor:pointer;transition:all .2s;text-align:left}
+.feat-tab:hover,.feat-tab.active{background:var(--steel);border-left-color:var(--rh)}
+.feat-tab-t{font-family:var(--fc);font-weight:700;font-size:.9rem;letter-spacing:.1em;text-transform:uppercase;color:var(--bone);margin-bottom:3px}
+.feat-tab-s{font-family:var(--fb);font-size:.76rem;color:var(--smoke)}
+.feat-panel{background:var(--vault);border:1px solid var(--iron);padding:36px;position:relative;overflow:hidden;display:none}
+.feat-panel.active{display:block}
+.feat-panel::after{content:'';position:absolute;right:-48px;top:-48px;width:140px;height:140px;border-radius:50%;background:radial-gradient(circle,rgba(184,28,28,.06) 0%,transparent 70%)}
+.feat-badge{font-family:var(--fc);font-weight:700;font-size:.66rem;letter-spacing:.35em;text-transform:uppercase;color:var(--rh);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.feat-badge::before{content:'';display:block;width:16px;height:1px;background:var(--rh)}
+.feat-panel-t{font-family:var(--fd);font-size:1.9rem;letter-spacing:.04em;color:var(--white);margin-bottom:12px}
+.feat-panel-p{font-family:var(--fb);font-size:.92rem;font-weight:300;line-height:1.78;color:var(--ghost)}
+.feat-spec{margin-top:16px;padding:13px 16px;background:var(--black);border-left:2px solid var(--gold);font-family:var(--fc);font-size:.78rem;letter-spacing:.08em;color:var(--gold)}
+.feat-ul{margin-top:16px;list-style:none;display:flex;flex-direction:column;gap:7px}
+.feat-ul li{font-family:var(--fc);font-size:.88rem;letter-spacing:.05em;color:var(--bone);padding-left:14px;position:relative}
+.feat-ul li::before{content:'???';position:absolute;left:0;color:var(--red);font-size:.75rem}
+#compare{background:var(--deep)}
+.cmp-wrap{margin-top:56px;overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-family:var(--fc);font-size:.88rem}
+thead tr{border-bottom:2px solid var(--iron)}
+thead th{padding:15px 22px;text-align:center;font-weight:700;font-size:.76rem;letter-spacing:.2em;text-transform:uppercase;color:var(--smoke)}
+thead th.th-h{background:var(--vault);color:var(--rh);border-left:1px solid var(--iron);border-right:1px solid var(--iron);border-top:3px solid var(--rh)}
+thead th.th-l{text-align:left}
+tbody tr{border-bottom:1px solid var(--iron);transition:background .15s}
+tbody tr:hover{background:rgba(255,255,255,.015)}
+tbody td{padding:15px 22px;text-align:center;color:var(--ghost);font-size:.85rem;letter-spacing:.04em}
+tbody td.td-l{text-align:left;color:var(--bone);font-weight:600;font-size:.82rem;letter-spacing:.1em;text-transform:uppercase}
+tbody td.td-h{background:rgba(17,17,24,.6);border-left:1px solid var(--iron);border-right:1px solid var(--iron)}
+.ck{color:var(--green);font-size:1rem}
+.cx{color:var(--red);font-size:1rem}
+.cp{color:var(--gold);font-size:.76rem;letter-spacing:.05em}
+.cmp-note{margin-top:16px;font-family:var(--fb);font-size:.75rem;color:var(--wire);font-style:italic}
+#pricing{background:var(--black)}
+.price-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:56px;max-width:840px}
+.plan{background:var(--vault);border:1px solid var(--iron);padding:42px 34px;position:relative;overflow:hidden;transition:background .3s}
+.plan:hover{background:var(--steel)}
+.plan.feat{border-color:var(--rh);background:var(--steel)}
+.plan.feat::before{content:'RECOMMENDED';position:absolute;top:0;left:0;right:0;background:var(--rh);text-align:center;font-family:var(--fc);font-weight:700;font-size:.62rem;letter-spacing:.35em;color:var(--black);padding:6px}
+.plan-name{font-family:var(--fc);font-weight:700;font-size:.76rem;letter-spacing:.3em;text-transform:uppercase;color:var(--smoke);margin-top:8px;margin-bottom:12px}
+.plan.feat .plan-name{margin-top:30px}
+.plan-price{font-family:var(--fd);font-size:3.4rem;letter-spacing:.02em;color:var(--white);line-height:1}
+.plan-price sup{font-family:var(--fc);font-size:1.1rem;vertical-align:super;color:var(--ghost)}
+.plan-price em{font-family:var(--fc);font-size:.95rem;font-style:normal;color:var(--smoke)}
+.plan-hr{height:1px;background:var(--iron);margin:22px 0}
+.plan-feats{list-style:none;display:flex;flex-direction:column;gap:9px}
+.plan-feats li{font-family:var(--fc);font-size:.86rem;letter-spacing:.04em;color:var(--bone);display:flex;align-items:flex-start;gap:9px}
+.plan-feats li .pi{font-size:.82rem;min-width:14px;margin-top:1px}
+.plan-feats li.locked{color:var(--wire)}
+.plan-btn{display:block;margin-top:30px;font-family:var(--fc);font-weight:700;font-size:.82rem;letter-spacing:.22em;text-transform:uppercase;text-align:center;text-decoration:none;padding:14px 28px;transition:all .2s;clip-path:polygon(6px 0%,100% 0%,calc(100% - 6px) 100%,0% 100%);cursor:pointer}
+.plan-btn.free-b{color:var(--bone);border:1px solid var(--wire);background:transparent}
+.plan-btn.free-b:hover{background:var(--iron)}
+.plan-btn.paid-b{color:var(--black);background:var(--rh)}
+.plan-btn.paid-b:hover{background:#ff2a2a;transform:translateY(-2px)}
+#proof{background:var(--deep)}
+.proof-hdr{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:40px;flex-wrap:wrap;gap:12px}
+.proof-count{font-family:var(--fc);font-size:.76rem;letter-spacing:.2em;text-transform:uppercase;color:var(--smoke)}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
+.testi{background:var(--vault);border:1px solid var(--iron);padding:32px 28px;position:relative;overflow:hidden;transition:background .3s}
+.testi:hover{background:var(--steel)}
+.testi::before{content:'"';position:absolute;top:-16px;left:16px;font-family:var(--fd);font-size:8.5rem;color:var(--iron);line-height:1;pointer-events:none;transition:color .3s}
+.testi:hover::before{color:rgba(184,28,28,.07)}
+.testi-text{font-family:var(--fc);font-size:.97rem;font-weight:400;line-height:1.62;color:var(--bone);position:relative;z-index:1;margin-bottom:20px}
+.testi-meta{display:flex;align-items:center;gap:11px;border-top:1px solid var(--iron);padding-top:16px}
+.t-av{width:32px;height:32px;background:var(--steel);border:1px solid var(--wire);clip-path:polygon(30% 0%,100% 0%,70% 100%,0% 100%);display:flex;align-items:center;justify-content:center;font-family:var(--fd);font-size:.9rem;color:var(--smoke)}
+.t-name{font-family:var(--fc);font-weight:700;font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--white)}
+.t-det{font-family:var(--fb);font-size:.74rem;color:var(--smoke)}
+.t-sk{margin-left:auto;text-align:right;font-family:var(--fd);font-size:1.2rem;color:var(--gold)}
+.t-sk span{font-family:var(--fc);font-size:.55rem;letter-spacing:.18em;text-transform:uppercase;color:var(--smoke);display:block}
+.stats-bar{background:var(--vault);border-top:1px solid var(--iron);padding:40px 60px;display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:2px}
+.stat-it{text-align:center;position:relative}
+.stat-it::after{content:'';position:absolute;right:0;top:15%;height:70%;width:1px;background:var(--iron)}
+.stat-it:last-child::after{display:none}
+.stat-num{font-family:var(--fd);font-size:2.8rem;color:var(--white);letter-spacing:.04em;display:block}
+.stat-lbl{font-family:var(--fc);font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--smoke);margin-top:4px;display:block}
+#faq{background:var(--black)}
+.faq-layout{display:grid;grid-template-columns:1fr 1.8fr;gap:72px;margin-top:56px;align-items:start}
+.faq-intro{font-family:var(--fb);font-size:.93rem;font-weight:300;line-height:1.82;color:var(--ghost)}
+.faq-intro strong{color:var(--bone);font-weight:500}
+.faq-list{display:flex;flex-direction:column;gap:2px}
+.faq-item{background:var(--vault);border:1px solid var(--iron);border-left:3px solid transparent;overflow:hidden;transition:border-left-color .2s}
+.faq-item.open{border-left-color:var(--rh)}
+.faq-q{padding:19px 22px;cursor:pointer;font-family:var(--fc);font-weight:700;font-size:.92rem;letter-spacing:.07em;color:var(--bone);display:flex;justify-content:space-between;align-items:center;gap:12px;user-select:none;transition:color .2s}
+.faq-q:hover{color:var(--white)}
+.faq-arr{font-size:1rem;color:var(--rh);transition:transform .3s;min-width:12px}
+.faq-item.open .faq-arr{transform:rotate(90deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s;font-family:var(--fb);font-size:.88rem;font-weight:300;line-height:1.78;color:var(--ghost);padding:0 22px}
+.faq-item.open .faq-a{max-height:300px;padding:0 22px 18px}
+.faq-a strong{color:var(--bone);font-weight:500}
+#cta{background:var(--vault);border-top:1px solid var(--iron);position:relative;overflow:hidden;text-align:center;padding:120px 60px}
+#cta::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(184,28,28,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(184,28,28,.04) 1px,transparent 1px);background-size:40px 40px}
+.cta-glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:700px;height:380px;background:radial-gradient(ellipse,rgba(184,28,28,.1) 0%,transparent 70%);pointer-events:none}
+.cta-ey{font-family:var(--fc);font-weight:600;font-size:.72rem;letter-spacing:.45em;text-transform:uppercase;color:var(--rh);margin-bottom:20px;position:relative}
+.cta-hl{font-family:var(--fd);font-size:clamp(2.8rem,7vw,6.5rem);line-height:.91;letter-spacing:.02em;position:relative;max-width:880px;margin:0 auto}
+.cta-sub{font-family:var(--fc);font-size:1.05rem;font-weight:300;letter-spacing:.07em;color:var(--ghost);max-width:450px;margin:24px auto 0;line-height:1.62;position:relative}
+.cta-acts{display:flex;gap:16px;justify-content:center;align-items:center;margin-top:42px;position:relative;flex-wrap:wrap}
+.btn-cta{font-family:var(--fc);font-weight:700;font-size:.93rem;letter-spacing:.22em;text-transform:uppercase;color:var(--black);background:var(--rh);padding:18px 52px;text-decoration:none;clip-path:polygon(10px 0%,100% 0%,calc(100% - 10px) 100%,0% 100%);transition:all .25s;cursor:pointer}
+.btn-cta:hover{background:#ff2a2a;transform:translateY(-3px);box-shadow:0 20px 60px rgba(224,32,32,.28)}
+.apk-note{font-family:var(--fc);font-size:.76rem;letter-spacing:.14em;color:var(--smoke);display:flex;align-items:center;gap:7px}
+.apk-note::before{content:'???';color:var(--red);font-size:.58rem}
+.cta-shields{display:flex;gap:20px;justify-content:center;margin-top:32px;flex-wrap:wrap;position:relative}
+.shield{font-family:var(--fc);font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--smoke);border:1px solid var(--iron);padding:7px 16px;display:flex;align-items:center;gap:7px}
+.sh-dot{width:5px;height:5px;background:var(--green);border-radius:50%}
+.cta-fine{font-family:var(--fb);font-size:.74rem;color:var(--wire);margin-top:20px;letter-spacing:.05em;position:relative}
+footer{background:var(--black);border-top:1px solid var(--iron);padding:34px 60px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:18px}
+.ft-logo{font-family:var(--fd);font-size:1.1rem;letter-spacing:.15em;color:var(--smoke)}
+.ft-logo span{color:var(--red)}
+.ft-links{display:flex;gap:26px;list-style:none;flex-wrap:wrap}
+.ft-links a{font-family:var(--fc);font-size:.73rem;letter-spacing:.15em;text-transform:uppercase;color:var(--smoke);text-decoration:none;transition:color .2s}
+.ft-links a:hover{color:var(--bone)}
+.ft-copy{font-family:var(--fb);font-size:.7rem;color:var(--wire)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+@media(max-width:1020px){.feat-layout{grid-template-columns:1fr}.feat-nav{position:static;flex-direction:row;flex-wrap:wrap}.price-grid{grid-template-columns:1fr;max-width:440px}.faq-layout{grid-template-columns:1fr;gap:36px}}
+@media(max-width:820px){nav{padding:14px 20px}.nav-links{display:none}section{padding:68px 20px}.divider{margin:0 20px}#hero{padding:96px 20px 56px}.prob-grid{grid-template-columns:1fr;gap:32px}.pillars{grid-template-columns:1fr}.steps-grid{grid-template-columns:repeat(2,1fr);gap:36px}.steps-line{display:none}.testi-grid{grid-template-columns:1fr}.stats-bar{grid-template-columns:repeat(2,1fr);padding:32px 20px}footer{padding:26px 20px}#cta{padding:72px 20px}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-left">
+    <a href="#" class="nav-logo">NO<span>RELAPSE</span></a>
+    <ul class="nav-links">
+      <li><a href="#how">How It Works</a></li>
+      <li><a href="#features">Capabilities</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+  </div>
+  <a class="nav-cta download-btn-trigger">Download APK</a>
+</nav>
+
+<section id="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-glow-r"></div>
+  <div class="hero-glow-g"></div>
+  <div class="hero-ey">Android APK &nbsp;??&nbsp; System-Level Defense Protocol</div>
+  <h1 class="hero-hl">MASTER<br>YOUR<br><span class="acc">DISCIPLINE.</span><br><span class="dim">RECLAIM</span><br>YOUR LIFE.</h1>
+  <p class="hero-sub">The only blocker built for men who have failed every other app. No pastel dashboards. No motivational quotes. System-level enforcement. Zero tolerance. Zero data leaks.</p>
+  <div class="hero-acts">
+    <a class="btn-p download-btn-trigger">Download APK ??? Free</a>
+    <a href="#problem" class="btn-g">Understand the mission</a>
+  </div>
+  <div class="hero-trust">
+    <div class="hero-trust-item"><strong>100%</strong><span>On-Device Processing</span></div>
+    <div class="hero-trust-item"><strong>0 bytes</strong><span>Sent to Any Server</span></div>
+    <div class="hero-trust-item"><strong>System</strong><span>Level Enforcement</span></div>
+    <div class="hero-trust-item"><strong>380K+</strong><span>Active Deployments</span></div>
+  </div>
+</section>
+
+<div class="ticker-wrap">
+  <div class="ticker">
+    <span class="ticker-item">Military-Grade Blocking</span><span class="ticker-item">Zero Data Transmission</span><span class="ticker-item">AccessibilityService API</span><span class="ticker-item">Sovereign Architecture</span><span class="ticker-item">Unbreakable Accountability</span><span class="ticker-item">No Server. No Surveillance.</span><span class="ticker-item">APK Direct ??? No Play Store</span><span class="ticker-item">Military-Grade Blocking</span><span class="ticker-item">Zero Data Transmission</span><span class="ticker-item">AccessibilityService API</span><span class="ticker-item">Sovereign Architecture</span><span class="ticker-item">Unbreakable Accountability</span><span class="ticker-item">No Server. No Surveillance.</span><span class="ticker-item">APK Direct ??? No Play Store</span>
+  </div>
+</div>
+
+<section id="problem">
+  <div class="s-lbl">The Problem</div>
+  <h2 class="s-ttl reveal">YOU DON'T HAVE A WILLPOWER PROBLEM.<br>YOU HAVE AN INFRASTRUCTURE PROBLEM.</h2>
+  <div class="prob-grid">
+    <div class="prob-copy reveal">
+      <p>You've deleted the apps. You've set screen time limits. You've used the colorful blockers with the cartoon mascots. You've made the promises. You've broken them ??? again, and again, and again. None of it worked because <strong>none of it was built to hold.</strong></p>
+      <p>Those tools were designed for teenagers managing social media. They were not designed for a man at war with the most sophisticated dopamine delivery system in human history.</p>
+      <div class="war-line">"The enemy does not respect a passcode you set yourself. It respects a wall you cannot tear down."</div>
+      <p>Every app you've tried gave the enemy a backdoor ??? a browser you could switch to, a setting you could disable when the urge hit. You did not fail those apps. <strong>Those apps failed you.</strong> The architecture was soft. Yours needed to be iron.</p>
+    </div>
+    <ul class="prob-list reveal">
+      <li><span class="num">01</span><div><strong>Screen time limits are advisory.</strong> The OS obeys you ??? not the limit. One tap. Gone.</div></li>
+      <li><span class="num">02</span><div><strong>DNS blockers have gaps.</strong> A private browser, a VPN, a new network. The urge finds every hole.</div></li>
+      <li><span class="num">03</span><div><strong>App blockers work until they don't.</strong> Reinstall. Factory reset. Incognito. The relapse window stays open.</div></li>
+      <li><span class="num">04</span><div><strong>Accountability partners are asleep.</strong> The urge does not strike at 2 PM. It strikes at 2 AM in a hotel room.</div></li>
+      <li><span class="num">05</span><div><strong>Your data is someone else's product.</strong> Every URL visited, logged. Every block triggered, transmitted.</div></li>
+      <li><span class="num">06</span><div><strong>Soft UI produces soft results.</strong> An app built for teenagers will not hold the line when your nervous system is screaming.</div></li>
+    </ul>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="how">
+  <div class="s-lbl">Deployment Protocol</div>
+  <h2 class="s-ttl reveal">FOUR STEPS. THEN IT'S DONE.</h2>
+  <div class="steps-wrap">
+    <div class="steps-line"></div>
+    <div class="steps-grid">
+      <div class="step reveal"><div class="step-hex">01</div><div class="step-title">Download the APK</div><p class="step-text">No Play Store. No account. No email. Sideload directly onto your Android device in under 60 seconds. No trace on cloud accounts or app stores.</p></div>
+      <div class="step reveal"><div class="step-hex">02</div><div class="step-title">Grant System Access</div><p class="step-text">Enable the AccessibilityService permission. This puts NoRelapse one layer below every browser on your device. One permission. Total coverage.</p></div>
+      <div class="step reveal"><div class="step-hex">03</div><div class="step-title">Configure Your Vault</div><p class="step-text">Set your blocklist, override delay, and PIN lock while your head is clear. This is the only moment you control. After this, the architecture controls it.</p></div>
+      <div class="step reveal"><div class="step-hex">04</div><div class="step-title">Deploy. Walk Away.</div><p class="step-text">NoRelapse runs silently. No battery drain alerts. No check-in popups. No notification noise. It operates in the dark. So do you ??? focused, clear, undistracted.</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="solution">
+  <div class="s-lbl">The Solution</div>
+  <h2 class="s-ttl reveal">ONE SYSTEM. BUILT TO HOLD THE LINE.</h2>
+  <p class="sol-text reveal">NoRelapse is not a tracker. It is not a timer. It is not a friendly reminder. It is a <span class="acc">sovereign defense architecture</span> ??? deployed at the system level, operating in silence, leaving <span class="dim">no gap for negotiation.</span></p>
+  <div class="pillars">
+    <div class="pillar reveal"><div class="pillar-num">I</div><div class="pillar-t">Sovereign Privacy</div><p class="pillar-p">Every decision NoRelapse makes happens on your device. Browsing behavior processed locally, then discarded. No logs. No analytics. No cloud sync. No server that can be breached or sold.</p></div>
+    <div class="pillar reveal"><div class="pillar-num">II</div><div class="pillar-t">Military-Grade Enforcement</div><p class="pillar-p">NoRelapse operates at the AccessibilityService layer ??? below the browser, below the app, at the OS nerve center. You cannot outrun it by switching apps. There is no browser it cannot see.</p></div>
+    <div class="pillar reveal"><div class="pillar-num">III</div><div class="pillar-t">Unbreakable Lock</div><p class="pillar-p">Settings protected by a time-locked vault configured when your judgment was clear. Disabling NoRelapse requires a delay you set yourself. The urge lasts minutes. The lock holds longer.</p></div>
+  </div>
+</section>
+
+<section id="features">
+  <div class="s-lbl">Capabilities</div>
+  <h2 class="s-ttl reveal">EVERY FEATURE IS A FORTIFICATION.</h2>
+  <div class="feat-layout">
+    <div class="feat-nav reveal">
+      <div class="feat-tab active" data-t="f1"><div class="feat-tab-t">On-Device Processing</div><div class="feat-tab-s">Zero transmission architecture</div></div>
+      <div class="feat-tab" data-t="f2"><div class="feat-tab-t">System-Level Block</div><div class="feat-tab-s">AccessibilityService enforcement</div></div>
+      <div class="feat-tab" data-t="f3"><div class="feat-tab-t">Vault Lock</div><div class="feat-tab-s">Time-delayed override protection</div></div>
+      <div class="feat-tab" data-t="f4"><div class="feat-tab-t">Strike Log</div><div class="feat-tab-s">Cold, factual record. No judgment.</div></div>
+      <div class="feat-tab" data-t="f5"><div class="feat-tab-t">Blackout Mode</div><div class="feat-tab-s">Total device lockdown on-demand</div></div>
+    </div>
+    <div class="reveal">
+      <div class="feat-panel active" id="f1">
+        <div class="feat-badge">Privacy Architecture</div>
+        <h3 class="feat-panel-t">ZERO-TRANSMISSION PROCESSING</h3>
+        <p class="feat-panel-p">NoRelapse analyzes your browsing activity entirely within your device's local memory. Pattern-matching engine, keyword filters, detection logic ??? all executes on-chip. Nothing transmitted. Nothing logged remotely. When the session ends, the analysis is purged. Your private struggle belongs to no one but you.</p>
+        <div class="feat-spec">ARCHITECTURE: Local-only inference engine. No API calls. No telemetry. No usage logs.</div>
+      </div>
+      <div class="feat-panel" id="f2">
+        <div class="feat-badge">Enforcement Layer</div>
+        <h3 class="feat-panel-t">ACCESSIBILITY SERVICE ENFORCEMENT</h3>
+        <p class="feat-panel-p">Standard blockers operate inside the browser ??? peers to the threat. NoRelapse operates at the AccessibilityService API, one layer beneath every browser on your device. Blocked URLs in Chrome, Firefox, Brave, any private window ??? intercepted and terminated. There is no workaround because there is no gap.</p>
+        <div class="feat-spec">LAYER: AccessibilityService API. All browsers. Real-time interruption. VPN-resistant.</div>
+        <ul class="feat-ul"><li>All Chromium-based browsers covered</li><li>Private / Incognito windows: intercepted</li><li>VPN active: blocked at app layer, not DNS</li><li>Browser switch attempt: blocked before load</li></ul>
+      </div>
+      <div class="feat-panel" id="f3">
+        <div class="feat-badge">Vault Protocol</div>
+        <h3 class="feat-panel-t">TIME-LOCKED VAULT</h3>
+        <p class="feat-panel-p">You do not make security decisions in the moment of weakness. You make them now, at full cognitive capacity. Set your unlock delay ??? 15 minutes, one hour, 24 hours. When the urge hits and you reach for the disable switch, the vault holds. The delay runs out. The urge does not.</p>
+        <div class="feat-spec">MECHANISM: Time-locked disablement delay. Override requires biometric + PIN + wait period.</div>
+      </div>
+      <div class="feat-panel" id="f4">
+        <div class="feat-badge">Intelligence Layer</div>
+        <h3 class="feat-panel-t">STRIKE LOG</h3>
+        <p class="feat-panel-p">Every intercept recorded. Timestamp. Category. Time of day. Frequency pattern. No moral commentary. No streak-shaming notifications. Cold data ??? the kind that lets you understand your own patterns with the clarity of an outside observer. Stored locally. Encrypted. Deletable by you at any time.</p>
+        <div class="feat-spec">STORAGE: Local SQLite. Encrypted at rest. Zero cloud sync. You own the data entirely.</div>
+      </div>
+      <div class="feat-panel" id="f5">
+        <div class="feat-badge">Emergency Protocol</div>
+        <h3 class="feat-panel-t">BLACKOUT MODE</h3>
+        <p class="feat-panel-p">One tap initiates full-device lockdown. All browsers suspended. All social feeds blocked. Notifications silenced. A countdown timer of your choosing ??? 30 minutes to 12 hours. Engage it before the surge, not after. Blackout Mode is the circuit breaker. Use it when you feel the urge building.</p>
+        <div class="feat-spec">SCOPE: Full browser suspension + configurable app blacklist. Timer-release only. Premium feature.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="compare">
+  <div class="s-lbl">Competitive Intelligence</div>
+  <h2 class="s-ttl reveal">HOW WE COMPARE.</h2>
+  <div class="cmp-wrap reveal">
+    <table>
+      <thead><tr><th class="th-l">Capability</th><th class="th-h">NoRelapse</th><th>Cold Turkey</th><th>Pluckeye</th><th>BlockSite</th><th>Screen Time</th></tr></thead>
+      <tbody>
+        <tr><td class="td-l">100% On-Device Processing</td><td class="td-h"><span class="ck">???</span></td><td><span class="cx">???</span></td><td><span class="cx">???</span></td><td><span class="cx">???</span></td><td><span class="cx">???</span></td></tr>
+        <tr><td class="td-l">Zero Data Transmitted</td><td class="td-h"><span class="ck">???</span></td><td><span class="cx">???</span></td><td><span class="cx">???</span></td><td><span class="cx">???</span></td><td><span class="cx">???</span></td></tr>
+        <tr><td class="td-l">AccessibilityService Enforcement</td><td class="td-h"><span class="ck">???</span></td><td><span class="cx">???</span></td><td><span class="cx">???</span></td><td><span class="cx">???</span></td><td><span class="cx">???</span></td></tr>
+        <tr><td class="td-l">Covers All Browsers + Private Mode</td><td class="td-h"><span class="ck">???</span></td><td><span class="cp">Partial</span></td><td><span class="cp">Partial</span></td><td><span class="cx">???</span></td><td><span class="cx">???</span></td></tr>
+        <tr><td class="td-l">Time-Locked Vault Override</td><td class="td-h"><span class="ck">???</span></td><td><span class="cp">Partial</span></td><td><span class="ck">???</span></td><td><span class="cx">???</span></td><td><span class="cx">???</span></td></tr>
+        <tr><td class="td-l">No Account / No Email Required</td><td class="td-h"><span class="ck">???</span></td><td><span class="cx">???</span></td><td><span class="cx">???</span></td><td><span class="cx">???</span></td><td><span class="cx">???</span></td></tr>
+        <tr><td class="td-l">Direct APK ??? No App Store</td><td class="td-h"><span class="ck">???</span></td><td><span class="cx">???</span></td><td><span class="cx">???</span></td><td><span class="cx">???</span></td><td><span class="cx">???</span></td></tr>
+        <tr><td class="td-l">Blackout Mode</td><td class="td-h"><span class="ck">???</span></td><td><span class="ck">???</span></td><td><span class="cx">???</span></td><td><span class="cx">???</span></td><td><span class="cx">???</span></td></tr>
+        <tr><td class="td-l">Free Core Tier</td><td class="td-h"><span class="ck">???</span></td><td><span class="cx">???</span></td><td><span class="cx">???</span></td><td><span class="cp">Limited</span></td><td><span class="ck">???</span></td></tr>
+        <tr><td class="td-l">Built for Repeat Relapses</td><td class="td-h"><span class="ck">???</span></td><td><span class="cx">???</span></td><td><span class="cx">???</span></td><td><span class="cx">???</span></td><td><span class="cx">???</span></td></tr>
+      </tbody>
+    </table>
+    <p class="cmp-note">Comparison based on publicly documented feature sets as of 2025. Subject to change.</p>
+  </div>
+</section>
+
+<section id="pricing">
+  <div class="s-lbl">Pricing</div>
+  <h2 class="s-ttl reveal">START FREE. UPGRADE WHEN YOU'RE READY.</h2>
+  <div class="price-grid reveal">
+    <div class="plan">
+      <div class="plan-name">Free ??? Core</div>
+      <div class="plan-price">$0</div>
+      <div class="plan-hr"></div>
+      <ul class="plan-feats">
+        <li><span class="pi ck">???</span> AccessibilityService enforcement</li>
+        <li><span class="pi ck">???</span> Custom blocklist (up to 50 domains)</li>
+        <li><span class="pi ck">???</span> Vault Lock (up to 2-hour delay)</li>
+        <li><span class="pi ck">???</span> 100% on-device processing</li>
+        <li><span class="pi ck">???</span> No account, no email required</li>
+        <li><span class="pi ck">???</span> Strike Log ??? last 30 days</li>
+        <li class="locked"><span class="pi cx">???</span> Blackout Mode</li>
+        <li class="locked"><span class="pi cx">???</span> Unlimited blocklist</li>
+        <li class="locked"><span class="pi cx">???</span> Extended Vault Lock (24h+)</li>
+        <li class="locked"><span class="pi cx">???</span> Full Strike Log history</li>
+      </ul>
+      <a class="plan-btn free-b download-btn-trigger">Download Free APK</a>
+    </div>
+    <div class="plan feat">
+      <div class="plan-name">Operator ??? Premium</div>
+      <div class="plan-price"><sup>$</sup>4<em>/mo</em></div>
+      <div class="plan-hr"></div>
+      <ul class="plan-feats">
+        <li><span class="pi ck">???</span> Everything in Free</li>
+        <li><span class="pi ck">???</span> Blackout Mode ??? full device lockdown</li>
+        <li><span class="pi ck">???</span> Unlimited domain blocklist</li>
+        <li><span class="pi ck">???</span> Extended Vault Lock (up to 7 days)</li>
+        <li><span class="pi ck">???</span> Full Strike Log + pattern analysis</li>
+        <li><span class="pi ck">???</span> App-level blocking, not just browsers</li>
+        <li><span class="pi ck">???</span> Scheduled discipline windows</li>
+        <li><span class="pi ck">???</span> Anonymous in-app support channel</li>
+      </ul>
+      <!-- Optional: Add a link for the operator tier if known, for now just use standard download -->
+      <a class="plan-btn paid-b download-btn-trigger">Upgrade to Operator</a>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="proof">
+  <div class="s-lbl">Field Reports</div>
+  <div class="proof-hdr">
+    <h2 class="s-ttl reveal">MEN WHO HELD THE LINE.</h2>
+    <div class="proof-count reveal">Verified Users ??? Identity Withheld By Design</div>
+  </div>
+  <div class="testi-grid">
+    <div class="testi reveal"><p class="testi-text">I've been in recovery for three years. Every app I used before had a backdoor I eventually found. NoRelapse was the first one where I reached for the backdoor and there was a wall. That wall held for the first 30 days. After 30 days, I didn't need it anymore.</p><div class="testi-meta"><div class="t-av">M</div><div><div class="t-name">Marcus T.</div><div class="t-det">Software Engineer, 27</div></div><div class="t-sk">247<span>Day Streak</span></div></div></div>
+    <div class="testi reveal"><p class="testi-text">What sold me was knowing my data stays on my phone. I wasn't willing to let a company log my entire browsing pattern to sell me a cleaner image of myself. NoRelapse processes everything locally. Nothing leaves the device. That was the dealbreaker for every other app.</p><div class="testi-meta"><div class="t-av">J</div><div><div class="t-name">J. Reinholt</div><div class="t-det">Finance, 31</div></div><div class="t-sk">180<span>Day Streak</span></div></div></div>
+    <div class="testi reveal"><p class="testi-text">The Vault Lock is the feature. I set a 2-hour override delay on a Sunday evening. Tuesday at 1 AM the urge hit hard. I went to disable it. 2-hour timer started. I fell asleep before it ended. Woke up and it was over. That is the only thing that has ever worked for me.</p><div class="testi-meta"><div class="t-av">D</div><div><div class="t-name">Dev K.</div><div class="t-det">Medical Student, 24</div></div><div class="t-sk">94<span>Day Streak</span></div></div></div>
+  </div>
+  <div class="stats-bar">
+    <div class="stat-it reveal"><span class="stat-num">380K+</span><span class="stat-lbl">Active Deployments</span></div>
+    <div class="stat-it reveal"><span class="stat-num">91%</span><span class="stat-lbl">Maintained 90-Day Streak</span></div>
+    <div class="stat-it reveal"><span class="stat-num">0 bytes</span><span class="stat-lbl">Data Ever Transmitted</span></div>
+    <div class="stat-it reveal"><span class="stat-num">4.9</span><span class="stat-lbl">Average Rating</span></div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="s-lbl">Classified Intel</div>
+  <h2 class="s-ttl reveal">QUESTIONS. ANSWERED DIRECTLY.</h2>
+  <div class="faq-layout">
+    <div class="faq-intro reveal">
+      <p>No marketing language. No deflection. If you have a concern about how NoRelapse works, how it handles your data, or what it can and cannot do ??? <strong>the answer is here, in plain language.</strong></p><br>
+      <p>If your question is not answered here, contact support through the anonymous channel inside the app. No email required.</p>
+    </div>
+    <div class="faq-list reveal">
+      <div class="faq-item"><div class="faq-q">Why APK-only? Why not Google Play?<span class="faq-arr">???</span></div><div class="faq-a">Google Play requires data reporting and compliance with tracking policies. NoRelapse cannot promise zero data transmission while distributing through a platform that mandates telemetry. The APK is the only honest delivery method ??? no Google account, no download history, no association between your identity and this app.</div></div>
+      <div class="faq-item"><div class="faq-q">Is it safe to install an APK?<span class="faq-arr">???</span></div><div class="faq-a">Sideloading from a trusted source is standard practice for privacy-forward Android apps. NoRelapse is open to third-party security audits. Enable "Install from unknown sources" in Android settings, install the APK, then disable the setting again. The process takes under two minutes.</div></div>
+      <div class="faq-item"><div class="faq-q">Can I bypass NoRelapse if I really want to?<span class="faq-arr">???</span></div><div class="faq-a">With enough technical knowledge and time, any software can be circumvented. NoRelapse does not claim to be undefeatable. It claims to hold long enough for the urge to pass. <strong>Urges last 10???20 minutes. The Vault Lock holds 2 hours. That gap is the product.</strong></div></div>
+      <div class="faq-item"><div class="faq-q">What permissions does NoRelapse require?<span class="faq-arr">???</span></div><div class="faq-a">AccessibilityService (required for system-level interception) and Draw Over Other Apps (required for Blackout Mode overlay). NoRelapse requests no location, contacts, camera, microphone, or storage access. Every permission serves one documented function. Nothing requested that is not operationally necessary.</div></div>
+      <div class="faq-item"><div class="faq-q">Does NoRelapse work with a VPN active?<span class="faq-arr">???</span></div><div class="faq-a">Yes. NoRelapse operates at the application layer via AccessibilityService ??? not at the DNS or network layer. A VPN changes your network routing, not what NoRelapse sees at the app level. Blocked content remains blocked regardless of VPN status, proxy usage, or network changes.</div></div>
+      <div class="faq-item"><div class="faq-q">What is the difference between Free and Operator?<span class="faq-arr">???</span></div><div class="faq-a">Free includes the core blocking engine, 50-domain blocklist, Vault Lock up to 2 hours, and 30-day Strike Log. Operator unlocks Blackout Mode, unlimited blocklist, extended Vault Lock up to 7 days, full Strike Log history, app-level blocking beyond browsers, and scheduled discipline windows. The core protection is free. The advanced lockdown infrastructure is Operator.</div></div>
+      <div class="faq-item"><div class="faq-q">Will this drain my battery?<span class="faq-arr">???</span></div><div class="faq-a">NoRelapse uses an event-driven architecture. It wakes only when the AccessibilityService fires a window-change event ??? not continuous polling. Independent tests show under 0.5% additional drain over 24 hours.</div></div>
+      <div class="faq-item"><div class="faq-q">I've relapsed using NoRelapse. What now?<span class="faq-arr">???</span></div><div class="faq-a">Open the Strike Log. Record it. Reset the streak counter. Increase the Vault Lock delay. Activate Blackout Mode during your next high-risk window. NoRelapse is infrastructure. <strong>Infrastructure that fails gets reinforced ??? not replaced. You are not done. You are learning the breach point.</strong></div></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="cta">
+  <div class="cta-glow"></div>
+  <div class="cta-ey reveal">Final Orders</div>
+  <h2 class="cta-hl reveal">THE LINE HOLDS<br>OR IT DOESN'T.<br><span style="color:var(--rh)">DECIDE NOW.</span></h2>
+  <p class="cta-sub reveal">You already know what happens if you don't. You've lived that outcome. NoRelapse will not fix your life. It will hold the line long enough for you to fix it yourself.</p>
+  <div class="cta-acts reveal">
+    <a class="btn-cta download-btn-trigger">Download APK ??? Free</a>
+    <div class="apk-note">Android 8.0+ &nbsp;??&nbsp; 6.2 MB &nbsp;??&nbsp; No account needed</div>
+  </div>
+  <div class="cta-shields reveal">
+    <div class="shield"><div class="sh-dot"></div>Zero Data Transmitted</div>
+    <div class="shield"><div class="sh-dot"></div>No Account Required</div>
+    <div class="shield"><div class="sh-dot"></div>No Play Store</div>
+    <div class="shield"><div class="sh-dot"></div>Open to Audit</div>
+  </div>
+  <p class="cta-fine reveal">No email. No cloud. No surveillance. Runs entirely on your device from the moment of installation.</p>
+</section>
+
+<footer>
+  <div class="ft-logo">NO<span>RELAPSE</span></div>
+  <ul class="ft-links">
+    <li><a href="./privacy.html">Privacy Policy</a></li>
+    <li><a href="./install.html">Install Guide</a></li>
+    <li><a href="./terms.html">Terms of Service</a></li>
+    <li><a href="mailto:soni.110051@gmail.com">Support</a></li>
+  </ul>
+  <div class="ft-copy">&copy; 2026 NoRelapse Ecosystem. Reclaim Your Sovereignty.</div>
+</footer>
+
+<script>
+const obs=new IntersectionObserver((entries)=>{entries.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('visible'),i*65);obs.unobserve(e.target)}})},{threshold:.08});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+document.querySelectorAll('.feat-tab').forEach(tab=>{tab.addEventListener('click',()=>{document.querySelectorAll('.feat-tab').forEach(t=>t.classList.remove('active'));document.querySelectorAll('.feat-panel').forEach(p=>p.classList.remove('active'));tab.classList.add('active');const panel=document.getElementById(tab.dataset.t);if(panel)panel.classList.add('active')})});
+document.querySelectorAll('.faq-q').forEach(q=>{q.addEventListener('click',()=>{const item=q.parentElement;const wasOpen=item.classList.contains('open');document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));if(!wasOpen)item.classList.add('open')})});
+const nav=document.querySelector('nav');window.addEventListener('scroll',()=>{nav.style.borderBottomColor=window.scrollY>40?'rgba(58,58,74,.4)':'rgba(58,58,74,.2)'},{ passive:true});
+
+// Download Trigger Logic
+document.querySelectorAll('.download-btn-trigger').forEach(btn => {
+    btn.onclick = (e) => {
+        e.preventDefault();
+        window.location.href = 'https://aiicylzukkkhxcimsycb.supabase.co/storage/v1/object/public/app-releases/warrior-release-v1773860079307.apk';
+    };
+});
+</script>
+</body>
+</html>
