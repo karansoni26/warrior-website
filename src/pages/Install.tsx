@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { supabase } from '../supabase';
 
 export default function Install() {
   useEffect(() => {
@@ -18,9 +19,19 @@ export default function Install() {
     return () => obs.disconnect();
   }, []);
 
-  const handleDownloadClick = (e: React.MouseEvent) => {
+  const handleDownloadClick = async (e: React.MouseEvent) => {
     e.preventDefault();
-    window.location.href = 'https://aiicylzukkkhxcimsycb.supabase.co/storage/v1/object/public/app-releases/warrior-release-v1773860079307.apk';
+    try {
+      const { data } = await supabase.from('app_config').select('warrior_settings').eq('id', 'global').single();
+      const latestUrl = data?.warrior_settings?.latest_apk_url;
+      if (latestUrl) {
+         window.location.href = latestUrl;
+         return;
+      }
+    } catch (err) {
+      console.error("Install download failed", err);
+    }
+    window.location.href = 'https://aiicylzukkkhxcimsycb.supabase.co/storage/v1/object/public/app-releases/NoRelapse-release.apk';
   };
 
   return (
@@ -60,9 +71,9 @@ export default function Install() {
 
           <div className="download-block">
             <div className="db-info">
-              <div className="db-version">Latest Release — v1.1</div>
-              <div className="db-name">NoRelapse_v1.1.apk</div>
-              <div className="db-meta">Android 6.0+ &nbsp;·&nbsp; ~6.2 MB &nbsp;·&nbsp; Signed &amp; Verified</div>
+              <div className="db-version">Latest Release — v1.1.1</div>
+              <div className="db-name">NoRelapse.apk</div>
+              <div className="db-meta">Android 6.0+ &nbsp;·&nbsp; ~20 MB &nbsp;·&nbsp; Signed &amp; Verified</div>
             </div>
             <a href="#" onClick={handleDownloadClick} className="btn-dl">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M12 3v13M6 11l6 6 6-6"/><path d="M3 20h18"/></svg>

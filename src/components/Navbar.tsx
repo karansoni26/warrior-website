@@ -1,6 +1,7 @@
 import { Link, useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import React from 'react';
+import { supabase } from '../supabase';
 
 export default function Navbar() {
   const { pathname } = useLocation();
@@ -16,10 +17,22 @@ export default function Navbar() {
   // Close menu on route change
   useEffect(() => { setMenuOpen(false); }, [pathname]);
 
-  const handleDownloadClick = (e: React.MouseEvent) => {
+  const handleDownloadClick = async (e: React.MouseEvent) => {
     e.preventDefault();
     setMenuOpen(false);
-    window.location.href = 'https://aiicylzukkkhxcimsycb.supabase.co/storage/v1/object/public/app-releases/warrior-release-v1773860079307.apk';
+    
+    try {
+      const { data } = await supabase.from('app_config').select('warrior_settings').eq('id', 'global').single();
+      const latestUrl = data?.warrior_settings?.latest_apk_url;
+      if (latestUrl) {
+         window.location.href = latestUrl;
+         return;
+      }
+    } catch (err) {
+      console.error("Navbar download failed", err);
+    }
+    
+    window.location.href = 'https://aiicylzukkkhxcimsycb.supabase.co/storage/v1/object/public/app-releases/NoRelapse-release.apk';
   };
 
   return (
