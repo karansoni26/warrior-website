@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import { supabase } from '../supabase';
 
 
 export default function Home() {
@@ -45,9 +46,23 @@ export default function Home() {
     };
   }, []);
 
-  const handleDownloadClick = (e: React.MouseEvent) => {
+  const handleDownloadClick = async (e: React.MouseEvent) => {
     e.preventDefault();
-    window.location.href = 'https://aiicylzukkkhxcimsycb.supabase.co/storage/v1/object/public/app-releases/warrior-release-v1773860079307.apk';
+    try {
+      // Try to get dynamic link from DB
+      const { data } = await supabase.from('app_config').select('warrior_settings').eq('id', 'global').single();
+      const latestUrl = data?.warrior_settings?.latest_apk_url;
+      
+      if (latestUrl) {
+         window.location.href = latestUrl;
+         return;
+      }
+    } catch (err) {
+      console.error("Config fetch failed", err);
+    }
+    
+    // Fallback if DB fails or is empty
+    window.location.href = 'https://aiicylzukkkhxcimsycb.supabase.co/storage/v1/object/public/app-releases/NoRelapse-release.apk';
   };
 
   return (
