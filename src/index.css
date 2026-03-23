@@ -367,8 +367,14 @@ tbody td.td-h{background:rgba(17,17,24,.6);border-left:1px solid var(--iron);bor
 /* Mobile — all the layout changes */
 @media(max-width:640px){
   /* Sections base padding */
-  section{padding:56px 20px}
+  section{padding:60px 20px}
   .divider{margin:0 20px}
+  
+  #install { padding: 60px 20px !important; }
+  #cta { padding: 60px 20px !important; }
+  .download-block { padding: 30px 20px !important; }
+  .db-name { font-size: 1.8rem !important; }
+  .btn-cta { width: 100%; text-align: center; padding: 18px 30px !important; }
 
   /* Hero — stack to single column */
   #hero{padding:96px 20px 56px !important}
@@ -432,6 +438,7 @@ tbody td.td-h{background:rgba(17,17,24,.6);border-left:1px solid var(--iron);bor
   /* Page hero for legal + install pages */
   .page-h1{font-size:clamp(2.4rem,10vw,4rem)}
   .sec-title{font-size:clamp(1.6rem,7vw,2.4rem)}
+  .cta-hl { font-size: clamp(2.5rem, 8vw, 4rem) !important; }
 
   /* Footer */
   footer{padding:20px}

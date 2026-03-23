@@ -343,7 +343,7 @@ export default function Home() {
                 Google Play Protect flags any direct APK that requests Accessibility permissions. Because NoRelapse operates at a deeper layer for better protection, you must authorize it manually.
              </p>
 
-             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '60px', marginTop: '60px' }}>
+             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '60px', marginTop: '60px' }}>
                   <div className="experience-card reveal" style={{ textAlign: 'center' }}>
                        <div className="phone-mockup" style={{ maxWidth: '340px', border: '10px solid var(--iron)', borderRadius: '48px', margin: '0 auto' }}>
                             <img src="/images/onboarding_play_protect_menu_1774281835227.png" alt="Google Play Protect Settings" />
