@@ -456,7 +456,7 @@ tbody td.td-h{background:rgba(17,17,24,.6);border-left:1px solid var(--iron);bor
   border-radius: 46px;
   background: #000;
   overflow: hidden;
-  max-width: 320px;
+  max-width: 400px;
   margin: 0 auto;
   position: relative;
   z-index: 5;

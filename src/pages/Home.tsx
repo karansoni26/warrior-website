@@ -48,20 +48,24 @@ export default function Home() {
 
   const handleDownloadClick = async (e: React.MouseEvent) => {
     e.preventDefault();
+    const section = document.getElementById('install');
+    if (section) {
+       section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const actualDownload = async (e: React.MouseEvent) => {
+    e.preventDefault();
     try {
-      // Try to get dynamic link from DB
       const { data } = await supabase.from('app_config').select('warrior_settings').eq('id', 'global').single();
       const latestUrl = data?.warrior_settings?.latest_apk_url;
-      
       if (latestUrl) {
          window.location.href = latestUrl;
          return;
       }
     } catch (err) {
-      console.error("Config fetch failed", err);
+      console.error("Install download failed", err);
     }
-    
-    // Fallback if DB fails or is empty
     window.location.href = 'https://aiicylzukkkhxcimsycb.supabase.co/storage/v1/object/public/app-releases/NoRelapse-release.apk';
   };
 
@@ -321,6 +325,73 @@ export default function Home() {
         </div>
       </section>
 
+      <div className="divider"></div>
+
+      <section id="install" style={{ background: 'var(--deep)', padding: '120px 60px' }}>
+        <div className="s-lbl">Deployment Protocol</div>
+        <h2 className="s-ttl reveal">MISSION-CRITICAL SETUP</h2>
+        <p className="sol-text reveal" style={{ maxWidth: '800px', marginBottom: '60px' }}>
+             PLEASE FOLLOW THESE INSTRUCTIONS CAREFULLY TO DEPLOY THE GUARDIAN SHIELD WITHOUT ANY INTERRUPTION. 
+             <span className="acc">SKIPPING THESE STEPS MAY PREVENT THE BLOCKER FROM SECURING YOUR DEVICE.</span>
+        </p>
+
+        {/* SETUP PHASE 01: PLAY PROTECT */}
+        <div className="section-block reveal" style={{ border: 'none', padding: 0 }}>
+             <div className="sec-num">Phase 01</div>
+             <h3 className="sec-title">BYPASSING GOOGLE RESTRICTIONS</h3>
+             <p className="sec-body" style={{ maxWidth: '700px', marginBottom: '48px' }}>
+                Google Play Protect flags any direct APK that requests Accessibility permissions. Because NoRelapse operates at a deeper layer for better protection, you must authorize it manually.
+             </p>
+
+             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '60px', marginTop: '60px' }}>
+                  <div className="experience-card reveal" style={{ textAlign: 'center' }}>
+                       <div className="phone-mockup" style={{ maxWidth: '340px', border: '10px solid var(--iron)', borderRadius: '48px', margin: '0 auto' }}>
+                            <img src="/images/onboarding_play_protect_menu_1774281835227.png" alt="Google Play Protect Settings" />
+                       </div>
+                       <h4 style={{ fontSize: '2.2rem', marginTop: '32px' }}>1. ACCESS PLAY PROTECT</h4>
+                       <p style={{ fontSize: '1.1rem' }}>Open Google Play Store &rarr; Tap Profile Icon &rarr; Select <strong>Play Protect</strong>.</p>
+                  </div>
+                  <div className="experience-card reveal" style={{ textAlign: 'center' }}>
+                       <div className="phone-mockup" style={{ maxWidth: '340px', border: '10px solid var(--iron)', borderRadius: '48px', margin: '0 auto' }}>
+                            <img src="/images/onboarding_play_protect_toggle_off_1774281859344.png" alt="Disable APK Scanning" />
+                       </div>
+                       <h4 style={{ fontSize: '2.2rem', marginTop: '32px' }}>2. DISABLE SCANNING</h4>
+                       <p style={{ fontSize: '1.1rem' }}>Tap Gear Icon (top right) &rarr; Disable <strong>"Scan apps with Play Protect"</strong> during installation.</p>
+                  </div>
+             </div>
+        </div>
+
+        {/* SETUP PHASE 02: ACCESSIBILITY */}
+        <div className="section-block reveal" style={{ border: 'none', padding: 0, marginTop: '140px' }}>
+             <div className="sec-num">Phase 02</div>
+             <h3 className="sec-title">VITAL: REAL-TIME GUARD</h3>
+             <p className="sec-body" style={{ maxWidth: '700px', marginBottom: '48px' }}>
+                The Guardian Shield requires Accessibility permission to monitor and block restricted URLs across all browsers. <strong>This is the core of NoRelapse.</strong>
+             </p>
+
+             <div className="experience-card reveal" style={{ textAlign: 'center' }}>
+                  <div className="phone-mockup" style={{ maxWidth: '340px', border: '10px solid var(--iron)', borderRadius: '48px', margin: '0 auto' }}>
+                       <img src="/images/onboarding_accessibility_menu_step_1774281884464.png" alt="Enable Accessibility Permission" />
+                  </div>
+                  <h4 style={{ fontSize: '2.2rem', marginTop: '32px' }}>ACTIVATE SHIELD LAYER</h4>
+                  <p style={{ fontSize: '1.1rem', maxWidth: '600px', margin: '16px auto 0' }}>Go to <strong>Settings</strong> &rarr; <strong>Accessibility</strong> &rarr; <strong>Downloaded Apps</strong> &rarr; Toggle <strong>NoRelapse</strong> to ON.</p>
+             </div>
+        </div>
+
+        {/* ACTUAL DOWNLOAD BUTTON */}
+        <div style={{ textAlign: 'center', marginTop: '120px', borderTop: '1px solid var(--iron)', paddingTop: '100px' }}>
+             <p className="cta-ey reveal">All Systems Ready</p>
+             <h2 className="cta-hl reveal" style={{ fontSize: '4rem', marginBottom: '40px' }}>COMMENCE DEPLOYMENT</h2>
+             <a href="#" onClick={actualDownload} className="btn-cta" style={{ fontSize: '1.4rem', padding: '24px 72px' }}>
+                DOWNLOAD NORELAPSE ELITE
+             </a>
+             <div className="callout reveal" style={{ maxWidth: '600px', margin: '40px auto 0', borderLeftColor: 'var(--rh)' }}>
+                <strong>SYSTEM NOTICE:</strong> After clicking download, your browser will warn: <em>"File might be harmful."</em> You must tap <strong>"Download anyway"</strong> — this is standard for all private APK deployments.
+             </div>
+        </div>
+      </section>
+
+      <div className="divider"></div>
 
       <section id="cta">
         <div className="cta-glow"></div>

@@ -1,7 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import React from 'react';
-import { supabase } from '../supabase';
 
 export default function Navbar() {
   const { pathname } = useLocation();
@@ -17,22 +16,18 @@ export default function Navbar() {
   // Close menu on route change
   useEffect(() => { setMenuOpen(false); }, [pathname]);
 
-  const handleDownloadClick = async (e: React.MouseEvent) => {
+  const handleDownloadClick = (e: React.MouseEvent) => {
     e.preventDefault();
     setMenuOpen(false);
     
-    try {
-      const { data } = await supabase.from('app_config').select('warrior_settings').eq('id', 'global').single();
-      const latestUrl = data?.warrior_settings?.latest_apk_url;
-      if (latestUrl) {
-         window.location.href = latestUrl;
-         return;
+    if (pathname === '/') {
+      const section = document.getElementById('install');
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+        return;
       }
-    } catch (err) {
-      console.error("Navbar download failed", err);
     }
-    
-    window.location.href = 'https://aiicylzukkkhxcimsycb.supabase.co/storage/v1/object/public/app-releases/NoRelapse-release.apk';
+    window.location.href = '/#install';
   };
 
   return (
@@ -42,7 +37,7 @@ export default function Navbar() {
           <Link to="/" className="nav-logo">NO<span>RELAPSE</span></Link>
           <ul className="nav-links">
             <li><Link to="/" className={pathname === '/' ? 'active' : ''}>Home</Link></li>
-            <li><Link to="/install" className={pathname === '/install' ? 'active' : ''}>Install Guide</Link></li>
+            <li><a href="/#install" onClick={handleDownloadClick}>Setup Guide</a></li>
             <li><Link to="/privacy" className={pathname === '/privacy' ? 'active' : ''}>Privacy</Link></li>
             <li><a href="mailto:soni.110051@gmail.com">Support</a></li>
           </ul>
@@ -64,7 +59,7 @@ export default function Navbar() {
       {/* Mobile dropdown menu */}
       <div className={menuOpen ? 'mobile-menu open' : 'mobile-menu'}>
         <Link to="/" className={pathname === '/' ? 'active' : ''} onClick={() => setMenuOpen(false)}>Home</Link>
-        <Link to="/install" className={pathname === '/install' ? 'active' : ''} onClick={() => setMenuOpen(false)}>Install Guide</Link>
+        <a href="/#install" onClick={handleDownloadClick}>Setup Guide</a>
         <Link to="/privacy" className={pathname === '/privacy' ? 'active' : ''} onClick={() => setMenuOpen(false)}>Privacy</Link>
         <a href="mailto:soni.110051@gmail.com" onClick={() => setMenuOpen(false)}>Support</a>
         <a href="#" onClick={handleDownloadClick} className="mobile-menu-cta">Download APK</a>
