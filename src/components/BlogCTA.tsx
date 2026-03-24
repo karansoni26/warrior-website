@@ -1,9 +1,6 @@
 import React from 'react';
 
 const BlogCTA: React.FC = () => {
-    // Correct link from current bucket + VirusTotal verification
-    const apkUrl = "https://aiicylzukkkhxcimsycb.supabase.co/storage/v1/object/public/app-releases/NoRelapse-release-v1";
-    
     return (
         <div style={{
             margin: '60px 0',
@@ -19,7 +16,7 @@ const BlogCTA: React.FC = () => {
                 Stop fighting purely with willpower. Deploy the system-level shield.
             </p>
             <a 
-                href={apkUrl}
+                href="/install"
                 className="btn-g" 
                 style={{
                     display: 'inline-block', 

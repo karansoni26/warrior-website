@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import { supabase } from '../supabase';
 
 
 export default function Home() {
@@ -54,19 +53,9 @@ export default function Home() {
     }
   };
 
-  const actualDownload = async (e: React.MouseEvent) => {
+  const actualDownload = (e: React.MouseEvent) => {
     e.preventDefault();
-    try {
-      const { data } = await supabase.from('app_config').select('warrior_settings').eq('id', 'global').single();
-      const latestUrl = data?.warrior_settings?.latest_apk_url;
-      if (latestUrl) {
-         window.location.href = latestUrl;
-         return;
-      }
-    } catch (err) {
-      console.error("Install download failed", err);
-    }
-    window.location.href = 'https://aiicylzukkkhxcimsycb.supabase.co/storage/v1/object/public/app-releases/NoRelapse-release-v1';
+    window.location.href = '/install';
   };
 
   return (
