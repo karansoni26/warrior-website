@@ -45,83 +45,54 @@ export default function Install() {
 
       <div className="page-body">
         
-        {/* CRITICAL WARNING BANNER */}
-        <div className="section-block reveal" style={{ border: '2px solid var(--rh)', background: 'rgba(224, 32, 32, 0.05)', padding: '40px', borderRadius: '4px', marginBottom: '80px' }}>
-             <div style={{ display: 'flex', gap: '20px', alignItems: 'center', marginBottom: '20px' }}>
-                <span style={{ fontSize: '2.5rem' }}>⚠️</span>
-                <h2 style={{ fontFamily: 'var(--fd)', fontSize: '2.2rem', color: 'var(--white)', letterSpacing: '0.05em', margin: 0 }}>CRITICAL SETUP REQUIRED</h2>
-             </div>
-             <p style={{ fontFamily: 'var(--fc)', fontSize: '1.2rem', color: 'var(--bone)', lineHeight: 1.6, letterSpacing: '0.02em' }}>
-                Please follow the visual instructions below <strong>BEFORE and DURING</strong> installation. Skipping these steps will prevent the Guardian Shield from intercepting triggers and protecting your streak.
-             </p>
-        </div>
-
-        {/* VISUAL GUIDE 1: PLAY PROTECT */}
+        {/* VIDEO TUTORIAL: PHASE 01 */}
         <div className="section-block reveal" id="protect">
-          <div className="sec-num">Setup Phase 01</div>
+          <div className="sec-num">Phase 01</div>
           <h2 className="sec-title">BYPASS GOOGLE RESTRICTIONS</h2>
           <div className="sec-body">
-            <p>Google Play Protect marks any non-Store app as "Unknown." To use NoRelapse's advanced URL-blocking, you must allow the installation manually.</p>
+            <p>Google Play Protect marks private APKs as "Unknown." Watch the tutorial below to authorize the Guardian Shield correctly.</p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '32px', marginTop: '40px' }}>
-             <div className="experience-card">
-                <div className="phone-mockup" style={{ maxWidth: '200px', border: '6px solid var(--iron)', borderRadius: '32px' }}>
-                   <img src="/images/onboarding_play_protect_menu_1774281835227.png" alt="Play Protect Menu" />
-                </div>
-                <h4>1. Open Play Protect</h4>
-                <p>Open Play Store, tap your profile icon (top-right), and select <strong>Play Protect</strong>.</p>
-             </div>
-             <div className="experience-card">
-                <div className="phone-mockup" style={{ maxWidth: '200px', border: '6px solid var(--iron)', borderRadius: '32px' }}>
-                   <img src="/images/onboarding_play_protect_toggle_off_1774281859344.png" alt="Toggle Off" />
-                </div>
-                <h4>2. Disable Scanning</h4>
-                <p>Tap Settings (Gear icon) and turn <strong>OFF</strong> "Scan apps with Play Protect" during install.</p>
-             </div>
+          <div className="phone-mockup" style={{ maxWidth: '340px', border: '10px solid var(--iron)', borderRadius: '48px', margin: '40px auto 0', position: 'relative' }}>
+               <video src="/videos/walkthrough.mp4" autoPlay muted loop playsInline controls style={{ width: '100%', borderRadius: '38px', background: '#000' }} />
+          </div>
+          <div style={{ textAlign: 'center', marginTop: '24px' }}>
+              <p style={{ color: 'var(--ghost)' }}>Open Play Store &rarr; Profile &rarr; Play Protect &rarr; Settings &rarr; Toggle <strong>OFF</strong>.</p>
           </div>
         </div>
 
-        {/* VISUAL GUIDE 2: ACCESSIBILITY */}
-        <div className="section-block reveal" id="authorize">
-          <div className="sec-num">Setup Phase 02</div>
-          <h2 className="sec-title">ACTIVATE REAL-TIME GUARD</h2>
+        {/* VIDEO TUTORIAL: PHASE 02 */}
+        <div className="section-block reveal" id="authorize" style={{ marginTop: '100px' }}>
+          <div className="sec-num">Phase 02</div>
+          <h2 className="sec-title">INITIALIZE GUARDIAN SHIELD</h2>
           <div className="sec-body">
-            <p>The Guardian Shield needs Permission to see when a restricted URL is about to load. This happens entirely locally on your device.</p>
+            <p>The shield requires Accessibility permission to intercept triggers. If your device blocks this, follow the 'Restricted Settings' protocol shown.</p>
           </div>
 
-          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '40px' }}>
-             <div className="experience-card" style={{ maxWidth: '400px' }}>
-                <div className="phone-mockup" style={{ maxWidth: '200px', margin: '0 auto', border: '6px solid var(--iron)', borderRadius: '32px' }}>
-                   <img src="/images/onboarding_accessibility_menu_step_1774281884464.png" alt="Accessibility Guide" />
-                </div>
-                <h4>Enable Accessibility</h4>
-                <p>In your Phone Settings, find <strong>Accessibility</strong> → <strong>Downloaded Apps</strong> → Select <strong>NoRelapse</strong> and toggle it <strong>ON</strong>.</p>
-             </div>
+          <div className="phone-mockup" style={{ maxWidth: '340px', border: '10px solid var(--iron)', borderRadius: '48px', margin: '40px auto 0', position: 'relative' }}>
+               <video src="/videos/gaurdian.mp4" autoPlay muted loop playsInline controls style={{ width: '100%', borderRadius: '38px', background: '#000' }} />
           </div>
+          <div style={{ textAlign: 'center', marginTop: '24px' }}>
+              <p style={{ color: 'var(--ghost)' }}>Settings &rarr; Accessibility &rarr; NoRelapse &rarr; Toggle <strong>ON</strong>.</p>
+          </div>
+        </div>
+
+        {/* TRUST BADGE */}
+        <div className="reveal" style={{ textAlign: 'center', marginTop: '100px', padding: '40px', background: 'rgba(255,255,255,0.03)', border: '1px solid var(--iron)' }}>
+            <h3 style={{ color: 'var(--rh)', marginBottom: '10px' }}>🛡️ SECURITY CERTIFIED</h3>
+            <p style={{ color: 'var(--ghost)' }}>
+                This APK is 100% clean. <a href="https://www.virustotal.com/gui/file/8131612f0013509f848ea40fc49247dd4b671bcaca9aa4e487db06c9fa654137" target="_blank" rel="noopener" style={{ color: 'var(--white)' }}>View VirusTotal Scan Result (0 Detections)</a>
+            </p>
         </div>
 
         {/* FINAL DOWNLOAD CTA */}
         <div className="section-block reveal" id="download" style={{ textAlign: 'center', padding: '80px 0' }}>
-            <div className="page-label" style={{ justifyContent: 'center' }}>Ready for Deployment</div>
-            <h2 className="sec-title" style={{ fontSize: '3.5rem' }}>COMMENCE THE BATTLE</h2>
-            <p className="sec-body" style={{ maxWidth: '600px', margin: '0 auto 40px' }}>
-                You have reviewed the protocols. The Guardian Shield is ready to be initialized on your device.
-            </p>
-
-            <div className="download-block" style={{ border: '1px solid var(--rh)', background: 'var(--steel)', padding: '50px', justifyContent: 'center' }}>
-                <div style={{ textAlign: 'center' }}>
-                    <div className="db-version" style={{ fontSize: '0.9rem', marginBottom: '10px' }}>Elite Warrior Edition — v1.x</div>
-                    <div className="db-name" style={{ fontSize: '2.5rem', marginBottom: '20px' }}>NoRelapse_Elite.apk</div>
-                    <a href="#" onClick={handleDownloadClick} className="btn-dl" style={{ fontSize: '1.2rem', padding: '24px 60px', borderRadius: '0' }}>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M12 3v13M6 11l6 6 6-6"/><path d="M3 20h18"/></svg>
-                        DOWNLOAD GUARDIAN SHIELD
-                    </a>
-                </div>
-            </div>
-
-            <div className="callout" style={{ maxWidth: '500px', margin: '40px auto 0' }}>
-                <strong>Note:</strong> Android will show a "File might be harmful" warning. Tap <strong>"Download anyway"</strong>. This is standard for direct APKs.
+            <h2 className="sec-title" style={{ fontSize: '3rem' }}>COMMENCE DEPLOYMENT</h2>
+            <div className="download-block" style={{ border: '1px solid var(--iron)', background: 'var(--steel)', padding: '40px', justifyContent: 'center', marginTop: '40px' }}>
+                <a href="#" onClick={handleDownloadClick} className="btn-dl" style={{ fontSize: '1.2rem', padding: '24px 60px' }}>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M12 3v13M6 11l6 6 6-6"/><path d="M3 20h18"/></svg>
+                    DOWNLOAD APK NOW
+                </a>
             </div>
         </div>
 

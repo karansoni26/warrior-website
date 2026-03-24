@@ -396,7 +396,21 @@ export default function Home() {
         </div>
 
         {/* ACTUAL DOWNLOAD BUTTON */}
-        <div style={{ textAlign: 'center', marginTop: '120px', borderTop: '1px solid var(--iron)', paddingTop: '100px' }}>
+         {/* VIRUSTOTAL TRUST SECTION */}
+         <div className="reveal" style={{marginTop: '100px', textAlign: 'center'}}>
+             <div style={{background: 'rgba(255,255,255,0.03)', padding: '40px', borderRadius: '4px', border: '1px solid var(--iron)', display: 'inline-block', maxWidth: '600px'}}>
+                <h3 style={{fontSize: '1.8rem', color: 'var(--white)', marginBottom: '10px'}}>SECURITY CERTIFIED</h3>
+                <p style={{fontSize: '1.2rem', color: 'var(--ghost)', marginBottom: '20px'}}>
+                   <span style={{color: 'var(--rh)', fontWeight: 'bold'}}>🛡️ 0/72 DETECTIONS:</span> No threats detected by any major security engine.
+                </p>
+                <div style={{fontFamily: 'monospace', fontSize: '0.9rem', color: 'var(--dim)', wordBreak: 'break-all', marginBottom: '20px'}}>
+                   SHA256: 8131612...c9fa654137
+                </div>
+                <a href="https://www.virustotal.com/gui/file/8131612f0013509f848ea40fc49247dd4b671bcaca9aa4e487db06c9fa654137" target="_blank" rel="noopener" className="btn-g" style={{display: 'block', textDecoration: 'none'}}>View Live VirusTotal Analysis</a>
+             </div>
+         </div>
+
+         <div style={{ textAlign: 'center', marginTop: '120px', borderTop: '1px solid var(--iron)', paddingTop: '100px' }}>
              <p className="cta-ey reveal">All Systems Ready</p>
              <h2 className="cta-hl reveal" style={{ fontSize: '4rem', marginBottom: '40px' }}>COMMENCE DEPLOYMENT</h2>
              <a href="#" onClick={actualDownload} className="btn-cta" style={{ fontSize: '1.4rem', padding: '24px 72px' }}>
@@ -417,7 +431,10 @@ export default function Home() {
         <p className="cta-sub reveal">You already know what happens if you don't. You've lived that outcome. NoRelapse will not fix your life. It will hold the line long enough for you to fix it yourself.</p>
         <div className="cta-acts reveal">
           <a href="#" onClick={handleDownloadClick} className="btn-cta">Download APK &mdash; Free</a>
-          <div className="apk-note">Android 8.0+ &middot; 6.2 MB &middot; No account needed</div>
+          <div className="apk-note">Android 8.0+ &middot; 6.2 MB &middot; VirusTotal Verified</div>
+          <div style={{marginTop: '10px', fontSize: '0.85rem', color: 'var(--ghost)'}}>
+              <a href="https://www.virustotal.com/gui/file/8131612f0013509f848ea40fc49247dd4b671bcaca9aa4e487db06c9fa654137" target="_blank" rel="noopener" style={{color: 'var(--white)'}}>🛡️ SHA256: 8131612... (Zero Detections)</a>
+          </div>
         </div>
         <div className="cta-shields reveal">
           <div className="shield"><div className="sh-dot"></div>Zero Data Transmitted</div>
