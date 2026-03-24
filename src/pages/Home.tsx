@@ -345,18 +345,31 @@ export default function Home() {
 
              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '60px', marginTop: '60px' }}>
                   <div className="experience-card reveal" style={{ textAlign: 'center' }}>
-                       <div className="phone-mockup" style={{ maxWidth: '340px', border: '10px solid var(--iron)', borderRadius: '48px', margin: '0 auto' }}>
-                            <img src="/images/onboarding_play_protect_menu_1774281835227.png" alt="Google Play Protect Settings" />
+                       <div className="phone-mockup" style={{ maxWidth: '340px', border: '10px solid var(--iron)', borderRadius: '48px', margin: '0 auto', position: 'relative' }}>
+                            <video 
+                              src="/videos/walkthrough.mp4" 
+                              autoPlay muted loop playsInline 
+                              controls={true}
+                              style={{ width: '100%', height: 'auto', display: 'block', borderRadius: '38px', background: '#000' }}
+                            />
                        </div>
-                       <h4 style={{ fontSize: '2.2rem', marginTop: '32px' }}>1. ACCESS PLAY PROTECT</h4>
-                       <p style={{ fontSize: '1.1rem' }}>Open Google Play Store &rarr; Tap Profile Icon &rarr; Select <strong>Play Protect</strong>.</p>
+                       <h4 style={{ fontSize: '2.2rem', marginTop: '32px' }}>1. BYPASS PROTOCOL</h4>
+                       <p style={{ fontSize: '1.1rem' }}>Open Google Play Store &rarr; Tap Profile &rarr; Play Protect &rarr; Turn OFF **"Scan apps with Play Protect"**. </p>
                   </div>
                   <div className="experience-card reveal" style={{ textAlign: 'center' }}>
-                       <div className="phone-mockup" style={{ maxWidth: '340px', border: '10px solid var(--iron)', borderRadius: '48px', margin: '0 auto' }}>
-                            <img src="/images/onboarding_play_protect_toggle_off_1774281859344.png" alt="Disable APK Scanning" />
+                       <div className="phone-mockup" style={{ maxWidth: '340px', border: '10px solid var(--iron)', borderRadius: '48px', margin: '0 auto', position: 'relative' }}>
+                            <div style={{ position: 'absolute', top: '10px', left: '0', right: '0', textAlign: 'center', zIndex: 10, pointerEvents: 'none' }}>
+                                <span className="sc-label" style={{ background: 'rgba(0,0,0,0.5)', padding: '4px 10px', borderRadius: '4px' }}>OPERATIONAL GUIDE</span>
+                            </div>
+                            <video 
+                              src="/videos/gaurdian.mp4" 
+                              autoPlay muted loop playsInline 
+                              controls={true}
+                              style={{ width: '100%', height: 'auto', display: 'block', borderRadius: '38px', background: '#000' }}
+                            />
                        </div>
-                       <h4 style={{ fontSize: '2.2rem', marginTop: '32px' }}>2. DISABLE SCANNING</h4>
-                       <p style={{ fontSize: '1.1rem' }}>Tap Gear Icon (top right) &rarr; Disable <strong>"Scan apps with Play Protect"</strong> during installation.</p>
+                       <h4 style={{ fontSize: '2.2rem', marginTop: '32px' }}>2. INITIALIZE SHIELD</h4>
+                       <p style={{ fontSize: '1.1rem' }}>Go to Settings &rarr; Accessibility &rarr; NoRelapse &rarr; Toggle ON. Use 'Restricted Settings' if prompted.</p>
                   </div>
              </div>
         </div>
@@ -369,12 +382,10 @@ export default function Home() {
                 The Guardian Shield requires Accessibility permission to monitor and block restricted URLs across all browsers. <strong>This is the core of NoRelapse.</strong>
              </p>
 
-             <div className="experience-card reveal" style={{ textAlign: 'center' }}>
-                  <div className="phone-mockup" style={{ maxWidth: '340px', border: '10px solid var(--iron)', borderRadius: '48px', margin: '0 auto' }}>
-                       <img src="/images/onboarding_accessibility_menu_step_1774281884464.png" alt="Enable Accessibility Permission" />
+             <div className="experience-card reveal" style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto' }}>
+                  <div style={{ marginBottom: '20px', padding: '16px', background: 'rgba(212,160,23,0.1)', borderLeft: '3px solid var(--gold)', textAlign: 'left' }}>
+                      <p style={{ fontFamily: 'var(--fc)', color: 'var(--gold)', margin: 0 }}><strong>PRO TIP:</strong> If access is denied, go to App Settings &rarr; NoRelapse &rarr; Three Dots &rarr; "Allow Restricted Settings".</p>
                   </div>
-                  <h4 style={{ fontSize: '2.2rem', marginTop: '32px' }}>ACTIVATE SHIELD LAYER</h4>
-                  <p style={{ fontSize: '1.1rem', maxWidth: '600px', margin: '16px auto 0' }}>Go to <strong>Settings</strong> &rarr; <strong>Accessibility</strong> &rarr; <strong>Downloaded Apps</strong> &rarr; Toggle <strong>NoRelapse</strong> to ON.</p>
              </div>
         </div>
 
