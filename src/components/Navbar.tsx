@@ -37,7 +37,8 @@ export default function Navbar() {
           <Link to="/" className="nav-logo">NO<span>RELAPSE</span></Link>
           <ul className="nav-links">
             <li><Link to="/" className={pathname === '/' ? 'active' : ''}>Home</Link></li>
-            <li><a href="/#install" onClick={handleDownloadClick}>Setup Guide</a></li>
+            <li><Link to="/install" className={pathname === '/install' ? 'active' : ''}>Setup Guide</Link></li>
+            <li><Link to="/blog" className={pathname.startsWith('/blog') ? 'active' : ''}>Handbook</Link></li>
             <li><Link to="/privacy" className={pathname === '/privacy' ? 'active' : ''}>Privacy</Link></li>
             <li><a href="mailto:soni.110051@gmail.com">Support</a></li>
           </ul>
@@ -59,7 +60,8 @@ export default function Navbar() {
       {/* Mobile dropdown menu */}
       <div className={menuOpen ? 'mobile-menu open' : 'mobile-menu'}>
         <Link to="/" className={pathname === '/' ? 'active' : ''} onClick={() => setMenuOpen(false)}>Home</Link>
-        <a href="/#install" onClick={handleDownloadClick}>Setup Guide</a>
+        <Link to="/install" className={pathname === '/install' ? 'active' : ''} onClick={() => setMenuOpen(false)}>Setup Guide</Link>
+        <Link to="/blog" className={pathname.startsWith('/blog') ? 'active' : ''} onClick={() => setMenuOpen(false)}>Handbook</Link>
         <Link to="/privacy" className={pathname === '/privacy' ? 'active' : ''} onClick={() => setMenuOpen(false)}>Privacy</Link>
         <a href="mailto:soni.110051@gmail.com" onClick={() => setMenuOpen(false)}>Support</a>
         <a href="#" onClick={handleDownloadClick} className="mobile-menu-cta">Download APK</a>

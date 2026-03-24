@@ -5,6 +5,8 @@ import Home from './pages/Home';
 import Privacy from './pages/Privacy';
 import Install from './pages/Install';
 import Terms from './pages/Terms';
+import Blog from './pages/Blog';
+import BlogPost from './pages/BlogPost';
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
@@ -26,6 +28,8 @@ function App() {
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/install" element={<Install />} />
         <Route path="/terms" element={<Terms />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/blog/:slug" element={<BlogPost />} />
       </Routes>
       <Footer />
     </>
