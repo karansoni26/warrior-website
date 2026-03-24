@@ -55,7 +55,7 @@ export const BLOG_POSTS: Post[] = [
       <h3>See It In Action:</h3>
       <div style="margin: 40px 0; border: 1px solid var(--rh); border-radius: 12px; overflow: hidden; background: #000; box-shadow: 0 0 30px rgba(0, 255, 136, 0.1);">
         <video 
-          src="/gaurdian.mp4" 
+          src="/videos/gaurdian.mp4" 
           controls 
           muted 
           autoPlay 
