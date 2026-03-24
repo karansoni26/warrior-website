@@ -78,25 +78,29 @@ export default function Home() {
 
         <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:'60px',alignItems:'center',position:'relative',zIndex:1}}>
           <div>
-            <div className="hero-ey">Android APK &middot; System-Level Defense Protocol</div>
+            <div className="hero-ey">NoRelapse Warrior &middot; Safe &middot; VirusTotal Verified</div>
             <h1 className="hero-hl">
-              MASTER<br />YOUR<br />
-              <span className="acc">DISCIPLINE.</span><br />
-              <span className="dim">RECLAIM</span><br />
-              YOUR LIFE.
+              SYSTEM-LEVEL<br />DISCIPLINE.<br />
+              <span className="acc">WARRIOR APK.</span><br />
+              <span className="dim">GUARDIAN</span><br />
+              SHIELD ONLY.
             </h1>
-            <p className="hero-sub">
-              The only blocker built for men who have failed every other app. No pastel dashboards. No motivational quotes. System-level enforcement. Zero tolerance. Zero data leaks.
+            <p className="hero-sub" style={{ fontSize: '1.2rem', color: 'var(--white)' }}>
+               Guardian Shield turns your entire phone into a bodyguard.<br />
+               Biological Roadmap proves your brain is healing.<br />
+               <strong>Zero paywall. Zero tracking. Direct download.</strong>
             </p>
             <div className="hero-acts">
-              <a href="#" onClick={handleDownloadClick} className="btn-p">Download APK &mdash; Free</a>
-              <a href="#problem" className="btn-g">Understand the mission</a>
+              <a href="#" onClick={handleDownloadClick} className="btn-p" style={{ padding: '20px 40px' }}>
+                ✅ DOWNLOAD WARRIOR APK (Safe • VirusTotal Verified)
+              </a>
+              <a href="https://www.virustotal.com/gui/home/upload" target="_blank" rel="noopener" className="btn-g">Scan APK on VirusTotal</a>
             </div>
             <div className="hero-trust">
-              <div className="hero-trust-item"><strong>100%</strong><span>On-Device Processing</span></div>
-              <div className="hero-trust-item"><strong>0 bytes</strong><span>Sent to Any Server</span></div>
-              <div className="hero-trust-item"><strong>System</strong><span>Level Enforcement</span></div>
-              <div className="hero-trust-item"><strong>380K+</strong><span>Active Deployments</span></div>
+              <div className="hero-trust-item"><strong>100%</strong><span>Privacy-First</span></div>
+              <div className="hero-trust-item"><strong>30s</strong><span>To Install</span></div>
+              <div className="hero-trust-item"><strong>Safe</strong><span>Clean Distribution</span></div>
+              <div className="hero-trust-item"><strong>380K+</strong><span>Active Warriors</span></div>
             </div>
           </div>
 
@@ -116,11 +120,11 @@ export default function Home() {
       </div>
 
       <section id="problem">
-        <div className="s-lbl">The Problem</div>
-        <h2 className="s-ttl reveal">YOU DON'T HAVE A WILLPOWER PROBLEM.<br />YOU HAVE AN INFRASTRUCTURE PROBLEM.</h2>
+        <div className="s-lbl">Why NoRelapse Warrior Is Different</div>
+        <h2 className="s-ttl reveal">SYSTEM-LEVEL PROTECTION,<br />NOT JUST A HABIT TRACKER.</h2>
         <div className="prob-grid">
           <div className="prob-copy reveal">
-            <p>You've deleted the apps. You've set screen time limits. You've used the colorful blockers with the cartoon mascots. You've made the promises. You've broken them â€” again, and again, and again. None of it worked because <strong>none of it was built to hold.</strong></p>
+            <p style={{fontSize:'1.2rem', color:'var(--white)'}}>Most apps only block triggers inside their own browsers. **Our Guardian Shield blocks triggers across the entire phone.** Chromium, YouTube, Instagram, and every system app is monitored 24/7. **No root required. Zero battery drain.**</p>
             <p>Those tools were designed for teenagers managing social media. They were not designed for a man at war with the most sophisticated dopamine delivery system in human history.</p>
             <div className="war-line">"The enemy does not respect a passcode you set yourself. It respects a wall you cannot tear down."</div>
             <p>Every app you've tried gave the enemy a backdoor â€” a browser you could switch to, a setting you could disable when the urge hit. You did not fail those apps. <strong>Those apps failed you.</strong> The architecture was soft. Yours needed to be iron.</p>
@@ -155,9 +159,9 @@ export default function Home() {
       <div className="divider"></div>
 
       <section id="solution">
-        <div className="s-lbl">The Solution</div>
-        <h2 className="s-ttl reveal">ONE SYSTEM. BUILT TO HOLD THE LINE.</h2>
-        <p className="sol-text reveal">NoRelapse is not a tracker. It is not a timer. It is not a friendly reminder. It is a <span className="acc">sovereign defense architecture</span> â€” deployed at the system level, operating in silence, leaving <span className="dim">no gap for negotiation.</span></p>
+        <div className="s-lbl">Guardian Shield</div>
+        <h2 className="s-ttl reveal">TRUE SYSTEM-LEVEL PROTECTION.</h2>
+        <p className="sol-text reveal">NoRelapse Warrior is not a tracker. It is not a timer. It is a <span className="acc">Guardian Shield architecture</span> — deployed at the Accessibility Service layer, operating in silence, providing <span className="dim">100% phone-wide protection.</span></p>
         <div className="pillars">
           <div className="pillar reveal"><div className="pillar-num">I</div><div className="pillar-t">Sovereign Privacy</div><p className="pillar-p">Every decision NoRelapse makes happens on your device. Browsing behavior processed locally, then discarded. No logs. No analytics. No cloud sync. No server that can be breached or sold.</p></div>
           <div className="pillar reveal"><div className="pillar-num">II</div><div className="pillar-t">Military-Grade Enforcement</div><p className="pillar-p">NoRelapse operates at the AccessibilityService layer â€” below the browser, below the app, at the OS nerve center. You cannot outrun it by switching apps. There is no browser it cannot see.</p></div>
@@ -168,10 +172,12 @@ export default function Home() {
       <div className="divider"></div>
 
       <section id="experience" style={{background:'var(--black)',padding:'100px 60px'}}>
-        <div className="s-lbl">The Interface</div>
-        <h2 className="s-ttl reveal">ELITE TOOLS FOR VICTORY.</h2>
+        <div className="s-lbl">Biological Roadmap</div>
+        <h2 className="s-ttl reveal">SCIENCE-BACKED BRAIN HEALING.</h2>
         <div className="experience-grid">
           <div className="experience-card reveal delay-100">
+            <h4 style={{fontSize:'2rem',marginBottom:'20px'}}>DAY 14: NEURAL REPAIR</h4>
+            <p style={{marginBottom:'30px'}}>Stop counting days. Start tracking brain healing. Roadmap proves your prefrontal cortex is repairing itself from Day 14 onwards.</p>
             <div className="phone-mockup">
               <img src="/images/journey.png" alt="Journey Roadmap" />
             </div>
@@ -419,7 +425,7 @@ export default function Home() {
           <div className="shield"><div className="sh-dot"></div>No Play Store</div>
           <div className="shield"><div className="sh-dot"></div>Open to Audit</div>
         </div>
-        <p className="cta-fine reveal">No email. No cloud. No surveillance. Runs entirely on your device from the moment of installation.</p>
+        <p className="cta-fine reveal">Safe APK &middot; Privacy First &middot; Built for Real Warriors</p>
       </section>
     </>
   );
