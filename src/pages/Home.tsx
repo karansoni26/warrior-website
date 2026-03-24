@@ -66,7 +66,7 @@ export default function Home() {
     } catch (err) {
       console.error("Install download failed", err);
     }
-    window.location.href = 'https://aiicylzukkkhxcimsycb.supabase.co/storage/v1/object/public/app-releases/NoRelapse-release.apk';
+    window.location.href = 'https://aiicylzukkkhxcimsycb.supabase.co/storage/v1/object/public/app-releases/NoRelapse-release-v1';
   };
 
   return (
@@ -404,9 +404,9 @@ export default function Home() {
                    <span style={{color: 'var(--rh)', fontWeight: 'bold'}}>🛡️ 0/72 DETECTIONS:</span> No threats detected by any major security engine.
                 </p>
                 <div style={{fontFamily: 'monospace', fontSize: '0.9rem', color: 'var(--dim)', wordBreak: 'break-all', marginBottom: '20px'}}>
-                   SHA256: 8131612...c9fa654137
+                   SHA256: A800D0E6...CFEA755D8
                 </div>
-                <a href="https://www.virustotal.com/gui/file/8131612f0013509f848ea40fc49247dd4b671bcaca9aa4e487db06c9fa654137" target="_blank" rel="noopener" className="btn-g" style={{display: 'block', textDecoration: 'none'}}>View Live VirusTotal Analysis</a>
+                <a href="https://www.virustotal.com/gui/file/a800d0e677b3902f488e684e955474f70a08b1d5be74c2eac07d212cfea755d8" target="_blank" rel="noopener" className="btn-g" style={{display: 'block', textDecoration: 'none'}}>View Live VirusTotal Analysis</a>
              </div>
          </div>
 
@@ -433,7 +433,7 @@ export default function Home() {
           <a href="#" onClick={handleDownloadClick} className="btn-cta">Download APK &mdash; Free</a>
           <div className="apk-note">Android 8.0+ &middot; 6.2 MB &middot; VirusTotal Verified</div>
           <div style={{marginTop: '10px', fontSize: '0.85rem', color: 'var(--ghost)'}}>
-              <a href="https://www.virustotal.com/gui/file/8131612f0013509f848ea40fc49247dd4b671bcaca9aa4e487db06c9fa654137" target="_blank" rel="noopener" style={{color: 'var(--white)'}}>🛡️ SHA256: 8131612... (Zero Detections)</a>
+              <a href="https://www.virustotal.com/gui/file/a800d0e677b3902f488e684e955474f70a08b1d5be74c2eac07d212cfea755d8" target="_blank" rel="noopener" style={{color: 'var(--white)'}}>🛡️ SHA256: A800D0E6... (Zero Detections)</a>
           </div>
         </div>
         <div className="cta-shields reveal">

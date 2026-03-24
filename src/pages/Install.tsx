@@ -81,7 +81,7 @@ export default function Install() {
         <div className="reveal" style={{ textAlign: 'center', marginTop: '100px', padding: '40px', background: 'rgba(255,255,255,0.03)', border: '1px solid var(--iron)' }}>
             <h3 style={{ color: 'var(--rh)', marginBottom: '10px' }}>🛡️ SECURITY CERTIFIED</h3>
             <p style={{ color: 'var(--ghost)' }}>
-                This APK is 100% clean. <a href="https://www.virustotal.com/gui/file/8131612f0013509f848ea40fc49247dd4b671bcaca9aa4e487db06c9fa654137" target="_blank" rel="noopener" style={{ color: 'var(--white)' }}>View VirusTotal Scan Result (0 Detections)</a>
+                This APK is 100% clean. <a href="https://www.virustotal.com/gui/file/a800d0e677b3902f488e684e955474f70a08b1d5be74c2eac07d212cfea755d8" target="_blank" rel="noopener" style={{ color: 'var(--white)' }}>View VirusTotal Scan Result (0/68 Detections)</a>
             </p>
         </div>
 
