@@ -79,5 +79,35 @@ export const BLOG_POSTS: Post[] = [
 
       <p>Ready to make your phone safe again? Turn your device from a liability into a fortress today.</p>
     `
+  },
+  {
+    slug: 'how-to-block-porn-on-android-no-root',
+    title: 'How I Blocked Porn Everywhere on Android Without Root (Free APK)',
+    excerpt: 'I tried every paid blocker available in 2026. None of them worked when the real urge hit. See the step-by-step guide to full zero-friction blocking.',
+    date: 'March 25, 2026',
+    readTime: '3 min read',
+    image: '/accessibility-setup.png',
+    content: `
+      <p>I tried every paid blocker available in 2026. None of them worked when the real urge hit. They were either too clunky, didn't block incognito, or were easily bypassed by a simple settings change. <strong>Then I found NoRelapse Warrior.</strong></p>
+      
+      <p>Here’s exactly how I blocked porn on my entire phone, including incognito tabs and third-party apps, without rooting my device:</p>
+
+      <h3>The 3-Step Setup:</h3>
+      <ol>
+        <li><strong>Download the Free Warrior APK</strong>: The foundation of your fortress.</li>
+        <li><strong>Enable Accessibility Service</strong>: This takes exactly 30 seconds but gives the Guardian Shield its "eyes."</li>
+        <li><strong>Add Your Personal Blacklist</strong>: Custom triggers that only you know.</li>
+      </ol>
+
+      <div style="margin: 40px 0; border: 1px solid var(--iron); border-radius: 12px; overflow: hidden; background: #000;">
+        <img src="/accessibility-setup.png" alt="Accessibility Service Setup Guide" style="width: 100%; display: block;" />
+        <div style="padding: 15px; font-size: 0.9rem; color: var(--ghost); text-align: center;">No-Friction Onboarding: Setting up Accessibility Service</div>
+      </div>
+
+      <h3>The Result:</h3>
+      <p>On Day 1 alone, the system blocked <strong>47 triggers</strong> that I didn't even realize I was hitting. It was a silent bodyguard running in the background. No complicated setup, no monthly fees, and absolutely no root needed.</p>
+
+      <p>Stop trying to fight a digital war with physical willpower. Upgrade your defenses and watch your streak climb.</p>
+    `
   }
 ];
