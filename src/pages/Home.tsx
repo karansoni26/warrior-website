@@ -64,8 +64,21 @@ export default function Home() {
     }
   };
 
-  const actualDownload = (e: React.MouseEvent) => {
+  const actualDownload = async (e: React.MouseEvent) => {
     e.preventDefault();
+    
+    // Referral Tracking: Copy the ref to clipboard if present in URL
+    const params = new URLSearchParams(window.location.search);
+    const ref = params.get('ref');
+    if (ref) {
+      try {
+        await navigator.clipboard.writeText(`NR_REF:${ref}`);
+        console.log("Referral sentinel copied to clipboard");
+      } catch (err) {
+        console.error("Clipboard copy failed", err);
+      }
+    }
+
     if (latestApkUrl) {
       window.location.href = latestApkUrl;
     } else {
