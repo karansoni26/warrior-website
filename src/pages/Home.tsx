@@ -1,8 +1,19 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import { supabase } from '../supabase';
 
 
 export default function Home() {
+  const [latestApkUrl, setLatestApkUrl] = useState<string | null>(null);
+
   useEffect(() => {
+    const fetchLatestApk = async () => {
+      const { data } = await supabase.from('app_config').select('warrior_settings').eq('id', 'global').single();
+      if (data?.warrior_settings?.latest_apk_url) {
+        setLatestApkUrl(data.warrior_settings.latest_apk_url);
+      }
+    };
+    fetchLatestApk();
+
     const obs = new IntersectionObserver(
       (entries) => {
         entries.forEach((e, i) => {
@@ -55,7 +66,12 @@ export default function Home() {
 
   const actualDownload = (e: React.MouseEvent) => {
     e.preventDefault();
-    window.location.href = '/install';
+    if (latestApkUrl) {
+      window.location.href = latestApkUrl;
+    } else {
+      // Fallback if DB value is missing
+      window.location.href = 'https://norelapse.app/Warrior_Elite_Final_Pro_v4.apk'; 
+    }
   };
 
   return (
