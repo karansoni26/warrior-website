@@ -4,6 +4,11 @@ import { supabase } from '../supabase';
 
 export default function Home() {
   const [latestApkUrl, setLatestApkUrl] = useState<string | null>(null);
+  const [email, setEmail] = useState('');
+  const [name, setName] = useState('');
+  const [leadStatus, setLeadStatus] = useState<{ type: 'success' | 'error' | null, msg: string }>({ type: null, msg: '' });
+  const [loading, setLoading] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     const fetchLatestApk = async () => {
@@ -51,8 +56,16 @@ export default function Home() {
       });
     });
 
+    const timer = setTimeout(() => {
+      const hasSeen = localStorage.getItem('warrior_blueprint_seen');
+      if (!hasSeen) {
+        setShowModal(true);
+      }
+    }, 5000);
+
     return () => {
       obs.disconnect();
+      clearTimeout(timer);
     };
   }, []);
 
@@ -87,6 +100,47 @@ export default function Home() {
     }
   };
 
+  const captureLead = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email || !email.includes('@')) {
+      setLeadStatus({ type: 'error', msg: 'Enter a valid warrior email.' });
+      return;
+    }
+    if (!name || name.length < 2) {
+      setLeadStatus({ type: 'error', msg: 'Enter your Warrior Name.' });
+      return;
+    }
+
+    setLoading(true);
+    setLeadStatus({ type: null, msg: '' });
+
+    try {
+      // 1. Send to local serverless API (Brevo + Supabase)
+      const res = await fetch('/api/send-lead-magnet', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email })
+      });
+
+      const data = await res.json();
+      
+      if (!res.ok) throw new Error(data.error || 'System error. Try again later.');
+
+      setLeadStatus({ type: 'success', msg: data.message || 'Victory! Your 7-Day Battle Plan is on the way.' });
+      setEmail('');
+      setName('');
+    } catch (err: any) {
+      setLeadStatus({ type: 'error', msg: err.message || 'System error. Try again later.' });
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const closeLeadModal = () => {
+    setShowModal(false);
+    localStorage.setItem('warrior_blueprint_seen', 'true');
+  };
+
   return (
     <>
       <section id="hero" style={{minHeight:'100vh',display:'flex',flexDirection:'column',justifyContent:'center',position:'relative',padding:'130px 60px 90px',overflow:'hidden'}}>
@@ -114,6 +168,41 @@ export default function Home() {
               </a>
               <a href="https://www.virustotal.com/gui/home/upload" target="_blank" rel="noopener" className="btn-g">Scan APK on VirusTotal</a>
             </div>
+
+            <div className="blueprint-card">
+               <h3 className="blueprint-title">GET THE WARRIOR'S 7-DAY BATTLE PLAN</h3>
+               <p className="blueprint-sub">Download the field-tested "7-Day Warrior Battle Plan" PDF. Learn the neural protocols to crush addiction before it peaks. It's free, forever.</p>
+               <form className="blueprint-form" onSubmit={captureLead}>
+                  <input 
+                    type="text" 
+                    placeholder="Enter your Warrior Name" 
+                    className="blueprint-input"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    disabled={loading}
+                    required
+                    style={{ marginBottom: '10px' }}
+                  />
+                  <input 
+                    type="email" 
+                    placeholder="Enter your email to receive guide" 
+                    className="blueprint-input"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    disabled={loading}
+                    required
+                  />
+                  <button type="submit" className="blueprint-btn" disabled={loading} style={{ marginTop: '10px' }}>
+                    {loading ? 'INITIATING...' : 'JOIN THE VANGUARD'}
+                  </button>
+               </form>
+               {leadStatus.msg && (
+                 <div className={`blueprint-status ${leadStatus.type}`}>
+                   {leadStatus.msg}
+                 </div>
+               )}
+            </div>
+
             <div className="hero-trust">
               <div className="hero-trust-item"><strong>100%</strong><span>Privacy-First</span></div>
               <div className="hero-trust-item"><strong>30s</strong><span>To Install</span></div>
@@ -462,6 +551,46 @@ export default function Home() {
         </div>
         <p className="cta-fine reveal">Safe APK &middot; Privacy First &middot; Built for Real Warriors</p>
       </section>
+
+      {showModal && (
+        <div className="blueprint-overlay">
+          <div className="blueprint-modal">
+            <button className="blueprint-modal-close" onClick={closeLeadModal}>&times;</button>
+            <h3 className="blueprint-title">INITIATE RECOVERY</h3>
+            <p className="blueprint-sub">Download the <b>Warrior's 7-Day Battle Plan</b> PDF and start your healing journey today. Direct to your inbox.</p>
+            <form className="blueprint-form" onSubmit={captureLead}>
+               <input 
+                 type="text" 
+                 placeholder="Warrior Name" 
+                 className="blueprint-input"
+                 value={name}
+                 onChange={(e) => setName(e.target.value)}
+                 disabled={loading}
+                 required
+                 style={{ marginBottom: '10px' }}
+               />
+               <input 
+                 type="email" 
+                 placeholder="Warrior Email" 
+                 className="blueprint-input"
+                 value={email}
+                 onChange={(e) => setEmail(e.target.value)}
+                 disabled={loading}
+                 required
+               />
+               <button type="submit" className="blueprint-btn" disabled={loading} style={{ marginTop: '10px' }}>
+                 {loading ? 'WAITING...' : 'SEND BLUEPRINT'}
+               </button>
+            </form>
+            {leadStatus.msg && (
+              <div className={`blueprint-status ${leadStatus.type}`} style={{marginTop: '15px'}}>
+                {leadStatus.msg}
+              </div>
+            )}
+            <p style={{fontSize: '11px', color: 'var(--smoke)', marginTop: '20px', textAlign: 'center'}}>Zero spam. Full sovereignty.</p>
+          </div>
+        </div>
+      )}
     </>
   );
 }

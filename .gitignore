@@ -1,5 +1,24 @@
 node_modules/
 dist/
 .env
+.env.local
 .DS_Store
 *.log
+
+# Junk / dev-only files
+coords.json
+deploy_log.txt
+deploy_log_utf8.txt
+generate_advanced.cjs
+generate_pdf.cjs
+process_forms.cjs
+old_images.txt
+old_index.html
+old_index.txt
+very_old.txt
+very_old_index.txt
+phase7.txt
+png_history.txt
+png_history_ascii.txt
+pdf_assets/
+vite.config.ts.timestamp-*
