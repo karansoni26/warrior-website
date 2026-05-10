@@ -168,7 +168,7 @@ export default defineConfig(({ mode }) => {
                     res.statusCode = 500;
                     res.end(JSON.stringify({ error: 'Brevo API error', details: err }));
                   }
-                } catch (e) {
+                } catch (e: any) {
                   console.error('❌ VITE MIDDLEWARE CRASH:', e);
                   res.statusCode = 500;
                   res.end(JSON.stringify({ error: 'Internal Dev Server Error', message: e.message }));

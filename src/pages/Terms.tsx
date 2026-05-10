@@ -107,7 +107,7 @@ export default function Terms() {
           <div className="sec-body">
             <p><strong>6.1 Modifications.</strong> We reserve the right to modify these terms. Continued use of the updated APK implies acceptance.</p>
             <p><strong>6.2 Jurisdiction.</strong> This agreement shall be governed by the laws applicable to the developer's registered jurisdiction, without regard to conflict of law principles.</p>
-            <p style={{marginTop: "24px"}}><strong>Developer Contact:</strong> <a href="mailto:soni.110051@gmail.com" style={{color: "var(--rh)", textDecoration: "none", fontFamily: "var(--fc)", letterSpacing: ".05em"}}>soni.110051@gmail.com</a></p>
+            <p style={{marginTop: "24px"}}><strong>Developer Email:</strong> <a href="mailto:soni.110051@gmail.com" style={{color: "var(--rh)", textDecoration: "none", fontFamily: "var(--fc)", letterSpacing: ".05em"}}>soni.110051@gmail.com</a></p>
           </div>
         </div>
 

@@ -150,8 +150,8 @@ export default function Privacy() {
           <h2 className="sec-title">CONTACT &amp; QUESTIONS</h2>
           <div className="sec-body">
             <p>If you have a specific technical question about our privacy implementation that is not answered here, contact us directly. We respond within 48 hours.</p>
-            <p style={{marginTop: "16px"}}><strong>Support:</strong> <a href="mailto:soni.110051@gmail.com" style={{color: "var(--rh)", textDecoration: "none", fontFamily: "var(--fc)"}}>soni.110051@gmail.com</a></p>
-            <p style={{marginTop: "8px", fontSize: ".85rem", color: "var(--smoke)"}}>Last updated: March 2026 &nbsp;·&nbsp; Sovereign Vault Protocol v1.1</p>
+            <p style={{marginTop: "16px"}}><strong>Support Email:</strong> <a href="mailto:soni.110051@gmail.com" style={{color: "var(--rh)", textDecoration: "none", fontFamily: "var(--fc)"}}>soni.110051@gmail.com</a></p>
+            <p style={{marginTop: "16px", fontSize: ".85rem", color: "var(--smoke)"}}>Last updated: March 2026 &nbsp;·&nbsp; Sovereign Vault Protocol v1.1</p>
           </div>
         </div>
       </div>
