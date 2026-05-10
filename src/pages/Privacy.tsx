@@ -147,6 +147,20 @@ export default function Privacy() {
         {/* 05 */}
         <div className="section-block reveal">
           <div className="sec-num">05</div>
+          <h2 className="sec-title">DATA DELETION &amp; ACCOUNT REMOVAL</h2>
+          <div className="sec-body">
+            <p>You have full control over your data. You can delete your account and all associated data (streaks, logs, and profile) at any time by:</p>
+            <ul className="term-list" style={{marginTop: "20px"}}>
+              <li style={{marginBottom: "12px"}}><div className="tl-dot"></div><strong>In-App:</strong> Going to <em>Settings &gt; Delete Account Permanently</em>. This action is instantaneous and irreversible.</li>
+              <li><div className="tl-dot"></div><strong>Manual Request:</strong> Emailing us at <strong>soni.110051@gmail.com</strong> from your registered email address. We will process your deletion request within 7 business days.</li>
+            </ul>
+            <p style={{marginTop: "20px"}}>Once your account is deleted, all locally stored data on your device is purged, and your associated records on our secure backend are permanently erased.</p>
+          </div>
+        </div>
+
+        {/* 06 */}
+        <div className="section-block reveal">
+          <div className="sec-num">06</div>
           <h2 className="sec-title">CONTACT &amp; QUESTIONS</h2>
           <div className="sec-body">
             <p>If you have a specific technical question about our privacy implementation that is not answered here, contact us directly. We respond within 48 hours.</p>
